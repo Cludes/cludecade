@@ -43,4 +43,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Mention the on-screen joystick in the first-run "How do I play?" hint for discoverability - 8224b74
 - 2026-06-02 - Fix service worker staleness: stale-while-revalidate + cache bump (v2) so PWA/SW users actually receive app updates (was cache-first, never bumped) - 64df6b3
 - 2026-06-02 - Declare color-scheme: dark so native controls render dark and there's no light flash on load - ae3cd8f
-- 2026-06-02 - Add apple-mobile-web-app + mobile-web-app-capable meta tags for proper iOS/Android standalone install behavior - pending
+- 2026-06-02 - Add apple-mobile-web-app + mobile-web-app-capable meta tags for proper iOS/Android standalone install behavior - bb1b646
+- 2026-06-02 - Add aria-label to the joystick toggle so its purpose is clear to screen readers - pending
