@@ -10,6 +10,7 @@ const CORES = {
 };
 
 let romName = "game";
+let currentFileName = "";
 
 // Curated per-game cheat database, auto-applied when a matching ROM loads.
 // Loaded once at startup; matching is done by normalised filename.
@@ -54,6 +55,8 @@ const autosaveState = document.getElementById("autosave-state");
 const linkAutostateBtn = document.getElementById("link-autostate");
 const loadAutostateBtn = document.getElementById("load-autostate");
 const autostateState = document.getElementById("autostate-state");
+const exportBackupBtn = document.getElementById("export-backup");
+const importBackupInput = document.getElementById("import-backup");
 
 romInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
@@ -114,6 +117,7 @@ async function detectCore(fileName, bytes) {
 
 function bootFromBytes(fileName, core, bytes) {
   romName = fileName.replace(/\.[^.]+$/, "");
+  currentFileName = fileName;
   startPlayTracking(fileName);
   const url = URL.createObjectURL(new Blob([bytes], { type: "application/octet-stream" }));
   bootEmulator(core, url, fileName);
@@ -158,6 +162,8 @@ function onEmulatorReady() {
   importSavInput.disabled = false;
   exportStateBtn.disabled = false;
   importStateInput.disabled = false;
+  exportBackupBtn.disabled = false;
+  importBackupInput.disabled = false;
 
   if (window.showSaveFilePicker) {
     linkAutosaveBtn.disabled = false;
@@ -473,6 +479,54 @@ loadAutostateBtn.addEventListener("click", async () => {
   }
 });
 
+// --- One-file backup: ROM + .sav + .state bundled as a single .zip ---
+
+exportBackupBtn.addEventListener("click", async () => {
+  const g = gm();
+  if (!g) return;
+  const files = [];
+
+  const rec = await romTx("roms", "readonly", (s) => s.get(currentFileName)).catch(() => null);
+  if (rec && rec.bytes) files.push({ name: rec.fileName, bytes: new Uint8Array(rec.bytes) });
+
+  const sav = g.getSaveFile();
+  if (sav && sav.length) files.push({ name: romName + ".sav", bytes: sav });
+
+  const state = await g.getState();
+  if (state && state.length) files.push({ name: romName + ".state", bytes: state });
+
+  if (!files.length) {
+    setStatus("Nothing to back up yet.");
+    return;
+  }
+  downloadBytes(makeZip(files), romName + "-backup.zip");
+  setStatus("Exported backup with " + files.length + " file(s).");
+});
+
+importBackupInput.addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const g = gm();
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const applied = [];
+  for (const entry of readZipEntries(bytes)) {
+    const ext = entry.name.split(".").pop().toLowerCase();
+    if (CORES[ext]) {
+      await saveRom(entry.name, CORES[ext], entry.bytes).catch(() => {});
+      applied.push("ROM");
+    } else if ((ext === "sav" || ext === "srm") && g) {
+      g.writeFile(g.getSaveFilePath(), entry.bytes);
+      g.loadSaveFiles();
+      applied.push(".sav");
+    } else if (ext === "state" && g) {
+      g.loadState(entry.bytes);
+      applied.push("state");
+    }
+  }
+  setStatus(applied.length ? "Imported from backup: " + applied.join(", ") + "." : "No usable files in backup.");
+  e.target.value = "";
+});
+
 // --- Quick-resume: persist ROMs in IndexedDB and list recent ones ---
 
 const MAX_RECENT = 10;
@@ -708,6 +762,108 @@ function readZipEntryNames(bytes) {
     off += 46 + nameLen + extraLen + commentLen;
   }
   return names;
+}
+
+// --- Minimal store-only (uncompressed) zip writer + reader ---
+
+let crcTable = null;
+function crc32(bytes) {
+  if (!crcTable) {
+    crcTable = new Uint32Array(256);
+    for (let n = 0; n < 256; n++) {
+      let c = n;
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+      crcTable[n] = c >>> 0;
+    }
+  }
+  let crc = 0xffffffff;
+  for (let i = 0; i < bytes.length; i++) crc = crcTable[(crc ^ bytes[i]) & 0xff] ^ (crc >>> 8);
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+// files: [{name, bytes}] -> Uint8Array of a stored (no compression) zip.
+function makeZip(files) {
+  const enc = new TextEncoder();
+  const chunks = [];
+  const central = [];
+  let offset = 0;
+  for (const f of files) {
+    const nameBytes = enc.encode(f.name);
+    const crc = crc32(f.bytes);
+
+    const local = new Uint8Array(30 + nameBytes.length);
+    const ldv = new DataView(local.buffer);
+    ldv.setUint32(0, 0x04034b50, true);
+    ldv.setUint16(4, 20, true);
+    ldv.setUint32(14, crc, true);
+    ldv.setUint32(18, f.bytes.length, true);
+    ldv.setUint32(22, f.bytes.length, true);
+    ldv.setUint16(26, nameBytes.length, true);
+    local.set(nameBytes, 30);
+    chunks.push(local, f.bytes);
+
+    const cen = new Uint8Array(46 + nameBytes.length);
+    const cdv = new DataView(cen.buffer);
+    cdv.setUint32(0, 0x02014b50, true);
+    cdv.setUint16(4, 20, true);
+    cdv.setUint16(6, 20, true);
+    cdv.setUint32(16, crc, true);
+    cdv.setUint32(20, f.bytes.length, true);
+    cdv.setUint32(24, f.bytes.length, true);
+    cdv.setUint16(28, nameBytes.length, true);
+    cdv.setUint32(42, offset, true);
+    cen.set(nameBytes, 46);
+    central.push(cen);
+
+    offset += local.length + f.bytes.length;
+  }
+
+  const cdStart = offset;
+  let cdSize = 0;
+  for (const c of central) {
+    chunks.push(c);
+    cdSize += c.length;
+  }
+
+  const eocd = new Uint8Array(22);
+  const edv = new DataView(eocd.buffer);
+  edv.setUint32(0, 0x06054b50, true);
+  edv.setUint16(8, central.length, true);
+  edv.setUint16(10, central.length, true);
+  edv.setUint32(12, cdSize, true);
+  edv.setUint32(16, cdStart, true);
+  chunks.push(eocd);
+
+  let total = 0;
+  for (const c of chunks) total += c.length;
+  const out = new Uint8Array(total);
+  let p = 0;
+  for (const c of chunks) {
+    out.set(c, p);
+    p += c.length;
+  }
+  return out;
+}
+
+// Extract stored entries by walking local file headers. Compressed entries
+// (method != 0) are skipped - this reads our own backup bundles.
+function readZipEntries(bytes) {
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const dec = new TextDecoder();
+  const entries = [];
+  let off = 0;
+  while (off + 30 <= bytes.length && dv.getUint32(off, true) === 0x04034b50) {
+    const method = dv.getUint16(off + 8, true);
+    const compSize = dv.getUint32(off + 18, true);
+    const nameLen = dv.getUint16(off + 26, true);
+    const extraLen = dv.getUint16(off + 28, true);
+    const nameStart = off + 30;
+    const name = dec.decode(bytes.subarray(nameStart, nameStart + nameLen));
+    const dataStart = nameStart + nameLen + extraLen;
+    if (method === 0) entries.push({ name, bytes: new Uint8Array(bytes.subarray(dataStart, dataStart + compSize)) });
+    off = dataStart + compSize;
+  }
+  return entries;
 }
 
 renderRecent();

@@ -64,6 +64,14 @@
           <button id="load-autostate" disabled>Load latest</button>
           <span id="autostate-state" class="status inline" aria-live="polite"></span>
         </div>
+        <div class="row" id="backup-row">
+          <span class="group-label">Backup (.zip)</span>
+          <button id="export-backup" disabled>Export backup</button>
+          <label class="filebtn small">
+            <input type="file" id="import-backup" accept=".zip" disabled />
+            <span>Import backup</span>
+          </label>
+        </div>
         <p id="status" class="status" aria-live="polite"></p>
       </div>
     </section>
