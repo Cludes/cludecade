@@ -24,4 +24,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Header polish: accent underline under the wordmark; theme-color corrected to match the redesigned background - acd821a
 - 2026-06-02 - Destructive-action affordance: red hover for Clear all and the remove-game buttons - fda081a
 - 2026-06-02 - Custom-styled select with inline-SVG caret to match the themed controls - 6ae9ebd
-- 2026-06-02 - Show console (system) as a pill badge on each recent-games entry - pending
+- 2026-06-02 - Show console (system) as a pill badge on each recent-games entry - 939c74c
+- 2026-06-02 - Style #status confirmations as a feedback chip (inset background, border) when present - pending
