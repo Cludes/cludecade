@@ -973,3 +973,12 @@ installAppBtn.addEventListener("click", async () => {
 window.addEventListener("appinstalled", () => {
   installAppBtn.hidden = true;
 });
+
+// Remember whether the user keeps the Save & backup section expanded.
+const saveBackupDetails = document.querySelector(".save-backup");
+if (saveBackupDetails) {
+  saveBackupDetails.open = localStorage.getItem("bgb-savebackup-open") === "1";
+  saveBackupDetails.addEventListener("toggle", () => {
+    localStorage.setItem("bgb-savebackup-open", saveBackupDetails.open ? "1" : "0");
+  });
+}
