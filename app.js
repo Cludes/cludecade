@@ -11,6 +11,28 @@ const CORES = {
 
 let romName = "game";
 
+// Curated per-game cheat database, auto-applied when a matching ROM loads.
+// Loaded once at startup; matching is done by normalised filename.
+let cheatsDb = [];
+let matchedCheatGame = null;
+fetch("cheats.json")
+  .then((r) => (r.ok ? r.json() : []))
+  .then((d) => (cheatsDb = d))
+  .catch(() => {});
+
+// Find the cheat entry whose match tokens all appear in the ROM filename.
+// Entries are ordered specific-first (e.g. FireRed before Red) so the first
+// hit wins.
+function findCheats(fileName) {
+  const compact = fileName.toLowerCase().replace(/[^a-z0-9]+/g, "");
+  for (const entry of cheatsDb) {
+    for (const tokens of entry.match) {
+      if (tokens.every((t) => compact.includes(t))) return entry;
+    }
+  }
+  return null;
+}
+
 const romInput = document.getElementById("rom-input");
 const picker = document.getElementById("picker");
 const pickerError = document.getElementById("picker-error");
@@ -111,6 +133,10 @@ function bootEmulator(core, romUrl, fileName) {
   window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
   window.EJS_startOnLoaded = true;
   window.EJS_ready = onEmulatorReady;
+  // Pre-load known cheats into the cheat manager (added disabled; toggle on
+  // from the in-game Cheats menu).
+  matchedCheatGame = findCheats(fileName);
+  window.EJS_cheats = matchedCheatGame ? matchedCheatGame.cheats : [];
   // Fired whenever the cartridge save changes (deduped by hash). Mirror it to
   // the linked on-disk file if the user has set one up.
   window.EJS_onSaveUpdate = (e) => {
@@ -135,6 +161,15 @@ function onEmulatorReady() {
     restoreAutosave();
   } else {
     autosaveState.textContent = "Not supported in this browser. Use Export .sav instead.";
+  }
+
+  if (matchedCheatGame) {
+    setStatus(
+      matchedCheatGame.cheats.length +
+        " cheats loaded for " +
+        matchedCheatGame.game +
+        ". Open the Cheats menu (right-click or the menu button) to turn them on."
+    );
   }
 }
 

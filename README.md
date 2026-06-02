@@ -36,6 +36,18 @@ This uses the [File System Access API](https://developer.mozilla.org/en-US/docs/
 
 For durable storage, modern browsers honor [`navigator.storage.persist()`](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist).
 
+## Cheats
+
+A curated cheat database ([`cheats.json`](cheats.json)) is auto-applied when a recognised ROM loads, so you don't have to hunt for codes. When you start a known game, its cheats are pre-loaded into EmulatorJS's cheat manager **disabled** - open the Cheats menu (right-click the game or use the menu button) and toggle the ones you want.
+
+Currently seeded for Pokemon Gen 1-3: Red/Blue, Yellow, Gold/Silver, Crystal, Ruby, Sapphire, Emerald, FireRed/LeafGreen (infinite money, Master Balls, Rare Candy, walk-through-walls, etc.).
+
+Notes:
+- Cheats are matched to the game by filename, so keep the game name in the file (e.g. "Pokemon Emerald.gba").
+- Cheat codes are game- and region-specific; they only exist for games in the database. Unrecognised games still get EmulatorJS's manual cheat manager.
+- GBA (Gen 3) cheats are more finicky than GB/GBC: some require enabling the "Master code" entry first, and stacking too many can glitch a game. Save before experimenting.
+- To add games, append entries to `cheats.json` (each has `match` token groups and `[name, code]` pairs; use `\n` to separate multi-line codes).
+
 ## Deploy
 
 1. Push this repo to GitHub.

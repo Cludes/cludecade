@@ -1,0 +1,86 @@
+[
+  {
+    "game": "Pokemon Emerald",
+    "system": "gba",
+    "match": [["pokemon", "emerald"]],
+    "cheats": [
+      ["Master code (enable this first)", "D8BAE4D9 4864DCE5\nA86CDBA5 19BA49B3\nA57E2EDE A5AFF3E4\n1C7B3231 B494738C"],
+      ["Unlimited money", "C051CCF6 975E8DA1"],
+      ["99 Rare Candy in PC", "BFF956FA 2F9EC50D"],
+      ["99 Master Balls in PC", "958D8046 A7151D70\n8BB602F7 8CEB681A"],
+      ["Walk through walls (no master code)", "7881A409 E2026E0C\n8E883EFF 92E9660D"]
+    ]
+  },
+  {
+    "game": "Pokemon FireRed / LeafGreen",
+    "system": "gba",
+    "match": [["pokemon", "firered"], ["pokemon", "leafgreen"]],
+    "cheats": [
+      ["Infinite money", "3AF85ACA C4D18CEC\n8E883EFF 92E9660D"],
+      ["99 Master Balls in PC", "8202595C 0001\n8202595E 0063"],
+      ["Walk through walls", "509197D3 542975F4\n78DA95DF 44018CB4"]
+    ]
+  },
+  {
+    "game": "Pokemon Ruby",
+    "system": "gba",
+    "match": [["pokemon", "ruby"]],
+    "cheats": [
+      ["Unlimited Rare Candies", "280EA266 88A62E5C"],
+      ["Unlimited Master Balls", "91B85743 27069397"],
+      ["Infinite money", "E51E97C3 7858E4EB"],
+      ["Walk through walls", "E03B0649 5D67050C\n78DA95DF 44018CB4"]
+    ]
+  },
+  {
+    "game": "Pokemon Sapphire",
+    "system": "gba",
+    "match": [["pokemon", "sapphire"]],
+    "cheats": [
+      ["Master code (enable this first)", "9E6AC962 823AB7A8\n8365F8FA 817CF3E9"],
+      ["99 Rare Candy in PC", "361E3586 CD38BA79"],
+      ["Unlimited money", "1B3E8B0C E075B270"],
+      ["99 Master Balls", "910C4AFB 679BA66A"]
+    ]
+  },
+  {
+    "game": "Pokemon Crystal",
+    "system": "gbc",
+    "match": [["pokemon", "crystal"]],
+    "cheats": [
+      ["Infinite money", "010F4ED8\n01424FD8\n013F50D8"],
+      ["Buy Master Balls in Mart", "9101F2D0"],
+      ["Buy Rare Candy in Mart", "9120F2D0"]
+    ]
+  },
+  {
+    "game": "Pokemon Gold / Silver",
+    "system": "gbc",
+    "match": [["pokemon", "gold"], ["pokemon", "silver"]],
+    "cheats": [
+      ["Infinite money", "019973D5\n019974D5\n019975D5"],
+      ["Buy Master Balls in Mart", "0101EFCF"],
+      ["Buy Rare Candy in Mart", "0120EECF"]
+    ]
+  },
+  {
+    "game": "Pokemon Yellow",
+    "system": "gb",
+    "match": [["pokemon", "yellow"]],
+    "cheats": [
+      ["Infinite money", "019946D3\n019947D3\n019948D3"],
+      ["Buy Master Balls in Mart", "01017CCF"],
+      ["Buy Rare Candy in Mart", "01287CCF"]
+    ]
+  },
+  {
+    "game": "Pokemon Red / Blue",
+    "system": "gb",
+    "match": [["pokemon", "red"], ["pokemon", "blue"]],
+    "cheats": [
+      ["Infinite money", "019947D3\n019948D3\n019949D3"],
+      ["Buy Master Balls in Mart", "01017CCF"],
+      ["Buy Rare Candy in Mart", "01287CCF"]
+    ]
+  }
+]
