@@ -223,6 +223,8 @@ select {
   animation: spin 0.7s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+#loading.failed { color: #ff8080; }
+#loading.failed::before { display: none; }
 
 footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0 auto; }
 

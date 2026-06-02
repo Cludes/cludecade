@@ -11,6 +11,8 @@ const CORES = {
 
 let romName = "game";
 let currentFileName = "";
+let emulatorReady = false;
+let bootTimer = null;
 
 // Curated per-game cheat database, auto-applied when a matching ROM loads.
 // Loaded once at startup; matching is done by normalised filename.
@@ -168,9 +170,20 @@ async function bootEmulator(core, romUrl, fileName) {
   const script = document.createElement("script");
   script.src = "https://cdn.emulatorjs.org/stable/data/loader.js";
   document.body.appendChild(script);
+
+  // If the emulator never signals ready (e.g. the CDN is unreachable), surface
+  // a clear error instead of an endless spinner.
+  bootTimer = setTimeout(() => {
+    if (!emulatorReady) {
+      loadingEl.classList.add("failed");
+      loadingEl.textContent = "The emulator failed to load. Check your connection and reload the page.";
+    }
+  }, 30000);
 }
 
 function onEmulatorReady() {
+  emulatorReady = true;
+  if (bootTimer) clearTimeout(bootTimer);
   loadingEl.hidden = true;
   saveControls.hidden = false;
   nowPlayingName.textContent = currentFileName;
