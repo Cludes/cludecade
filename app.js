@@ -60,6 +60,17 @@ const autostateState = document.getElementById("autostate-state");
 const exportBackupBtn = document.getElementById("export-backup");
 const importBackupInput = document.getElementById("import-backup");
 const autostateInterval = document.getElementById("autostate-interval");
+const nowPlayingName = document.getElementById("now-playing-name");
+const changeGameBtn = document.getElementById("change-game");
+
+// Reloading is the only clean way back to the picker, since EmulatorJS only
+// initialises once per page load. Recent ROMs persist, so the game list is
+// right there to resume from.
+changeGameBtn.addEventListener("click", () => {
+  if (confirm("Return to the game list? Make sure you've saved in-game first.")) {
+    location.reload();
+  }
+});
 
 romInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
@@ -162,6 +173,7 @@ async function bootEmulator(core, romUrl, fileName) {
 function onEmulatorReady() {
   loadingEl.hidden = true;
   saveControls.hidden = false;
+  nowPlayingName.textContent = currentFileName;
   exportSavBtn.disabled = false;
   importSavInput.disabled = false;
   exportStateBtn.disabled = false;
