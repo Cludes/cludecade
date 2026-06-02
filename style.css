@@ -364,6 +364,10 @@ footer a:hover { text-decoration: underline; }
   h1 { font-size: 1.7rem; }
   #picker { padding: 2.5rem 1rem; }
   .group-label { min-width: 100%; }
+  /* Comfortable tap targets on touch screens. */
+  button, select { min-height: 42px; }
+  .filebtn.small { min-height: 42px; display: inline-flex; align-items: center; }
+  .recent-del { min-width: 42px; }
 }
 
 /* Honour reduced-motion preferences: no spinner rotation or transitions. */
