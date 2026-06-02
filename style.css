@@ -150,6 +150,20 @@ a:focus-visible {
 
 .hint { color: var(--muted); font-size: 0.82rem; margin-top: 1.25rem; line-height: 1.6; }
 
+.controls-help {
+  max-width: 440px;
+  margin: 1rem auto 0;
+  text-align: left;
+  font-size: 0.82rem;
+}
+.controls-help summary {
+  cursor: pointer;
+  color: var(--accent);
+  width: fit-content;
+  margin: 0 auto;
+}
+.controls-help p { color: var(--muted); margin: 0.5rem 0 0; line-height: 1.6; }
+
 .error {
   color: #ff8e8e;
   font-size: 0.85rem;
