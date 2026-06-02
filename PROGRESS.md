@@ -32,3 +32,4 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Group the controls panel: dividers only between logical groups (saves / autosave-to-disk / backup), not every row - 3388e44
 - 2026-06-02 - Themed ::selection highlight (green tint) to match the palette - dc1d74c
 - 2026-06-02 - First-run "How do I play?" controls hint (collapsible details; points to in-game remap menu) - 48e6b64
+- 2026-06-02 - Declutter controls: collapse the 5 save/backup rows behind a "Save & backup" disclosure (closed by default); Now playing + status stay visible - pending

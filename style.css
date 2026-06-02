@@ -285,6 +285,25 @@ a:focus-visible {
   padding-top: 0.75rem;
 }
 
+/* Save/backup options are tucked behind a disclosure to keep the panel calm. */
+.save-backup > summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--border);
+  margin-top: 0.3rem;
+}
+.save-backup > summary:hover,
+.save-backup[open] > summary { color: var(--text); }
+/* The first group inside doesn't need its own divider right under the summary. */
+.save-backup > .row.group-start:first-of-type {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0.2rem;
+}
+
 .group-label {
   color: var(--muted);
   font-size: 0.8rem;
