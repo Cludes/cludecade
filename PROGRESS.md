@@ -7,4 +7,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Page metadata: meta description, Open Graph + Twitter card tags, og:image - acaac29
 - 2026-06-02 - Harden cheats startup race: await cheats.json before boot so cheats are never missed on a fast load - a9fec3e
 - 2026-06-02 - Configurable save-state autosave interval (10/20/30/60s, persisted) and skip writing unchanged states via crc32 - 3944b08
-- 2026-06-02 - "Now playing" row + Change game button to return to the game list (reload, recent ROMs persist) - pending
+- 2026-06-02 - "Now playing" row + Change game button to return to the game list (reload, recent ROMs persist) - 017fa73
+- 2026-06-02 - SKIPPED item 7 (settings persistence): EmulatorJS already persists volume, control mappings, shaders and display settings to its own storage; building our own would be redundant
