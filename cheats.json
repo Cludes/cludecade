@@ -94,6 +94,15 @@
     ]
   },
   {
+    "game": "Super Mario Bros. 3",
+    "system": "nes",
+    "match": [["super", "mario", "bros", "3"]],
+    "cheats": [
+      ["Infinite lives", "SLXPLOVS"],
+      ["Invincible + keep power-up", "PNKXGLIE"]
+    ]
+  },
+  {
     "game": "Super Mario Bros.",
     "system": "nes",
     "match": [["super", "mario", "bros"]],
@@ -120,6 +129,34 @@
     "cheats": [
       ["Infinite lives", "C222-D4DD"],
       ["Invincibility", "DD32-6DAD"]
+    ]
+  },
+  {
+    "game": "The Legend of Zelda: A Link to the Past",
+    "system": "snes",
+    "match": [["zelda", "past"], ["link", "past"]],
+    "cheats": [
+      ["Infinite health", "DD30-6DAD"],
+      ["Infinite magic", "DD6C-A7D4"],
+      ["Rupees never decrease", "C2B5-6F0F"]
+    ]
+  },
+  {
+    "game": "Super Metroid",
+    "system": "snes",
+    "match": [["super", "metroid"]],
+    "cheats": [
+      ["No energy loss from enemies", "C225-3005"],
+      ["Almost infinite missiles", "C288-C5A7"]
+    ]
+  },
+  {
+    "game": "Mega Man 2",
+    "system": "nes",
+    "match": [["mega", "man", "2"]],
+    "cheats": [
+      ["Infinite lives", "SXUGTPVG"],
+      ["Infinite energy", "SXXTPSSE"]
     ]
   }
 ]
