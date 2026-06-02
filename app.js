@@ -925,3 +925,22 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   });
 }
+
+// Offer an in-page install button when the browser says the app is installable.
+const installAppBtn = document.getElementById("install-app");
+let deferredInstall = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredInstall = e;
+  installAppBtn.hidden = false;
+});
+installAppBtn.addEventListener("click", async () => {
+  if (!deferredInstall) return;
+  deferredInstall.prompt();
+  await deferredInstall.userChoice;
+  deferredInstall = null;
+  installAppBtn.hidden = true;
+});
+window.addEventListener("appinstalled", () => {
+  installAppBtn.hidden = true;
+});
