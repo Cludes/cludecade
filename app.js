@@ -9,8 +9,18 @@ const CORES = {
   snes: "snes",
 };
 
+// Friendly system names for the "Now playing" badge.
+const SYSTEMS = {
+  gb: "Game Boy",
+  gbc: "Game Boy Color",
+  gba: "Game Boy Advance",
+  nes: "NES",
+  snes: "SNES",
+};
+
 let romName = "game";
 let currentFileName = "";
+let currentCore = "";
 let emulatorReady = false;
 let bootTimer = null;
 
@@ -63,6 +73,7 @@ const exportBackupBtn = document.getElementById("export-backup");
 const importBackupInput = document.getElementById("import-backup");
 const autostateInterval = document.getElementById("autostate-interval");
 const nowPlayingName = document.getElementById("now-playing-name");
+const nowPlayingSystem = document.getElementById("now-playing-system");
 const changeGameBtn = document.getElementById("change-game");
 
 // Reloading is the only clean way back to the picker, since EmulatorJS only
@@ -134,6 +145,7 @@ async function detectCore(fileName, bytes) {
 function bootFromBytes(fileName, core, bytes) {
   romName = fileName.replace(/\.[^.]+$/, "");
   currentFileName = fileName;
+  currentCore = core;
   startPlayTracking(fileName);
   const url = URL.createObjectURL(new Blob([bytes], { type: "application/octet-stream" }));
   bootEmulator(core, url, fileName);
@@ -187,6 +199,7 @@ function onEmulatorReady() {
   loadingEl.hidden = true;
   saveControls.hidden = false;
   nowPlayingName.textContent = currentFileName;
+  nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
   exportSavBtn.disabled = false;
   importSavInput.disabled = false;
   exportStateBtn.disabled = false;

@@ -13,4 +13,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Mobile polish: stack control labels above their buttons under 480px so rows aren't cramped - f5914bb
 - 2026-06-02 - Respect prefers-reduced-motion: disable spinner animation and transitions - 9be73d4
 - 2026-06-02 - Emulator load timeout (30s): show a clear error instead of an endless spinner if the core fails to load - b76b192
-- 2026-06-02 - In-page Install app button shown when the browser reports PWA installability - pending
+- 2026-06-02 - In-page Install app button shown when the browser reports PWA installability - 236dc5c
+- 2026-06-02 - System badge in the "Now playing" row (Game Boy / GBC / GBA / NES / SNES) - pending

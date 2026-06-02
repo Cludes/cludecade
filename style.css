@@ -179,6 +179,16 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+.badge {
+  font-size: 0.7rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+.badge:empty { display: none; }
+
 button {
   background: var(--accent-dark);
   color: #fff;
