@@ -19,4 +19,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - noscript fallback message for visitors with JavaScript disabled - 54ea257
 - 2026-06-02 - Footer "View source on GitHub" link - d08e1a6
 - 2026-06-02 - Expand cheats.json: Super Mario Land (GB), Super Mario Bros + Zelda (NES), Super Mario World (SNES), verified Game Genie codes; match now also requires system==core to avoid cross-console collisions - e16609a
-- 2026-06-02 - Visual modernization: gradient background + title, card-style panels with shadows, refined buttons (hover lift, primary/secondary hierarchy), pill badge, polished spacing - pending
+- 2026-06-02 - Visual modernization: gradient background + title, card-style panels with shadows, refined buttons (hover lift, primary/secondary hierarchy), pill badge, polished spacing - 4569d17
+- 2026-06-02 - First-run hero: cartridge SVG glyph + headline on the picker landing for clearer visual hierarchy - pending

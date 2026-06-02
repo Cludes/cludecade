@@ -72,6 +72,19 @@ main {
   box-shadow: 0 0 0 4px rgba(155, 188, 15, 0.12);
 }
 
+.picker-icon {
+  width: 60px;
+  height: 60px;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.picker-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
 .filebtn {
   display: inline-block;
   cursor: pointer;
