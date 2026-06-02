@@ -48,7 +48,17 @@ h1 {
   background-clip: text;
   color: transparent;
 }
-.tag { color: var(--muted); margin: 0; font-size: 0.92rem; }
+/* Subtle accent rule under the wordmark for a more designed header. */
+h1::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.tag { color: var(--muted); margin: 0.5rem 0 0; font-size: 0.92rem; }
 
 main {
   flex: 1;
