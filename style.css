@@ -285,6 +285,14 @@ button:hover:not(:disabled) { border-color: var(--accent); background: #222740; 
 button:active:not(:disabled) { transform: translateY(0); }
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 
+/* Destructive actions (clear all, remove a game) signal intent on hover. */
+.recent-clear:hover:not(:disabled),
+.recent-del:hover:not(:disabled) {
+  border-color: #c0504a;
+  background: rgba(192, 80, 74, 0.16);
+  color: #ff9a9a;
+}
+
 select {
   background: var(--panel-2);
   color: var(--text);
