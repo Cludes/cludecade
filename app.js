@@ -16,10 +16,12 @@ let currentFileName = "";
 // Loaded once at startup; matching is done by normalised filename.
 let cheatsDb = [];
 let matchedCheatGame = null;
-fetch("cheats.json")
+// Kept as a promise so the boot path can await it - otherwise a fast ROM load
+// could race ahead of the fetch and apply no cheats.
+const cheatsReady = fetch("cheats.json")
   .then((r) => (r.ok ? r.json() : []))
   .then((d) => (cheatsDb = d))
-  .catch(() => {});
+  .catch(() => []);
 
 // Find the cheat entry whose match tokens all appear in the ROM filename.
 // Entries are ordered specific-first (e.g. FireRed before Red) so the first
@@ -125,7 +127,7 @@ function bootFromBytes(fileName, core, bytes) {
 
 // EmulatorJS can only be initialised once per page load, so swap the picker
 // for the game and inject the loader with the chosen ROM.
-function bootEmulator(core, romUrl, fileName) {
+async function bootEmulator(core, romUrl, fileName) {
   picker.hidden = true;
   gameWrap.hidden = false;
   loadingEl.textContent = "Loading " + fileName + "...";
@@ -140,15 +142,16 @@ function bootEmulator(core, romUrl, fileName) {
   window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
   window.EJS_startOnLoaded = true;
   window.EJS_ready = onEmulatorReady;
-  // Pre-load known cheats into the cheat manager (added disabled; toggle on
-  // from the in-game Cheats menu).
-  matchedCheatGame = findCheats(fileName);
-  window.EJS_cheats = matchedCheatGame ? matchedCheatGame.cheats : [];
   // Fired whenever the cartridge save changes (deduped by hash). Mirror it to
   // the linked on-disk file if the user has set one up.
   window.EJS_onSaveUpdate = (e) => {
     if (e && e.save) writeAutosave(e.save);
   };
+
+  // Wait for the cheat DB so EJS_cheats is populated before the loader runs.
+  await cheatsReady;
+  matchedCheatGame = findCheats(fileName);
+  window.EJS_cheats = matchedCheatGame ? matchedCheatGame.cheats : [];
 
   const script = document.createElement("script");
   script.src = "https://cdn.emulatorjs.org/stable/data/loader.js";
