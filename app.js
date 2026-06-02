@@ -146,6 +146,7 @@ function bootFromBytes(fileName, core, bytes) {
   romName = fileName.replace(/\.[^.]+$/, "");
   currentFileName = fileName;
   currentCore = core;
+  document.title = romName + " - Browser Game Boy";
   startPlayTracking(fileName);
   const url = URL.createObjectURL(new Blob([bytes], { type: "application/octet-stream" }));
   bootEmulator(core, url, fileName);
