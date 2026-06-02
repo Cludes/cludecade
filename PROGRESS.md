@@ -16,4 +16,4 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - In-page Install app button shown when the browser reports PWA installability - 236dc5c
 - 2026-06-02 - System badge in the "Now playing" row (Game Boy / GBC / GBA / NES / SNES) - a69a615
 - 2026-06-02 - Set document title to the loaded game so tabs / installed PWA window are identifiable - 212c4f6
-- 2026-06-02 - noscript fallback message for visitors with JavaScript disabled - pending
+- 2026-06-02 - noscript fallback message for visitors with JavaScript disabled - 54ea257
