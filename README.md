@@ -36,6 +36,12 @@ This uses the [File System Access API](https://developer.mozilla.org/en-US/docs/
 
 For durable storage, modern browsers honor [`navigator.storage.persist()`](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist).
 
+### Autosave the save state to a file
+
+Click **Link state file** to pick a `.state` on your disk. While you play, a full save-state snapshot is written to that file every 20 seconds, so a crash or accidental refresh loses almost nothing. Use **Load latest** to restore the most recent snapshot. The link is remembered between visits.
+
+This is independent of the `.sav` autosave above: the `.sav` mirror captures cartridge saves (when you save in-game), while the state snapshot captures the exact moment-to-moment console state. Save states are tied to the emulator core, so a snapshot may fail to load if the core version changes - load failures are reported rather than hidden. Same Chromium-only support and fallback as above.
+
 ## Cheats
 
 A curated cheat database ([`cheats.json`](cheats.json)) is auto-applied when a recognised ROM loads, so you don't have to hunt for codes. When you start a known game, its cheats are pre-loaded into EmulatorJS's cheat manager **disabled** - open the Cheats menu (right-click the game or use the menu button) and toggle the ones you want.

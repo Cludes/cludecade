@@ -51,6 +51,9 @@ const exportStateBtn = document.getElementById("export-state");
 const importStateInput = document.getElementById("import-state");
 const linkAutosaveBtn = document.getElementById("link-autosave");
 const autosaveState = document.getElementById("autosave-state");
+const linkAutostateBtn = document.getElementById("link-autostate");
+const loadAutostateBtn = document.getElementById("load-autostate");
+const autostateState = document.getElementById("autostate-state");
 
 romInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
@@ -158,9 +161,12 @@ function onEmulatorReady() {
 
   if (window.showSaveFilePicker) {
     linkAutosaveBtn.disabled = false;
+    linkAutostateBtn.disabled = false;
     restoreAutosave();
+    restoreAutostate();
   } else {
     autosaveState.textContent = "Not supported in this browser. Use Export .sav instead.";
+    autostateState.textContent = "Not supported in this browser. Use Export state instead.";
   }
 
   if (matchedCheatGame) {
@@ -353,6 +359,120 @@ linkAutosaveBtn.addEventListener("click", async () => {
   }
 });
 
+// --- Autosave save-state to a real on-disk file (periodic snapshot) ---
+// No EJS_onSaveUpdate equivalent exists for save states, so we poll getState()
+// on a timer. The handle lives in the same "bgb-autosave" store, keyed by
+// romName + ".state" to keep it distinct from the .sav handle.
+
+const STATE_AUTOSAVE_MS = 20000;
+
+let autostateHandle = null;
+let stateWriting = false;
+let statePending = null;
+
+function setAutostateState(msg) {
+  autostateState.textContent = msg;
+}
+
+function autostateKey() {
+  return romName + ".state";
+}
+
+async function writeAutostate(bytes) {
+  if (!autostateHandle || !bytes || !bytes.length) return;
+  if (stateWriting) {
+    statePending = bytes;
+    return;
+  }
+  stateWriting = true;
+  try {
+    const writable = await autostateHandle.createWritable();
+    await writable.write(bytes);
+    await writable.close();
+    setAutostateState("State saved to " + autostateHandle.name + " at " + new Date().toLocaleTimeString());
+  } catch (err) {
+    setAutostateState("State autosave failed: " + err.message);
+  }
+  stateWriting = false;
+  if (statePending) {
+    const next = statePending;
+    statePending = null;
+    writeAutostate(next);
+  }
+}
+
+// Periodic snapshot while a game is running and a file is linked.
+setInterval(async () => {
+  if (!autostateHandle) return;
+  const g = gm();
+  if (!g) return;
+  try {
+    const bytes = await g.getState();
+    if (bytes && bytes.length) writeAutostate(bytes);
+  } catch (err) {
+    /* transient; next tick will retry */
+  }
+}, STATE_AUTOSAVE_MS);
+
+async function restoreAutostate() {
+  const handle = await readHandle(autostateKey()).catch(() => null);
+  if (!handle) return;
+  const perm = await handle.queryPermission({ mode: "readwrite" });
+  if (perm === "granted") {
+    autostateHandle = handle;
+    loadAutostateBtn.disabled = false;
+    setAutostateState("Autosaving state to " + handle.name);
+  } else {
+    setAutostateState('Click "Link state file" to resume autosaving to ' + handle.name);
+  }
+}
+
+linkAutostateBtn.addEventListener("click", async () => {
+  try {
+    let handle = await readHandle(autostateKey()).catch(() => null);
+    if (handle) {
+      const perm = await handle.requestPermission({ mode: "readwrite" });
+      if (perm !== "granted") handle = null;
+    }
+    if (!handle) {
+      handle = await window.showSaveFilePicker({
+        suggestedName: romName + ".state",
+        types: [{ description: "Save state", accept: { "application/octet-stream": [".state"] } }],
+      });
+      await storeHandle(autostateKey(), handle);
+    }
+    autostateHandle = handle;
+    loadAutostateBtn.disabled = false;
+    setAutostateState("Autosaving state to " + handle.name);
+
+    // Seed the file with the current state so "Load latest" works immediately.
+    const g = gm();
+    if (g) {
+      const bytes = await g.getState();
+      if (bytes && bytes.length) writeAutostate(bytes);
+    }
+  } catch (err) {
+    if (err.name !== "AbortError") setAutostateState("Could not link state file: " + err.message);
+  }
+});
+
+loadAutostateBtn.addEventListener("click", async () => {
+  const g = gm();
+  if (!g || !autostateHandle) return;
+  try {
+    const file = await autostateHandle.getFile();
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    if (!bytes.length) {
+      setAutostateState("Linked state file is empty.");
+      return;
+    }
+    g.loadState(bytes);
+    setAutostateState("Loaded state from " + autostateHandle.name);
+  } catch (err) {
+    setAutostateState("Could not load state: " + err.message);
+  }
+});
+
 // --- Quick-resume: persist ROMs in IndexedDB and list recent ones ---
 
 const MAX_RECENT = 10;
@@ -385,14 +505,33 @@ async function romTx(store, mode, fn) {
 }
 
 async function saveRom(fileName, core, bytes) {
-  await romTx("roms", "readwrite", (s) => s.put({ fileName, core, bytes, lastPlayed: Date.now() }));
+  // ROM bytes live in "roms"; lastPlayed lives in "meta" so bumping the
+  // timestamp on resume never rewrites the (up to 32MB) ROM record.
+  await romTx("roms", "readwrite", (s) => s.put({ fileName, core, bytes }));
+  await touchLastPlayed(fileName);
   await evictOldRoms();
   renderRecent();
 }
 
+async function touchLastPlayed(fileName) {
+  const meta = await getMeta(fileName);
+  meta.lastPlayed = Date.now();
+  await romTx("meta", "readwrite", (s) => s.put(meta));
+}
+
 async function listRoms() {
-  const all = (await romTx("roms", "readonly", (s) => s.getAll())) || [];
-  return all.sort((a, b) => b.lastPlayed - a.lastPlayed);
+  const roms = (await romTx("roms", "readonly", (s) => s.getAll())) || [];
+  const metas = (await romTx("meta", "readonly", (s) => s.getAll())) || [];
+  const metaByName = {};
+  for (const m of metas) metaByName[m.fileName] = m;
+  for (const rom of roms) {
+    const m = metaByName[rom.fileName] || {};
+    // Fall back to a legacy in-record lastPlayed for ROMs stored before the
+    // timestamp moved into "meta".
+    rom.lastPlayed = m.lastPlayed || rom.lastPlayed || 0;
+    rom.playTime = m.playTime || 0;
+  }
+  return roms.sort((a, b) => b.lastPlayed - a.lastPlayed);
 }
 
 async function deleteRom(fileName) {
@@ -413,7 +552,8 @@ async function resumeRom(fileName) {
     renderRecent();
     return;
   }
-  await saveRom(rec.fileName, rec.core, rec.bytes); // bump lastPlayed
+  await touchLastPlayed(rec.fileName); // bump timestamp without rewriting bytes
+  renderRecent();
   bootFromBytes(rec.fileName, rec.core, rec.bytes);
 }
 
@@ -426,8 +566,6 @@ async function renderRecent() {
   }
   recentWrap.hidden = false;
   for (const rom of roms) {
-    const meta = await getMeta(rom.fileName);
-
     const li = document.createElement("li");
     li.className = "recent-item";
 
@@ -443,7 +581,7 @@ async function renderRecent() {
     const sub = document.createElement("span");
     sub.className = "recent-meta";
     const parts = [formatBytes(rom.bytes.byteLength), "last played " + relTime(rom.lastPlayed)];
-    if (meta.playTime > 0) parts.push(formatDuration(meta.playTime) + " played");
+    if (rom.playTime > 0) parts.push(formatDuration(rom.playTime) + " played");
     sub.textContent = parts.join(" · ");
 
     resume.append(name, sub);
@@ -466,7 +604,7 @@ async function renderRecent() {
 // --- Per-game play time, storage usage, and clearing ---
 
 async function getMeta(fileName) {
-  return (await romTx("meta", "readonly", (s) => s.get(fileName))) || { fileName, playTime: 0 };
+  return (await romTx("meta", "readonly", (s) => s.get(fileName))) || { fileName, playTime: 0, lastPlayed: 0 };
 }
 
 let activeRom = null;
