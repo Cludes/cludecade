@@ -867,3 +867,10 @@ function readZipEntries(bytes) {
 }
 
 renderRecent();
+
+// Register the service worker for installability + instant offline shell.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  });
+}
