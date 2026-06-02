@@ -62,12 +62,18 @@
     <section id="game-wrap" hidden>
       <div id="game"></div>
       <div id="joystick" hidden aria-hidden="true">
-        <div id="joystick-base">
-          <div id="joystick-thumb"></div>
+        <div class="joystick-main">
+          <div id="joystick-base">
+            <div id="joystick-thumb"></div>
+          </div>
+          <div id="joystick-actions">
+            <button id="btn-b" class="action-btn" tabindex="-1">B</button>
+            <button id="btn-a" class="action-btn" tabindex="-1">A</button>
+          </div>
         </div>
-        <div id="joystick-actions">
-          <button id="btn-b" class="action-btn" tabindex="-1">B</button>
-          <button id="btn-a" class="action-btn" tabindex="-1">A</button>
+        <div id="joystick-meta">
+          <button id="btn-select" class="meta-btn" tabindex="-1">Select</button>
+          <button id="btn-start" class="meta-btn" tabindex="-1">Start</button>
         </div>
       </div>
       <p id="loading" class="status" hidden aria-live="polite">Loading...</p>

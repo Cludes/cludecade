@@ -1120,3 +1120,5 @@ function holdButton(btn, index) {
 }
 holdButton(document.getElementById("btn-a"), 8);
 holdButton(document.getElementById("btn-b"), 0);
+holdButton(document.getElementById("btn-select"), 2);
+holdButton(document.getElementById("btn-start"), 3);

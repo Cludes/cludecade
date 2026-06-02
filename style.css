@@ -261,13 +261,29 @@ a:focus-visible {
 /* Optional mouse/touch joystick (opt-in, off by default). */
 #joystick:not([hidden]) {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.joystick-main {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
 }
 #joystick-actions { display: flex; gap: 1rem; align-items: center; }
+#joystick-meta { display: flex; gap: 1rem; }
+.meta-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.meta-btn.pressed { filter: brightness(0.85); transform: scale(0.96); }
 .action-btn {
   width: 66px;
   height: 66px;

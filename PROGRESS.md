@@ -38,4 +38,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Timestamped backup filenames (game-backup-YYYYMMDD-HHMMSS.zip) so backups don't collide - 7fced63
 - 2026-06-02 - Optional mouse/touch on-screen joystick (opt-in toggle, persisted); drives D-pad via gameManager.simulateInput (indices up4/down5/left6/right7), pointer-events with capture, 8-way + deadzone, keyboard unaffected. Input verified by reasoning (same API as the touch gamepad) not a live click-test - 3647225
 - 2026-06-02 - On-screen A/B action buttons next to the joystick (hold-to-press via simulateInput, A=8/B=0) so it's actually playable by mouse/touch - 4fff798
-- 2026-06-02 - Expand cheats.json: Super Mario Bros. 3 + Mega Man 2 (NES), A Link to the Past + Super Metroid (SNES), verified Game Genie codes; SMB3 ordered before SMB - pending
+- 2026-06-02 - Expand cheats.json: Super Mario Bros. 3 + Mega Man 2 (NES), A Link to the Past + Super Metroid (SNES), verified Game Genie codes; SMB3 ordered before SMB - f4b51c1
+- 2026-06-02 - Add Start (3) and Select (2) buttons to the on-screen controls so the joystick gamepad is fully playable (e.g. saving in Pokemon) - pending
