@@ -10,4 +10,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - "Now playing" row + Change game button to return to the game list (reload, recent ROMs persist) - 017fa73
 - 2026-06-02 - SKIPPED item 7 (settings persistence): EmulatorJS already persists volume, control mappings, shaders and display settings to its own storage; building our own would be redundant
 - 2026-06-02 - Loading spinner on the "Loading..." state (CSS-only ::before, perceived-load polish) - 3383276
-- 2026-06-02 - Mobile polish: stack control labels above their buttons under 480px so rows aren't cramped - pending
+- 2026-06-02 - Mobile polish: stack control labels above their buttons under 480px so rows aren't cramped - f5914bb
+- 2026-06-02 - Respect prefers-reduced-motion: disable spinner animation and transitions - pending

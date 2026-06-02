@@ -232,3 +232,9 @@ footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0 
   main { padding: 0.75rem; }
   .group-label { min-width: 100%; }
 }
+
+/* Honour reduced-motion preferences: no spinner rotation or transitions. */
+@media (prefers-reduced-motion: reduce) {
+  #loading::before { animation: none; }
+  #picker, .filebtn, button { transition: none; }
+}
