@@ -59,6 +59,7 @@ const loadAutostateBtn = document.getElementById("load-autostate");
 const autostateState = document.getElementById("autostate-state");
 const exportBackupBtn = document.getElementById("export-backup");
 const importBackupInput = document.getElementById("import-backup");
+const autostateInterval = document.getElementById("autostate-interval");
 
 romInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
@@ -373,11 +374,11 @@ linkAutosaveBtn.addEventListener("click", async () => {
 // on a timer. The handle lives in the same "bgb-autosave" store, keyed by
 // romName + ".state" to keep it distinct from the .sav handle.
 
-const STATE_AUTOSAVE_MS = 20000;
-
 let autostateHandle = null;
 let stateWriting = false;
 let statePending = null;
+let stateTimer = null;
+let lastStateCrc = null;
 
 function setAutostateState(msg) {
   autostateState.textContent = msg;
@@ -410,18 +411,37 @@ async function writeAutostate(bytes) {
   }
 }
 
-// Periodic snapshot while a game is running and a file is linked.
-setInterval(async () => {
+// Periodic snapshot while a game is running and a file is linked. The state is
+// only written when it actually changed (cheap crc32 check), so a paused game
+// doesn't rewrite the file every tick.
+async function snapshotState() {
   if (!autostateHandle) return;
   const g = gm();
   if (!g) return;
   try {
     const bytes = await g.getState();
-    if (bytes && bytes.length) writeAutostate(bytes);
+    if (!bytes || !bytes.length) return;
+    const crc = crc32(bytes);
+    if (crc === lastStateCrc) return;
+    lastStateCrc = crc;
+    writeAutostate(bytes);
   } catch (err) {
     /* transient; next tick will retry */
   }
-}, STATE_AUTOSAVE_MS);
+}
+
+function startStateTimer(ms) {
+  if (stateTimer) clearInterval(stateTimer);
+  stateTimer = setInterval(snapshotState, ms);
+}
+
+// Restore the saved interval, default 20s.
+autostateInterval.value = localStorage.getItem("bgb-state-interval") || "20000";
+startStateTimer(Number(autostateInterval.value));
+autostateInterval.addEventListener("change", () => {
+  localStorage.setItem("bgb-state-interval", autostateInterval.value);
+  startStateTimer(Number(autostateInterval.value));
+});
 
 async function restoreAutostate() {
   const handle = await readHandle(autostateKey()).catch(() => null);
@@ -458,7 +478,10 @@ linkAutostateBtn.addEventListener("click", async () => {
     const g = gm();
     if (g) {
       const bytes = await g.getState();
-      if (bytes && bytes.length) writeAutostate(bytes);
+      if (bytes && bytes.length) {
+        lastStateCrc = crc32(bytes);
+        writeAutostate(bytes);
+      }
     }
   } catch (err) {
     if (err.name !== "AbortError") setAutostateState("Could not link state file: " + err.message);
