@@ -26,4 +26,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Custom-styled select with inline-SVG caret to match the themed controls - 6ae9ebd
 - 2026-06-02 - Show console (system) as a pill badge on each recent-games entry - 939c74c
 - 2026-06-02 - Style #status confirmations as a feedback chip (inset background, border) when present - 08cf785
-- 2026-06-02 - Bigger tap targets on mobile (>=42px min height for buttons/selects/remove) - pending
+- 2026-06-02 - Bigger tap targets on mobile (>=42px min height for buttons/selects/remove) - 261aecc
+- 2026-06-02 - Themed thin scrollbars (Firefox scrollbar-color + WebKit scrollbar pseudo-elements) - pending
