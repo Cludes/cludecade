@@ -236,7 +236,8 @@ select {
 #loading.failed { color: #ff8080; }
 #loading.failed::before { display: none; }
 
-footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0 auto; }
+footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0.3rem auto; }
+footer a { color: var(--accent); }
 
 /* On narrow phones, let each control group's label sit on its own line so the
    buttons aren't squeezed by the fixed label width. */
