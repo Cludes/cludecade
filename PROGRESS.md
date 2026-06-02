@@ -35,4 +35,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Declutter controls: collapse the 5 save/backup rows behind a "Save & backup" disclosure (closed by default); Now playing + status stay visible - 85bf0a3
 - 2026-06-02 - Auto-dismiss the status feedback chip after 6s so it doesn't linger stale - db7e4a0
 - 2026-06-02 - Remember the "Save & backup" disclosure expanded state in localStorage - 1bb5fd1
-- 2026-06-02 - Timestamped backup filenames (game-backup-YYYYMMDD-HHMMSS.zip) so backups don't collide - pending
+- 2026-06-02 - Timestamped backup filenames (game-backup-YYYYMMDD-HHMMSS.zip) so backups don't collide - 7fced63
+- 2026-06-02 - Optional mouse/touch on-screen joystick (opt-in toggle, persisted); drives D-pad via gameManager.simulateInput (indices up4/down5/left6/right7), pointer-events with capture, 8-way + deadzone, keyboard unaffected. Input verified by reasoning (same API as the touch gamepad) not a live click-test - pending

@@ -991,3 +991,109 @@ if (saveBackupDetails) {
     localStorage.setItem("bgb-savebackup-open", saveBackupDetails.open ? "1" : "0");
   });
 }
+
+// --- Optional on-screen joystick (mouse + touch) -> D-pad ---
+// Drives EmulatorJS via gameManager.simulateInput(player, index, value), the same
+// path its touch gamepad uses. Default libretro D-pad indices: up 4, down 5,
+// left 6, right 7 (player 0). Keyboard input is unaffected.
+const DPAD = { up: 4, down: 5, left: 6, right: 7 };
+const joystick = document.getElementById("joystick");
+const joystickBase = document.getElementById("joystick-base");
+const joystickThumb = document.getElementById("joystick-thumb");
+const toggleJoystickBtn = document.getElementById("toggle-joystick");
+const dirState = { up: false, down: false, left: false, right: false };
+let joyPointer = null;
+
+function emuInput(index, pressed) {
+  const g = gm();
+  if (g && typeof g.simulateInput === "function") {
+    try {
+      g.simulateInput(0, index, pressed ? 1 : 0);
+    } catch (e) {
+      /* ignore - input not ready */
+    }
+  }
+}
+
+function setDir(dir, on) {
+  if (dirState[dir] === on) return;
+  dirState[dir] = on;
+  emuInput(DPAD[dir], on);
+}
+
+function releaseJoystick() {
+  setDir("up", false);
+  setDir("down", false);
+  setDir("left", false);
+  setDir("right", false);
+  if (joystickThumb) joystickThumb.style.transform = "translate(0, 0)";
+}
+
+// Map the pointer offset from the base centre to an 8-way D-pad direction.
+function steerJoystick(e) {
+  const rect = joystickBase.getBoundingClientRect();
+  const radius = rect.width / 2;
+  let dx = e.clientX - (rect.left + radius);
+  let dy = e.clientY - (rect.top + radius);
+  const dist = Math.hypot(dx, dy);
+
+  // Keep the thumb inside the base.
+  const maxThumb = radius * 0.6;
+  if (dist > maxThumb && dist > 0) {
+    dx = (dx / dist) * maxThumb;
+    dy = (dy / dist) * maxThumb;
+  }
+  joystickThumb.style.transform = "translate(" + dx + "px, " + dy + "px)";
+
+  if (dist < radius * 0.28) {
+    setDir("up", false);
+    setDir("down", false);
+    setDir("left", false);
+    setDir("right", false);
+    return;
+  }
+  const mag = Math.hypot(dx, dy) || 1;
+  const nx = dx / mag;
+  const ny = dy / mag;
+  const t = 0.38; // diagonal threshold: within ~22.5deg of an axis = single direction
+  setDir("right", nx > t);
+  setDir("left", nx < -t);
+  setDir("down", ny > t);
+  setDir("up", ny < -t);
+}
+
+if (joystickBase) {
+  joystickBase.addEventListener("pointerdown", (e) => {
+    joyPointer = e.pointerId;
+    try {
+      joystickBase.setPointerCapture(e.pointerId);
+    } catch (err) {}
+    steerJoystick(e);
+    e.preventDefault();
+  });
+  joystickBase.addEventListener("pointermove", (e) => {
+    if (e.pointerId === joyPointer) steerJoystick(e);
+  });
+  const endJoy = (e) => {
+    if (e.pointerId !== joyPointer) return;
+    joyPointer = null;
+    releaseJoystick();
+  };
+  joystickBase.addEventListener("pointerup", endJoy);
+  joystickBase.addEventListener("pointercancel", endJoy);
+  joystickBase.addEventListener("lostpointercapture", endJoy);
+}
+
+function setJoystick(on) {
+  if (!joystick) return;
+  joystick.hidden = !on;
+  toggleJoystickBtn.textContent = on ? "On" : "Off";
+  toggleJoystickBtn.setAttribute("aria-pressed", on ? "true" : "false");
+  localStorage.setItem("bgb-joystick", on ? "1" : "0");
+  if (!on) releaseJoystick();
+}
+
+if (toggleJoystickBtn) {
+  toggleJoystickBtn.addEventListener("click", () => setJoystick(joystick.hidden));
+  if (localStorage.getItem("bgb-joystick") === "1") setJoystick(true);
+}
