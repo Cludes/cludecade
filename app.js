@@ -253,6 +253,15 @@ function downloadBytes(bytes, filename) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+// Local YYYYMMDD-HHMMSS stamp for versioned, non-colliding backup filenames.
+function timestamp() {
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, "0");
+  return (
+    d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes()) + p(d.getSeconds())
+  );
+}
+
 // --- In-game save (.sav / SRAM) ---
 
 exportSavBtn.addEventListener("click", () => {
@@ -570,7 +579,7 @@ exportBackupBtn.addEventListener("click", async () => {
     setStatus("Nothing to back up yet.");
     return;
   }
-  downloadBytes(makeZip(files), romName + "-backup.zip");
+  downloadBytes(makeZip(files), romName + "-backup-" + timestamp() + ".zip");
   setStatus("Exported backup with " + files.length + " file(s).");
 });
 

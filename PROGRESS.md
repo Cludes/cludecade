@@ -34,4 +34,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - First-run "How do I play?" controls hint (collapsible details; points to in-game remap menu) - 48e6b64
 - 2026-06-02 - Declutter controls: collapse the 5 save/backup rows behind a "Save & backup" disclosure (closed by default); Now playing + status stay visible - 85bf0a3
 - 2026-06-02 - Auto-dismiss the status feedback chip after 6s so it doesn't linger stale - db7e4a0
-- 2026-06-02 - Remember the "Save & backup" disclosure expanded state in localStorage - pending
+- 2026-06-02 - Remember the "Save & backup" disclosure expanded state in localStorage - 1bb5fd1
+- 2026-06-02 - Timestamped backup filenames (game-backup-YYYYMMDD-HHMMSS.zip) so backups don't collide - pending
