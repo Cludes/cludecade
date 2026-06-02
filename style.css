@@ -195,6 +195,15 @@ a:focus-visible {
   background: #222740;
   transform: translateY(-1px);
 }
+.recent-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+}
+.recent-top .recent-name { flex: 1; min-width: 0; }
+.recent-top .badge { flex-shrink: 0; }
 .recent-name {
   font-weight: 600;
   max-width: 100%;
