@@ -82,5 +82,44 @@
       ["Buy Master Balls in Mart", "01017CCF"],
       ["Buy Rare Candy in Mart", "01287CCF"]
     ]
+  },
+  {
+    "game": "Super Mario Land",
+    "system": "gb",
+    "match": [["super", "mario", "land"]],
+    "cheats": [
+      ["Infinite lives", "21C-53E-4C1"],
+      ["Invincibility", "03B-8EB-E69"],
+      ["Infinite time", "008-60A-E6E"]
+    ]
+  },
+  {
+    "game": "Super Mario Bros.",
+    "system": "nes",
+    "match": [["super", "mario", "bros"]],
+    "cheats": [
+      ["Infinite lives", "SXIOPO"],
+      ["Invincibility", "GOZSXX"]
+    ]
+  },
+  {
+    "game": "The Legend of Zelda",
+    "system": "nes",
+    "match": [["legend", "zelda"]],
+    "cheats": [
+      ["Total invincibility", "AVVLAUSZ"],
+      ["Infinite bombs (need 1 first)", "SZNZVOVK"],
+      ["Rupees never decrease", "SZVXASVK"],
+      ["Infinite keys (need 1 first)", "AEOEPSZA"]
+    ]
+  },
+  {
+    "game": "Super Mario World",
+    "system": "snes",
+    "match": [["super", "mario", "world"]],
+    "cheats": [
+      ["Infinite lives", "C222-D4DD"],
+      ["Invincibility", "DD32-6DAD"]
+    ]
   }
 ]

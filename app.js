@@ -35,12 +35,14 @@ const cheatsReady = fetch("cheats.json")
   .then((d) => (cheatsDb = d))
   .catch(() => []);
 
-// Find the cheat entry whose match tokens all appear in the ROM filename.
-// Entries are ordered specific-first (e.g. FireRed before Red) so the first
-// hit wins.
-function findCheats(fileName) {
+// Find the cheat entry whose system matches the core and whose match tokens all
+// appear in the ROM filename. Entries are ordered specific-first (e.g. FireRed
+// before Red) so the first hit wins. The system check stops same-named games on
+// different consoles from colliding (e.g. GB vs NES Zelda).
+function findCheats(fileName, core) {
   const compact = fileName.toLowerCase().replace(/[^a-z0-9]+/g, "");
   for (const entry of cheatsDb) {
+    if (entry.system && entry.system !== core) continue;
     for (const tokens of entry.match) {
       if (tokens.every((t) => compact.includes(t))) return entry;
     }
@@ -177,7 +179,7 @@ async function bootEmulator(core, romUrl, fileName) {
 
   // Wait for the cheat DB so EJS_cheats is populated before the loader runs.
   await cheatsReady;
-  matchedCheatGame = findCheats(fileName);
+  matchedCheatGame = findCheats(fileName, core);
   window.EJS_cheats = matchedCheatGame ? matchedCheatGame.cheats : [];
 
   const script = document.createElement("script");

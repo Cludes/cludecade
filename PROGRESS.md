@@ -17,4 +17,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - System badge in the "Now playing" row (Game Boy / GBC / GBA / NES / SNES) - a69a615
 - 2026-06-02 - Set document title to the loaded game so tabs / installed PWA window are identifiable - 212c4f6
 - 2026-06-02 - noscript fallback message for visitors with JavaScript disabled - 54ea257
-- 2026-06-02 - Footer "View source on GitHub" link - pending
+- 2026-06-02 - Footer "View source on GitHub" link - d08e1a6
+- 2026-06-02 - Expand cheats.json: Super Mario Land (GB), Super Mario Bros + Zelda (NES), Super Mario World (SNES), verified Game Genie codes; match now also requires system==core to avoid cross-console collisions - pending
