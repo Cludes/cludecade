@@ -225,3 +225,10 @@ select {
 @keyframes spin { to { transform: rotate(360deg); } }
 
 footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0 auto; }
+
+/* On narrow phones, let each control group's label sit on its own line so the
+   buttons aren't squeezed by the fixed label width. */
+@media (max-width: 480px) {
+  main { padding: 0.75rem; }
+  .group-label { min-width: 100%; }
+}
