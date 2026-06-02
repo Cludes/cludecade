@@ -235,8 +235,12 @@ function gm() {
   return emu && emu.gameManager ? emu.gameManager : null;
 }
 
+let statusTimer = null;
 function setStatus(msg) {
   statusEl.textContent = msg;
+  if (statusTimer) clearTimeout(statusTimer);
+  // Transient feedback shouldn't linger as a stale chip.
+  if (msg) statusTimer = setTimeout(() => (statusEl.textContent = ""), 6000);
 }
 
 function downloadBytes(bytes, filename) {
