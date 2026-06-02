@@ -9,3 +9,4 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Configurable save-state autosave interval (10/20/30/60s, persisted) and skip writing unchanged states via crc32 - 3944b08
 - 2026-06-02 - "Now playing" row + Change game button to return to the game list (reload, recent ROMs persist) - 017fa73
 - 2026-06-02 - SKIPPED item 7 (settings persistence): EmulatorJS already persists volume, control mappings, shaders and display settings to its own storage; building our own would be redundant
+- 2026-06-02 - Loading spinner on the "Loading..." state (CSS-only ::before, perceived-load polish) - pending

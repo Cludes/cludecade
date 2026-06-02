@@ -209,4 +209,19 @@ select {
 }
 .status.inline { margin: 0; min-height: 0; }
 
+/* Spinner on the loading line (pseudo-element survives JS textContent updates). */
+#loading::before {
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.5em;
+  vertical-align: -0.12em;
+  border: 2px solid var(--accent-dark);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
 footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0 auto; }
