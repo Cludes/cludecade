@@ -1097,3 +1097,26 @@ if (toggleJoystickBtn) {
   toggleJoystickBtn.addEventListener("click", () => setJoystick(joystick.hidden));
   if (localStorage.getItem("bgb-joystick") === "1") setJoystick(true);
 }
+
+// Hold-to-press action buttons (A = 8, B = 0 in the libretro RetroPad layout).
+function holdButton(btn, index) {
+  if (!btn) return;
+  const press = (e) => {
+    emuInput(index, true);
+    btn.classList.add("pressed");
+    try {
+      btn.setPointerCapture(e.pointerId);
+    } catch (err) {}
+    e.preventDefault();
+  };
+  const release = () => {
+    emuInput(index, false);
+    btn.classList.remove("pressed");
+  };
+  btn.addEventListener("pointerdown", press);
+  btn.addEventListener("pointerup", release);
+  btn.addEventListener("pointercancel", release);
+  btn.addEventListener("lostpointercapture", release);
+}
+holdButton(document.getElementById("btn-a"), 8);
+holdButton(document.getElementById("btn-b"), 0);

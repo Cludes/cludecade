@@ -259,7 +259,35 @@ a:focus-visible {
 .hint-inline { color: var(--muted); font-size: 0.75rem; }
 
 /* Optional mouse/touch joystick (opt-in, off by default). */
-#joystick:not([hidden]) { display: flex; justify-content: center; margin-top: 1rem; }
+#joystick:not([hidden]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+#joystick-actions { display: flex; gap: 1rem; align-items: center; }
+.action-btn {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0e1014;
+  background: linear-gradient(180deg, #b6da1e, #7f9c0c);
+  border: 1px solid rgba(155, 188, 15, 0.55);
+  box-shadow: var(--shadow-sm);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.action-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, #c2e62a, #8aac0d);
+  border-color: rgba(155, 188, 15, 0.7);
+  transform: none;
+}
+.action-btn.pressed { filter: brightness(0.82); transform: scale(0.94); }
 #joystick-base {
   position: relative;
   width: 150px;
