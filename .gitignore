@@ -1,0 +1,15 @@
+# Don't commit copyrighted ROMs or personal saves
+*.gb
+*.gbc
+*.gba
+*.nes
+*.sfc
+*.smc
+*.zip
+*.sav
+*.srm
+*.state
+
+# OS noise
+.DS_Store
+Thumbs.db

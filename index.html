@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Browser Game Boy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Browser Game Boy</h1>
+    <p class="tag">Runs entirely in your browser. Your ROM never leaves your device.</p>
+  </header>
+
+  <main>
+    <!-- ROM picker -->
+    <section id="picker">
+      <label class="filebtn">
+        <input type="file" id="rom-input" accept=".gb,.gbc,.gba,.nes,.sfc,.smc,.zip" />
+        <span>Choose a ROM file</span>
+      </label>
+      <p class="hint">Drag &amp; drop a ROM here, or click to browse. Supported: Game Boy (.gb), Game Boy Color (.gbc), Game Boy Advance (.gba), NES (.nes), SNES (.sfc/.smc), and zipped ROMs (.zip)</p>
+      <p id="picker-error" class="error" hidden role="alert"></p>
+      <div id="recent" hidden>
+        <div class="recent-head">
+          <h2>Recently played</h2>
+          <button id="clear-roms" class="recent-clear">Clear all</button>
+        </div>
+        <ul id="recent-list"></ul>
+        <p id="storage" class="hint"></p>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section id="game-wrap" hidden>
+      <div id="game"></div>
+      <p id="loading" class="status" hidden aria-live="polite">Loading...</p>
+
+      <div id="save-controls" hidden>
+        <div class="row">
+          <span class="group-label">In-game save (.sav)</span>
+          <button id="export-sav" disabled>Export .sav</button>
+          <label class="filebtn small">
+            <input type="file" id="import-sav" accept=".sav,.srm" disabled />
+            <span>Import .sav</span>
+          </label>
+        </div>
+        <div class="row">
+          <span class="group-label">Save state (.state)</span>
+          <button id="export-state" disabled>Export state</button>
+          <label class="filebtn small">
+            <input type="file" id="import-state" accept=".state" disabled />
+            <span>Import state</span>
+          </label>
+        </div>
+        <div class="row" id="autosave-row">
+          <span class="group-label">Autosave to file</span>
+          <button id="link-autosave" disabled>Link file</button>
+          <span id="autosave-state" class="status inline" aria-live="polite"></span>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Saves persist automatically in this browser (IndexedDB). Use Export to back them up or move to another device.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
