@@ -55,4 +55,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Disable EmulatorJS right-click context menu (EJS_Buttons.rightClick=false) - it popped up over the screen on right-click/trackpad tap; options remain in the bottom control bar - 8ed6c69
 - 2026-06-02 - Enlarge the immersive Game Boy console (max-width 460 -> 540px / 96vw) so it fills more of the screen and the emulator control bar has room - 9efe84f
 - 2026-06-02 - Scale the Game Boy faceplate D-pad and A/B buttons down under 480px so the controls fit narrow phones - 246babc
-- 2026-06-02 - Add 3 verified Gold/Silver cheats from libretro (99 of first bag item / Poke Ball / TM slot); rest of GBC GameShark data too messy to use - pending
+- 2026-06-02 - Add 3 verified Gold/Silver cheats from libretro (99 of first bag item / Poke Ball / TM slot); rest of GBC GameShark data too messy to use - f2d433e
+- 2026-06-02 - Multi-system support (stage 1): add N64, DS, PS1(.pbp), Sega Genesis/Game Gear/Master System, PC Engine, Virtual Boy, Atari 2600/7800, Lynx, Neo Geo Pocket, WonderSwan, ColecoVision via extension auto-detect (CORES/SYSTEMS/ASPECT maps, accept attr, gitignore); gate the GB faceplate to handhelds only. Heavy cores (N64/PS1/DS) run legacy/slow on Pages (no SharedArrayBuffer) - pending

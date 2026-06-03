@@ -7,6 +7,30 @@ const CORES = {
   sfc: "snes",
   smc: "snes",
   snes: "snes",
+  // Nintendo
+  n64: "n64",
+  z64: "n64",
+  v64: "n64",
+  nds: "nds",
+  // Sony (single-file PS1 format; disc images are handled via the console picker)
+  pbp: "psx",
+  // Sega
+  md: "segaMD",
+  gen: "segaMD",
+  smd: "segaMD",
+  gg: "segaGG",
+  sms: "segaMS",
+  // Others
+  pce: "pce",
+  vb: "vb",
+  a26: "atari2600",
+  a78: "atari7800",
+  lnx: "lynx",
+  ngp: "ngp",
+  ngc: "ngp",
+  ws: "ws",
+  wsc: "ws",
+  col: "coleco",
 };
 
 // EmulatorJS core name to request. The gambatte "gb" core handles both Game Boy
@@ -20,10 +44,44 @@ const SYSTEMS = {
   gba: "Game Boy Advance",
   nes: "NES",
   snes: "SNES",
+  n64: "Nintendo 64",
+  nds: "Nintendo DS",
+  psx: "PlayStation",
+  segaMD: "Sega Genesis",
+  segaGG: "Game Gear",
+  segaMS: "Master System",
+  pce: "PC Engine",
+  vb: "Virtual Boy",
+  atari2600: "Atari 2600",
+  atari7800: "Atari 7800",
+  lynx: "Atari Lynx",
+  ngp: "Neo Geo Pocket",
+  ws: "WonderSwan",
+  coleco: "ColecoVision",
 };
 
 // Screen aspect ratio per core so games fill the frame instead of letterboxing.
-const ASPECT = { gb: "10 / 9", gbc: "10 / 9", gba: "3 / 2", nes: "8 / 7", snes: "4 / 3" };
+const ASPECT = {
+  gb: "10 / 9",
+  gbc: "10 / 9",
+  gba: "3 / 2",
+  nes: "8 / 7",
+  snes: "4 / 3",
+  n64: "4 / 3",
+  nds: "2 / 3",
+  psx: "4 / 3",
+  segaMD: "4 / 3",
+  segaGG: "10 / 9",
+  segaMS: "4 / 3",
+  pce: "4 / 3",
+  vb: "12 / 7",
+  atari2600: "4 / 3",
+  atari7800: "4 / 3",
+  lynx: "80 / 51",
+  ngp: "20 / 19",
+  ws: "14 / 9",
+  coleco: "4 / 3",
+};
 
 let romName = "game";
 let currentFileName = "";
@@ -1191,13 +1249,15 @@ function reflectToggle(btn, on) {
 // skin additionally wraps the screen in the console body.
 function updateControls() {
   if (!joystick) return;
-  // The skin only takes over once a game is actually running, so the picker
-  // stays clean and loadable even when the skin setting is remembered.
-  const skinActive = skinOn && gameRunning;
+  // The Game Boy faceplate only suits the handhelds, and the skin only takes
+  // over once a game is actually running (so the picker stays clean/loadable).
+  const handheld = ["gb", "gbc", "gba"].includes(currentCore);
+  const skinActive = skinOn && gameRunning && handheld;
   const show = joystickOn || skinActive;
   joystick.hidden = !show;
   if (gameWrap) gameWrap.classList.toggle("gb-skin", skinActive);
   document.body.classList.toggle("skin-mode", skinActive);
+  if (toggleSkinBtn) toggleSkinBtn.hidden = !handheld;
   if (!show) releaseJoystick();
 }
 
