@@ -302,13 +302,14 @@ async function bootEmulator(core, romUrl, fileName) {
   document.body.appendChild(script);
 
   // If the emulator never signals ready (e.g. the CDN is unreachable), surface
-  // a clear error instead of an endless spinner.
+  // a clear error instead of an endless spinner. Heavy cores (N64/PS1/DS)
+  // download large WASM and init slowly, so allow generous time before erroring.
   bootTimer = setTimeout(() => {
     if (!emulatorReady) {
       loadingEl.classList.add("failed");
       loadingEl.textContent = "The emulator failed to load. Check your connection and reload the page.";
     }
-  }, 30000);
+  }, 60000);
 }
 
 function onEmulatorReady() {
