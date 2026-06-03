@@ -1391,6 +1391,14 @@ const CONTROLLERS = {
   gba: { face: [["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
   nes: { face: [["B", 0], ["A", 8]], meta: [["Select", 2], ["Start", 3]] },
   snes: { face: [["Y", 1], ["X", 9], ["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
+  // PlayStation: the RetroPad face IS the Sony diamond - Square=Y(1), Triangle=X(9),
+  // Cross=B(0), Circle=A(8); L1/R1 = L(10)/R(11). (pcsx_rearmed standard mapping.)
+  psx: { face: [["□", 1], ["△", 9], ["✕", 0], ["○", 8]], shoulder: [["L1", 10], ["R1", 11]], meta: [["Select", 2], ["Start", 3]] },
+  // Sega Genesis 3-button (genesis_plus_gx): A=Y(1), B=B(0), C=A(8), Start=3.
+  segaMD: { face: [["A", 1], ["B", 0], ["C", 8]], meta: [["Start", 3]] },
+  // N64: safe subset (A=8, B=0, L/R, Start). C-buttons and Z are omitted until their
+  // per-core RetroPad mapping is verified; the N64 has no Select button.
+  n64: { face: [["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Start", 3]] },
 };
 
 function makeHoldBtn(label, index, cls) {

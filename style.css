@@ -666,6 +666,42 @@ a:focus-visible {
 .console-skin[data-system="snes"] .action-btn:nth-child(4) { grid-area: 2 / 3; background: radial-gradient(circle at 35% 30%, #db5a4e, #c0392b); }
 .console-skin[data-system="snes"] .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
 
+/* PlayStation: Sony face diamond - dark buttons, coloured symbols
+   (Square pink / Triangle green / Cross blue / Circle red). DOM order: square, triangle, cross, circle. */
+.console-skin[data-system="psx"] #joystick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  grid-template-rows: repeat(3, 46px);
+  place-items: center;
+  max-width: none;
+  gap: 0.2rem;
+}
+.console-skin[data-system="psx"] .action-btn {
+  background: radial-gradient(circle at 38% 30%, #474c5b, #2a2e38 72%);
+  border: 1px solid #15171c;
+  font-size: 1.15rem;
+  line-height: 1;
+  box-shadow: 0 3px 0 #14171f, inset 0 1px 1px rgba(255, 255, 255, 0.14);
+}
+.console-skin[data-system="psx"] .action-btn:nth-child(1) { grid-area: 2 / 1; color: #ff86bd; }
+.console-skin[data-system="psx"] .action-btn:nth-child(2) { grid-area: 1 / 2; color: #54d894; }
+.console-skin[data-system="psx"] .action-btn:nth-child(3) { grid-area: 3 / 2; color: #6ea3ff; }
+.console-skin[data-system="psx"] .action-btn:nth-child(4) { grid-area: 2 / 3; color: #ff6f6f; }
+.console-skin[data-system="psx"] .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 #14171f; }
+
+/* Sega Genesis: the iconic A B C in a row (3-button pad), dark buttons. */
+.console-skin[data-system="segaMD"] #joystick-actions {
+  flex-wrap: nowrap;
+  max-width: none;
+  gap: 0.55rem;
+}
+.console-skin[data-system="segaMD"] .action-btn {
+  background: radial-gradient(circle at 38% 30%, #44484f, #25282f 72%);
+  border: 1px solid #14161c;
+  color: #d8dbe2;
+  font-weight: 700;
+}
+
 /* Immersive mode: with a game running and the skin on, the Game Boy fills the
    view and the page chrome gets out of the way. */
 .skin-mode header,
