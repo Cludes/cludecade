@@ -677,6 +677,12 @@ footer a:hover { text-decoration: underline; }
   button, select { min-height: 42px; }
   .filebtn.small { min-height: 42px; display: inline-flex; align-items: center; }
   .recent-del { min-width: 42px; }
+  /* Scale the Game Boy faceplate controls down so they fit narrow phones. */
+  .gb-skin .joystick-main { gap: 1.6rem; }
+  .gb-skin #joystick-base { width: 92px; height: 92px; }
+  .gb-skin #joystick-base::before { width: 32px; height: 92px; }
+  .gb-skin #joystick-base::after { width: 92px; height: 32px; }
+  .gb-skin .action-btn { width: 46px; height: 46px; }
 }
 
 /* Honour reduced-motion preferences: no spinner rotation or transitions. */
