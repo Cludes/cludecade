@@ -708,6 +708,9 @@ footer a:hover { text-decoration: underline; }
   .gb-skin #joystick-base::before { width: 32px; height: 92px; }
   .gb-skin #joystick-base::after { width: 92px; height: 32px; }
   .gb-skin .action-btn { width: 46px; height: 46px; }
+  /* Stack the console-picker brand label above its buttons on narrow phones. */
+  .console-group { flex-direction: column; align-items: stretch; gap: 0.3rem; }
+  .cg-label { flex: none; text-align: left; }
 }
 
 /* Honour reduced-motion preferences: no spinner rotation or transitions. */
