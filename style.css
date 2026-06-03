@@ -80,16 +80,16 @@ main {
 
 #picker {
   text-align: center;
-  padding: 3.5rem 1.5rem;
-  border: 2px dashed var(--border);
+  padding: 2.75rem 1.75rem;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-  transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  box-shadow: var(--shadow);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 #picker.dragover {
   border-color: var(--accent);
-  background: rgba(155, 188, 15, 0.08);
-  box-shadow: 0 0 0 4px rgba(155, 188, 15, 0.12);
+  box-shadow: 0 0 0 4px rgba(155, 188, 15, 0.14), var(--shadow);
 }
 
 .picker-icon {
@@ -122,7 +122,13 @@ main {
   letter-spacing: 0.04em;
 }
 .cg-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.console-btn { font-size: 0.78rem; padding: 0.4rem 0.7rem; }
+.console-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+}
+.console-btn:hover:not(:disabled) { transform: translateY(-1px); }
 .console-btn.selected {
   background: var(--accent);
   color: #0e1014;
@@ -197,13 +203,13 @@ a:focus-visible {
 }
 
 #recent {
-  margin: 2.5rem auto 0;
+  margin: 2.25rem auto 0;
   text-align: left;
-  max-width: 440px;
-  background: var(--panel);
+  max-width: 460px;
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   padding: 1rem 1.1rem;
 }
 .recent-head {
