@@ -448,7 +448,7 @@ a:focus-visible {
   justify-content: center;
   gap: 0.7rem;
 }
-.skin-mode #console-body { max-width: min(460px, 94vw); margin: 0; }
+.skin-mode #console-body { max-width: min(540px, 96vw); margin: 0; }
 .skin-mode #save-controls {
   background: none;
   border: none;
