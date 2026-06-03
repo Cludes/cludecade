@@ -65,3 +65,4 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Two-view home: the landing now shows only the console grid (+ recent); picking a console opens a load view (file/drag-drop/built-in/URL) for it with a back button. Selecting forces that core - 97bfe9f
 - 2026-06-02 - Modernize home screen: replace placeholder dashed border with a clean gradient card + shadow, pill-shaped console buttons with hover lift, recessed dark recent-games tray so items contrast - 6162b0e
 - 2026-06-02 - SNES controller: Super Famicom coloured diamond face buttons (Y green / X blue / B yellow / A red) arranged in a 3x3 grid via .console-skin[data-system=snes] - pending
+- 2026-06-02 - Redesign console picker as a modern responsive TILE grid (launcher-style, based on Pegasus/EmulationStation references) with per-brand accent bars (Nintendo red / Sony+Sega blue / Other green), hover lift + glow; replaces the text-pill rows - pending

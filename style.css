@@ -106,34 +106,50 @@ main {
 }
 
 #console-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  max-width: 600px;
-  margin: 0 auto 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
+  gap: 0.6rem;
+  max-width: 640px;
+  margin: 0 auto;
 }
-.console-group { display: flex; align-items: baseline; gap: 0.5rem; }
-.cg-label {
-  flex: 0 0 64px;
-  text-align: right;
-  font-size: 0.7rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.cg-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .console-btn {
-  font-size: 0.8rem;
-  font-weight: 500;
-  padding: 0.45rem 0.85rem;
-  border-radius: 999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  padding: 0.9rem 0.7rem;
+  text-align: center;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.14s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
-.console-btn:hover:not(:disabled) { transform: translateY(-1px); }
-.console-btn.selected {
-  background: var(--accent);
-  color: #0e1014;
-  border-color: var(--accent);
+/* Brand-coloured accent bar across the top of each tile. */
+.console-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: var(--brand, var(--accent));
 }
+.console-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  background: #20243a;
+  border-color: var(--brand, var(--accent));
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+}
+.console-btn:active:not(:disabled) { transform: translateY(-1px); }
+.console-btn:focus-visible { outline-color: var(--brand, var(--accent)); }
 .back-btn { margin: 0 0 0.85rem; font-size: 0.82rem; }
 
 .filebtn {

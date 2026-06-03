@@ -1157,25 +1157,25 @@ function showConsoleView() {
 
 if (backToConsoles) backToConsoles.addEventListener("click", showConsoleView);
 
+// Brand accent colours for the console tiles.
+const BRAND_COLORS = { Nintendo: "#e60012", Sony: "#2e6fdb", Sega: "#1c9bd8", Other: "#9bbc0f" };
+
 if (consoleGrid) {
   for (const [groupName, items] of CONSOLE_GROUPS) {
-    const group = document.createElement("div");
-    group.className = "console-group";
-    const lbl = document.createElement("span");
-    lbl.className = "cg-label";
-    lbl.textContent = groupName;
-    const btns = document.createElement("div");
-    btns.className = "cg-btns";
+    const color = BRAND_COLORS[groupName] || "#9bbc0f";
     for (const [core, label] of items) {
       const b = document.createElement("button");
       b.className = "console-btn";
-      b.textContent = label;
       b.dataset.core = core;
+      b.dataset.brand = groupName;
+      b.style.setProperty("--brand", color);
+      const name = document.createElement("span");
+      name.className = "console-name";
+      name.textContent = label;
+      b.appendChild(name);
       b.addEventListener("click", () => selectConsole(core, label));
-      btns.appendChild(b);
+      consoleGrid.appendChild(b);
     }
-    group.append(lbl, btns);
-    consoleGrid.appendChild(group);
   }
 }
 
