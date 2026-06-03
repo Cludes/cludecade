@@ -1161,19 +1161,44 @@ if (joystickBase) {
   joystickBase.addEventListener("lostpointercapture", endJoy);
 }
 
-function setJoystick(on) {
-  if (!joystick) return;
-  joystick.hidden = !on;
-  toggleJoystickBtn.textContent = on ? "On" : "Off";
-  toggleJoystickBtn.setAttribute("aria-pressed", on ? "true" : "false");
-  localStorage.setItem("bgb-joystick", on ? "1" : "0");
-  if (!on) releaseJoystick();
+const toggleSkinBtn = document.getElementById("toggle-skin");
+let joystickOn = false;
+let skinOn = false;
+
+function reflectToggle(btn, on) {
+  if (!btn) return;
+  btn.setAttribute("aria-pressed", on ? "true" : "false");
+  btn.classList.toggle("active", on);
 }
 
-if (toggleJoystickBtn) {
-  toggleJoystickBtn.addEventListener("click", () => setJoystick(joystick.hidden));
-  if (localStorage.getItem("bgb-joystick") === "1") setJoystick(true);
+// Controls show if either the plain joystick or the Game Boy skin is on; the
+// skin additionally wraps the screen in the console body.
+function updateControls() {
+  if (!joystick) return;
+  const show = joystickOn || skinOn;
+  joystick.hidden = !show;
+  if (gameWrap) gameWrap.classList.toggle("gb-skin", skinOn);
+  if (!show) releaseJoystick();
 }
+
+function setJoystick(on) {
+  joystickOn = on;
+  reflectToggle(toggleJoystickBtn, on);
+  localStorage.setItem("bgb-joystick", on ? "1" : "0");
+  updateControls();
+}
+
+function setSkin(on) {
+  skinOn = on;
+  reflectToggle(toggleSkinBtn, on);
+  localStorage.setItem("bgb-skin", on ? "1" : "0");
+  updateControls();
+}
+
+if (toggleJoystickBtn) toggleJoystickBtn.addEventListener("click", () => setJoystick(!joystickOn));
+if (toggleSkinBtn) toggleSkinBtn.addEventListener("click", () => setSkin(!skinOn));
+if (localStorage.getItem("bgb-joystick") === "1") setJoystick(true);
+if (localStorage.getItem("bgb-skin") === "1") setSkin(true);
 
 // Hold-to-press action buttons (A = 8, B = 0 in the libretro RetroPad layout).
 function holdButton(btn, index) {

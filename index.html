@@ -76,23 +76,26 @@
 
     <!-- Game -->
     <section id="game-wrap" hidden>
-      <div id="game"></div>
-      <div id="joystick" hidden aria-hidden="true">
-        <div class="joystick-main">
-          <div id="joystick-base">
-            <div id="joystick-thumb"></div>
+      <div id="console-body">
+        <div id="game"></div>
+        <p id="loading" class="status" hidden aria-live="polite">Loading...</p>
+        <div class="gb-brand">Game Boy <span>color</span></div>
+        <div id="joystick" hidden aria-hidden="true">
+          <div class="joystick-main">
+            <div id="joystick-base">
+              <div id="joystick-thumb"></div>
+            </div>
+            <div id="joystick-actions">
+              <button id="btn-b" class="action-btn" tabindex="-1">B</button>
+              <button id="btn-a" class="action-btn" tabindex="-1">A</button>
+            </div>
           </div>
-          <div id="joystick-actions">
-            <button id="btn-b" class="action-btn" tabindex="-1">B</button>
-            <button id="btn-a" class="action-btn" tabindex="-1">A</button>
+          <div id="joystick-meta">
+            <button id="btn-select" class="meta-btn" tabindex="-1">Select</button>
+            <button id="btn-start" class="meta-btn" tabindex="-1">Start</button>
           </div>
-        </div>
-        <div id="joystick-meta">
-          <button id="btn-select" class="meta-btn" tabindex="-1">Select</button>
-          <button id="btn-start" class="meta-btn" tabindex="-1">Start</button>
         </div>
       </div>
-      <p id="loading" class="status" hidden aria-live="polite">Loading...</p>
 
       <div id="save-controls" hidden>
         <div class="row" id="session-row">
@@ -102,9 +105,10 @@
           <button id="change-game">Change game</button>
         </div>
         <div class="row" id="controls-row">
-          <span class="group-label">On-screen joystick</span>
-          <button id="toggle-joystick" aria-pressed="false" aria-label="Toggle on-screen joystick">Off</button>
-          <span class="hint-inline">Drag with the mouse to move (keyboard still works)</span>
+          <span class="group-label">On-screen controls</span>
+          <button id="toggle-joystick" aria-pressed="false">Joystick</button>
+          <button id="toggle-skin" aria-pressed="false">Game Boy skin</button>
+          <span class="hint-inline">Play with the mouse (keyboard still works)</span>
         </div>
         <details class="save-backup">
           <summary>Save &amp; backup</summary>
