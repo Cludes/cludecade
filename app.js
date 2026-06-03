@@ -217,6 +217,10 @@ async function bootEmulator(core, romUrl, fileName) {
   window.EJS_gameName = fileName;
   window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
   window.EJS_startOnLoaded = true;
+  // Disable EmulatorJS's right-click context menu (it pops up on right-click /
+  // trackpad two-finger tap and feels intrusive). Same options remain in its
+  // bottom control bar.
+  window.EJS_Buttons = { rightClick: false };
   window.EJS_ready = onEmulatorReady;
   // Fired whenever the cartridge save changes (deduped by hash). Mirror it to
   // the linked on-disk file if the user has set one up.
