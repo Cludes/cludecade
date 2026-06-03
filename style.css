@@ -526,6 +526,22 @@ a:focus-visible {
 .console-skin .shoulder-btn { border-radius: 8px 8px 4px 4px; }
 .console-skin .meta-btn.pressed { transform: translateY(2px); filter: none; }
 
+/* SNES: iconic Super Famicom coloured diamond (face order in DOM: Y X B A). */
+.console-skin[data-system="snes"] #joystick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  grid-template-rows: repeat(3, 46px);
+  place-items: center;
+  max-width: none;
+  gap: 0.2rem;
+}
+.console-skin[data-system="snes"] .action-btn { color: #fff; border: none; box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4); }
+.console-skin[data-system="snes"] .action-btn:nth-child(1) { grid-area: 2 / 1; background: radial-gradient(circle at 35% 30%, #57cf78, #2ea84f); }
+.console-skin[data-system="snes"] .action-btn:nth-child(2) { grid-area: 1 / 2; background: radial-gradient(circle at 35% 30%, #5b8ff0, #2e6ad1); }
+.console-skin[data-system="snes"] .action-btn:nth-child(3) { grid-area: 3 / 2; background: radial-gradient(circle at 35% 30%, #f2cd56, #e0b020); color: #3a2e00; }
+.console-skin[data-system="snes"] .action-btn:nth-child(4) { grid-area: 2 / 3; background: radial-gradient(circle at 35% 30%, #db5a4e, #c0392b); }
+.console-skin[data-system="snes"] .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
+
 /* Immersive mode: with a game running and the skin on, the Game Boy fills the
    view and the page chrome gets out of the way. */
 .skin-mode header,
