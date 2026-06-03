@@ -316,6 +316,8 @@ function onEmulatorReady() {
   emulatorReady = true;
   gameRunning = true;
   if (bootTimer) clearTimeout(bootTimer);
+  renderController(currentCore);
+  if (gameWrap) gameWrap.dataset.system = currentCore;
   updateControls();
   loadingEl.hidden = true;
   saveControls.hidden = false;
@@ -1213,6 +1215,8 @@ const DPAD = { up: 4, down: 5, left: 6, right: 7 };
 const joystick = document.getElementById("joystick");
 const joystickBase = document.getElementById("joystick-base");
 const joystickThumb = document.getElementById("joystick-thumb");
+const joystickActions = document.getElementById("joystick-actions");
+const joystickMeta = document.getElementById("joystick-meta");
 const toggleJoystickBtn = document.getElementById("toggle-joystick");
 const dirState = { up: false, down: false, left: false, right: false };
 let joyPointer = null;
@@ -1311,15 +1315,17 @@ function reflectToggle(btn, on) {
 // skin additionally wraps the screen in the console body.
 function updateControls() {
   if (!joystick) return;
-  // The Game Boy faceplate only suits the handhelds, and the skin only takes
-  // over once a game is actually running (so the picker stays clean/loadable).
+  // Skin only takes over once a game is running (picker stays clean/loadable).
+  // Handhelds get the GBC handheld body; other consoles get a gamepad skin.
   const handheld = ["gb", "gbc", "gba"].includes(currentCore);
-  const skinActive = skinOn && gameRunning && handheld;
+  const skinActive = skinOn && gameRunning;
   const show = joystickOn || skinActive;
   joystick.hidden = !show;
-  if (gameWrap) gameWrap.classList.toggle("gb-skin", skinActive);
+  if (gameWrap) {
+    gameWrap.classList.toggle("gb-skin", skinActive && handheld);
+    gameWrap.classList.toggle("console-skin", skinActive && !handheld);
+  }
   document.body.classList.toggle("skin-mode", skinActive);
-  if (toggleSkinBtn) toggleSkinBtn.hidden = !handheld;
   if (!show) releaseJoystick();
 }
 
@@ -1362,7 +1368,34 @@ function holdButton(btn, index) {
   btn.addEventListener("pointercancel", release);
   btn.addEventListener("lostpointercapture", release);
 }
-holdButton(document.getElementById("btn-a"), 8);
-holdButton(document.getElementById("btn-b"), 0);
-holdButton(document.getElementById("btn-select"), 2);
-holdButton(document.getElementById("btn-start"), 3);
+// Per-system on-screen controller layouts. Buttons map to standard libretro
+// RetroPad indices (B=0, Y=1, Select=2, Start=3, A=8, X=9, L=10, R=11). The
+// D-pad is always present. More consoles are added over time.
+const CONTROLLERS = {
+  gb: { face: [["B", 0], ["A", 8]], meta: [["Select", 2], ["Start", 3]] },
+  gbc: { face: [["B", 0], ["A", 8]], meta: [["Select", 2], ["Start", 3]] },
+  gba: { face: [["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
+  nes: { face: [["B", 0], ["A", 8]], meta: [["Select", 2], ["Start", 3]] },
+  snes: { face: [["Y", 1], ["X", 9], ["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
+};
+
+function makeHoldBtn(label, index, cls) {
+  const b = document.createElement("button");
+  b.className = cls;
+  b.textContent = label;
+  b.tabIndex = -1;
+  b.dataset.btn = String(index);
+  holdButton(b, index);
+  return b;
+}
+
+// Build the on-screen face / shoulder / Start-Select buttons for a system.
+function renderController(core) {
+  if (!joystickActions || !joystickMeta) return;
+  const def = CONTROLLERS[core] || CONTROLLERS.gb;
+  joystickActions.innerHTML = "";
+  for (const [label, index] of def.face) joystickActions.appendChild(makeHoldBtn(label, index, "action-btn"));
+  joystickMeta.innerHTML = "";
+  if (def.shoulder) for (const [label, index] of def.shoulder) joystickMeta.appendChild(makeHoldBtn(label, index, "meta-btn shoulder-btn"));
+  for (const [label, index] of def.meta) joystickMeta.appendChild(makeHoldBtn(label, index, "meta-btn"));
+}

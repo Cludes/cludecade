@@ -60,4 +60,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Console-select front page (stage 2): grid of consoles on the picker; selecting one forces that core for the next ROM (so disc/ambiguous formats load without guessing). Also skip quick-resume caching for ROMs >48MB - c2065c4
 - 2026-06-02 - Group the console picker by brand (Nintendo / Sony / Sega / Other) with right-aligned labels so the 19 consoles are scannable instead of one wall of buttons - 213a633
 - 2026-06-02 - Increase the emulator load-timeout 30s -> 60s so heavy cores (N64/PS1/DS), which download big WASM and init slowly, dont trigger a false "failed to load" error - 56c5055
-- 2026-06-02 - Console picker on mobile: stack each brand label above its buttons under 480px so the fixed label doesn't squeeze them - pending
+- 2026-06-02 - Console picker on mobile: stack each brand label above its buttons under 480px so the fixed label doesn't squeeze them - d3e2239
+- 2026-06-02 - Per-system controller foundation: on-screen buttons are now data-driven (CONTROLLERS map -> renderController) so each system shows its real buttons/indices (e.g. SNES = Y/X/B/A + L/R); skin now works for all systems (handhelds keep the GBC body, consoles get a generic gamepad skin via .console-skin + [data-system]). Loop will add per-console layouts/art - pending
