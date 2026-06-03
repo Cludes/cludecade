@@ -153,60 +153,69 @@ main {
 }
 
 .picker-icon {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   color: var(--accent);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-3);
 }
 .picker-title {
-  font-size: 1.35rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   letter-spacing: -0.01em;
-  margin: 0 0 1.1rem;
+  margin: 0 0 var(--space-2);
 }
 
 #console-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
-  gap: 0.6rem;
-  max-width: 640px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: var(--space-3);
+  max-width: 660px;
+  margin: var(--space-5) auto 0;
 }
 .console-btn {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 72px;
-  padding: 0.9rem 0.7rem;
-  text-align: center;
-  font-size: 0.84rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--panel-2);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 2px;
+  min-height: 86px;
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+  text-align: left;
+  background: linear-gradient(160deg, var(--surface-2), var(--surface-1));
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--r-lg);
   overflow: hidden;
   transition: transform 0.14s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
-/* Brand-coloured accent bar across the top of each tile. */
+/* Brand-coloured spine down the left edge of each tile (launcher style). */
 .console-btn::before {
   content: "";
   position: absolute;
+  left: 0;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  height: 3px;
-  border-radius: 0 0 3px 3px;
+  bottom: 0;
+  width: 3px;
   background: var(--brand, var(--accent));
+}
+.console-brand {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--brand, var(--accent));
+}
+.console-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.18;
 }
 .console-btn:hover:not(:disabled) {
   transform: translateY(-3px);
-  background: var(--surface-3);
+  background: linear-gradient(160deg, var(--surface-3), var(--surface-2));
   border-color: var(--brand, var(--accent));
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--e2);
 }
 .console-btn:active:not(:disabled) { transform: translateY(-1px); }
 .console-btn:focus-visible { outline-color: var(--brand, var(--accent)); }

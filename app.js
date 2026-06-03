@@ -1169,6 +1169,13 @@ if (consoleGrid) {
       b.dataset.core = core;
       b.dataset.brand = groupName;
       b.style.setProperty("--brand", color);
+      // Brand eyebrow gives the tile hierarchy; skip it for the "Other" catch-all.
+      if (groupName !== "Other") {
+        const brand = document.createElement("span");
+        brand.className = "console-brand";
+        brand.textContent = groupName;
+        b.appendChild(brand);
+      }
       const name = document.createElement("span");
       name.className = "console-name";
       name.textContent = label;
