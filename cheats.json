@@ -2,161 +2,563 @@
   {
     "game": "Pokemon Emerald",
     "system": "gba",
-    "match": [["pokemon", "emerald"]],
+    "match": [
+      [
+        "pokemon",
+        "emerald"
+      ]
+    ],
     "cheats": [
-      ["Master code (enable this first)", "D8BAE4D9 4864DCE5\nA86CDBA5 19BA49B3\nA57E2EDE A5AFF3E4\n1C7B3231 B494738C"],
-      ["Unlimited money", "C051CCF6 975E8DA1"],
-      ["99 Rare Candy in PC", "BFF956FA 2F9EC50D"],
-      ["99 Master Balls in PC", "958D8046 A7151D70\n8BB602F7 8CEB681A"],
-      ["Walk through walls (no master code)", "7881A409 E2026E0C\n8E883EFF 92E9660D"]
+      [
+        "Master code (enable first)",
+        "D8BAE4D9+4864DCE5+A86CDBA5+19BA49B3"
+      ],
+      [
+        "Anti-DMA (enable first)",
+        "B2809E31+3CEF5320+1C7B3231+B494738C"
+      ],
+      [
+        "Max money",
+        "82000568+423F+8200056A+000F"
+      ],
+      [
+        "Have all Poke Balls",
+        "00000000+84226050+00630001+010C0001+80000000+00000000"
+      ],
+      [
+        "Have all TMs/HMs",
+        "00000000+84226090+00090121+011E0001+80000000+00000000+00000000+84226108+00090140+01140001+80000000+00000000+00000000+84226154+00090153+01080001+80000000+00000000"
+      ],
+      [
+        "Items cost $1",
+        "00000000+00000000+C43B60AA+168457A2+0A5D51E9+0000045B"
+      ],
+      [
+        "Max EXP after battle",
+        "8202309C+03E7+820241F0+03E7"
+      ],
+      [
+        "Infinite PP",
+        "42023070+6363+00000002+0002"
+      ],
+      [
+        "1-hit kill",
+        "02024104+0001+32024104+0001"
+      ],
+      [
+        "Complete Pokedex",
+        "32024AB0+00FF+32024AE0+0003+32026388+00FF+320263B8+0003+32029524+00FF+32029554+0003+32024A7C+00FF+32024AAC+0003"
+      ],
+      [
+        "National Dex (press Select)",
+        "D0000020+0004+83000E48+9F0D+D0000020+0004+83000E4A+081F"
+      ],
+      [
+        "Fly anywhere on map",
+        "72002DD4+0A74+32002DEA+0002"
+      ],
+      [
+        "No random battles",
+        "320375D4+0000"
+      ],
+      [
+        "1st Pokemon max stats",
+        "42024542+03E7+00000007+0002"
+      ],
+      [
+        "99 Rare Candy in PC",
+        "BFF956FA+2F9EC50D"
+      ]
     ]
   },
   {
     "game": "Pokemon FireRed / LeafGreen",
     "system": "gba",
-    "match": [["pokemon", "firered"], ["pokemon", "leafgreen"]],
+    "match": [
+      [
+        "pokemon",
+        "firered"
+      ],
+      [
+        "pokemon",
+        "leafgreen"
+      ]
+    ],
     "cheats": [
-      ["Infinite money", "3AF85ACA C4D18CEC\n8E883EFF 92E9660D"],
-      ["99 Master Balls in PC", "8202595C 0001\n8202595E 0063"],
-      ["Walk through walls", "509197D3 542975F4\n78DA95DF 44018CB4"]
+      [
+        "Master code (enable first)",
+        "C4000604+00008401+45525042+001DC0DE+00000000+1802603C+00002100+00000000+4230500C+07900000+4230500C+07910000"
+      ],
+      [
+        "Anti-DMA (enable first)",
+        "24C35E88+037C3033+78DA95DF+44018CB4"
+      ],
+      [
+        "Infinite money",
+        "042257BC+000F423F"
+      ],
+      [
+        "Have all Poke Balls",
+        "00000000+8422595C+00630001+010C0001+80000000+00000000"
+      ],
+      [
+        "Have all TMs/HMs",
+        "92225990 00000000+00000000+84225990+00010153+01080001+80000000+00000000+00000000+842259B0+00630121+01320001+80000000+00000000+00000000+40000000"
+      ],
+      [
+        "Quick level gain",
+        "820285B0+FFFF+8202863C+FFFF"
+      ],
+      [
+        "Infinite PP",
+        "42023C08+6363+00000002+0002"
+      ],
+      [
+        "1-hit kill",
+        "20223C64+00000001+00223C64+00000001"
+      ],
+      [
+        "Have all badges",
+        "00226510+000000FF"
+      ],
+      [
+        "Wild Pokemon easily caught",
+        "72023D74+9A84+82023D74+9AC3"
+      ],
+      [
+        "No random battles",
+        "00000000+1C0419E6+00002000+00000000"
+      ],
+      [
+        "Faster text",
+        "00000000+18002C02+0000E01A+00000000"
+      ]
     ]
   },
   {
     "game": "Pokemon Ruby",
     "system": "gba",
-    "match": [["pokemon", "ruby"]],
+    "match": [
+      [
+        "pokemon",
+        "ruby"
+      ]
+    ],
     "cheats": [
-      ["Unlimited Rare Candies", "280EA266 88A62E5C"],
-      ["Unlimited Master Balls", "91B85743 27069397"],
-      ["Infinite money", "E51E97C3 7858E4EB"],
-      ["Walk through walls", "E03B0649 5D67050C\n78DA95DF 44018CB4"]
+      [
+        "Master code (enable first)",
+        "0000B138+000A+10000428+0007"
+      ],
+      [
+        "Infinite money",
+        "82025BC4+E0FF+82025BC6+05F5"
+      ],
+      [
+        "Infinite items",
+        "42025C96+0063+00000014+0004"
+      ],
+      [
+        "Infinite key items",
+        "42025CE6+0001+00000014+0004"
+      ],
+      [
+        "Infinite TMs/HMs",
+        "42025D76+0063+00000014+0004"
+      ],
+      [
+        "Have all Poke Balls",
+        "5D340001+0001+000C0004+4202+5D360063+0000"
+      ],
+      [
+        "Infinite berries",
+        "42025E66+0063+00000014+0004"
+      ],
+      [
+        "Quick level gain",
+        "72024A64+0001+82024BEC+01F4"
+      ],
+      [
+        "Infinite PP",
+        "42024AA4+FFFF+00000002+0002"
+      ],
+      [
+        "Wild Pokemon easily caught",
+        "72024C10+9EB7+32024C10+00C2"
+      ],
+      [
+        "No random battles",
+        "8202E8C0+0000"
+      ],
+      [
+        "Fly to any area",
+        "42026A56+FFFF+00000005+0002"
+      ],
+      [
+        "Complete Pokedex",
+        "82026B00+0302+32024EBE+00DA+32026A5A+00F0+42024ECC+FFFF+00000034+0002+4202606C+FFFF+0000001A+0002+420291C0+FFFF+0000001A+0002"
+      ],
+      [
+        "1st Pokemon max stats",
+        "430043B6+03E7+00000007+0002"
+      ]
     ]
   },
   {
     "game": "Pokemon Sapphire",
     "system": "gba",
-    "match": [["pokemon", "sapphire"]],
+    "match": [
+      [
+        "pokemon",
+        "sapphire"
+      ]
+    ],
     "cheats": [
-      ["Master code (enable this first)", "9E6AC962 823AB7A8\n8365F8FA 817CF3E9"],
-      ["99 Rare Candy in PC", "361E3586 CD38BA79"],
-      ["Unlimited money", "1B3E8B0C E075B270"],
-      ["99 Master Balls", "910C4AFB 679BA66A"]
+      [
+        "Master code (enable first)",
+        "000056D0+000A+10000428+0007"
+      ],
+      [
+        "Infinite money",
+        "82025BC4+E0FF+82025BC6+05F5"
+      ],
+      [
+        "Infinite items",
+        "42025C96+0063+00000014+0004"
+      ],
+      [
+        "Infinite key items",
+        "42025CE6+0001+00000014+0004"
+      ],
+      [
+        "Infinite TMs/HMs",
+        "42025D76+0063+00000014+0004"
+      ],
+      [
+        "Have all Poke Balls",
+        "42025D34+0001+0001000C+0004+42025D36+0063+0000000C+0004"
+      ],
+      [
+        "Infinite berries",
+        "42025E66+0063+00000014+0004"
+      ],
+      [
+        "Quick level gain",
+        "72024A64+0001+82024BEC+01F4"
+      ],
+      [
+        "Infinite PP",
+        "42024AA4+FFFF+00000002+0002"
+      ],
+      [
+        "Wild Pokemon easily caught",
+        "72024C10+9EB7+32024C10+00C2"
+      ],
+      [
+        "No random battles",
+        "8202E8C0+0000"
+      ],
+      [
+        "Fly to any area",
+        "42026A56+FFFF+00000005+0002"
+      ],
+      [
+        "Complete Pokedex",
+        "82026B00+0302+32024EBE+00DA+32026A5A+00F0+42024ECC+FFFF+00000034+0002+4202606C+FFFF+0000001A+0002+420291C0+FFFF+0000001A+0002"
+      ],
+      [
+        "1st Pokemon max stats",
+        "430043B6+03E7+00000007+0002"
+      ]
     ]
   },
   {
     "game": "Pokemon Crystal",
     "system": "gbc",
-    "match": [["pokemon", "crystal"]],
+    "match": [
+      [
+        "pokemon",
+        "crystal"
+      ]
+    ],
     "cheats": [
-      ["Infinite money", "010F4ED8\n01424FD8\n013F50D8"],
-      ["Buy Master Balls in Mart", "9101F2D0"],
-      ["Buy Rare Candy in Mart", "9120F2D0"]
+      [
+        "Infinite money",
+        "010F4ED8\n01424FD8\n013F50D8"
+      ],
+      [
+        "Buy Master Balls in Mart",
+        "9101F2D0"
+      ],
+      [
+        "Buy Rare Candy in Mart",
+        "9120F2D0"
+      ]
     ]
   },
   {
     "game": "Pokemon Gold / Silver",
     "system": "gbc",
-    "match": [["pokemon", "gold"], ["pokemon", "silver"]],
+    "match": [
+      [
+        "pokemon",
+        "gold"
+      ],
+      [
+        "pokemon",
+        "silver"
+      ]
+    ],
     "cheats": [
-      ["Infinite money", "019973D5\n019974D5\n019975D5"],
-      ["Buy Master Balls in Mart", "0101EFCF"],
-      ["Buy Rare Candy in Mart", "0120EECF"]
+      [
+        "Infinite money",
+        "019973D5\n019974D5\n019975D5"
+      ],
+      [
+        "Buy Master Balls in Mart",
+        "0101EFCF"
+      ],
+      [
+        "Buy Rare Candy in Mart",
+        "0120EECF"
+      ]
     ]
   },
   {
     "game": "Pokemon Yellow",
     "system": "gb",
-    "match": [["pokemon", "yellow"]],
+    "match": [
+      [
+        "pokemon",
+        "yellow"
+      ]
+    ],
     "cheats": [
-      ["Infinite money", "019946D3\n019947D3\n019948D3"],
-      ["Buy Master Balls in Mart", "01017CCF"],
-      ["Buy Rare Candy in Mart", "01287CCF"]
+      [
+        "Infinite money",
+        "019946D3\n019947D3\n019948D3"
+      ],
+      [
+        "Buy Master Balls in Mart",
+        "01017CCF"
+      ],
+      [
+        "Buy Rare Candy in Mart",
+        "01287CCF"
+      ]
     ]
   },
   {
     "game": "Pokemon Red / Blue",
     "system": "gb",
-    "match": [["pokemon", "red"], ["pokemon", "blue"]],
+    "match": [
+      [
+        "pokemon",
+        "red"
+      ],
+      [
+        "pokemon",
+        "blue"
+      ]
+    ],
     "cheats": [
-      ["Infinite money", "019947D3\n019948D3\n019949D3"],
-      ["Buy Master Balls in Mart", "01017CCF"],
-      ["Buy Rare Candy in Mart", "01287CCF"]
+      [
+        "Infinite money",
+        "019947D3\n019948D3\n019949D3"
+      ],
+      [
+        "Buy Master Balls in Mart",
+        "01017CCF"
+      ],
+      [
+        "Buy Rare Candy in Mart",
+        "01287CCF"
+      ]
     ]
   },
   {
     "game": "Super Mario Land",
     "system": "gb",
-    "match": [["super", "mario", "land"]],
+    "match": [
+      [
+        "super",
+        "mario",
+        "land"
+      ]
+    ],
     "cheats": [
-      ["Infinite lives", "21C-53E-4C1"],
-      ["Invincibility", "03B-8EB-E69"],
-      ["Infinite time", "008-60A-E6E"]
+      [
+        "Infinite lives",
+        "21C-53E-4C1"
+      ],
+      [
+        "Invincibility",
+        "03B-8EB-E69"
+      ],
+      [
+        "Infinite time",
+        "008-60A-E6E"
+      ]
     ]
   },
   {
     "game": "Super Mario Bros. 3",
     "system": "nes",
-    "match": [["super", "mario", "bros", "3"]],
+    "match": [
+      [
+        "super",
+        "mario",
+        "bros",
+        "3"
+      ]
+    ],
     "cheats": [
-      ["Infinite lives", "SLXPLOVS"],
-      ["Invincible + keep power-up", "PNKXGLIE"]
+      [
+        "Infinite lives",
+        "SLXPLOVS"
+      ],
+      [
+        "Invincible + keep power-up",
+        "PNKXGLIE"
+      ]
     ]
   },
   {
     "game": "Super Mario Bros.",
     "system": "nes",
-    "match": [["super", "mario", "bros"]],
+    "match": [
+      [
+        "super",
+        "mario",
+        "bros"
+      ]
+    ],
     "cheats": [
-      ["Infinite lives", "SXIOPO"],
-      ["Invincibility", "GOZSXX"]
+      [
+        "Infinite lives",
+        "SXIOPO"
+      ],
+      [
+        "Invincibility",
+        "GOZSXX"
+      ]
     ]
   },
   {
     "game": "The Legend of Zelda",
     "system": "nes",
-    "match": [["legend", "zelda"]],
+    "match": [
+      [
+        "legend",
+        "zelda"
+      ]
+    ],
     "cheats": [
-      ["Total invincibility", "AVVLAUSZ"],
-      ["Infinite bombs (need 1 first)", "SZNZVOVK"],
-      ["Rupees never decrease", "SZVXASVK"],
-      ["Infinite keys (need 1 first)", "AEOEPSZA"]
+      [
+        "Total invincibility",
+        "AVVLAUSZ"
+      ],
+      [
+        "Infinite bombs (need 1 first)",
+        "SZNZVOVK"
+      ],
+      [
+        "Rupees never decrease",
+        "SZVXASVK"
+      ],
+      [
+        "Infinite keys (need 1 first)",
+        "AEOEPSZA"
+      ]
     ]
   },
   {
     "game": "Super Mario World",
     "system": "snes",
-    "match": [["super", "mario", "world"]],
+    "match": [
+      [
+        "super",
+        "mario",
+        "world"
+      ]
+    ],
     "cheats": [
-      ["Infinite lives", "C222-D4DD"],
-      ["Invincibility", "DD32-6DAD"]
+      [
+        "Infinite lives",
+        "C222-D4DD"
+      ],
+      [
+        "Invincibility",
+        "DD32-6DAD"
+      ]
     ]
   },
   {
     "game": "The Legend of Zelda: A Link to the Past",
     "system": "snes",
-    "match": [["zelda", "past"], ["link", "past"]],
+    "match": [
+      [
+        "zelda",
+        "past"
+      ],
+      [
+        "link",
+        "past"
+      ]
+    ],
     "cheats": [
-      ["Infinite health", "DD30-6DAD"],
-      ["Infinite magic", "DD6C-A7D4"],
-      ["Rupees never decrease", "C2B5-6F0F"]
+      [
+        "Infinite health",
+        "DD30-6DAD"
+      ],
+      [
+        "Infinite magic",
+        "DD6C-A7D4"
+      ],
+      [
+        "Rupees never decrease",
+        "C2B5-6F0F"
+      ]
     ]
   },
   {
     "game": "Super Metroid",
     "system": "snes",
-    "match": [["super", "metroid"]],
+    "match": [
+      [
+        "super",
+        "metroid"
+      ]
+    ],
     "cheats": [
-      ["No energy loss from enemies", "C225-3005"],
-      ["Almost infinite missiles", "C288-C5A7"]
+      [
+        "No energy loss from enemies",
+        "C225-3005"
+      ],
+      [
+        "Almost infinite missiles",
+        "C288-C5A7"
+      ]
     ]
   },
   {
     "game": "Mega Man 2",
     "system": "nes",
-    "match": [["mega", "man", "2"]],
+    "match": [
+      [
+        "mega",
+        "man",
+        "2"
+      ]
+    ],
     "cheats": [
-      ["Infinite lives", "SXUGTPVG"],
-      ["Infinite energy", "SXXTPSSE"]
+      [
+        "Infinite lives",
+        "SXUGTPVG"
+      ],
+      [
+        "Infinite energy",
+        "SXXTPSSE"
+      ]
     ]
   }
 ]
