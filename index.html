@@ -34,45 +34,54 @@
 
     <!-- ROM picker -->
     <section id="picker">
-      <svg class="picker-icon" viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="14" y="6" width="36" height="52" rx="5" fill="rgba(155,188,15,0.12)" stroke="currentColor" stroke-width="2.5" />
-        <rect x="21" y="14" width="22" height="14" rx="2" fill="currentColor" opacity="0.3" />
-        <rect x="21" y="42" width="14" height="3" rx="1.5" fill="currentColor" />
-        <rect x="21" y="48" width="22" height="3" rx="1.5" fill="currentColor" />
-      </svg>
-      <h2 class="picker-title">Play retro games in your browser</h2>
-      <div id="console-grid" role="group" aria-label="Choose a console (optional)"></div>
-      <p id="console-selected" class="hint" aria-live="polite"></p>
-      <label class="filebtn">
-        <input type="file" id="rom-input" accept=".gb,.gbc,.gba,.nes,.sfc,.smc,.n64,.z64,.v64,.nds,.pbp,.md,.gen,.smd,.gg,.sms,.pce,.vb,.a26,.a78,.lnx,.ngp,.ngc,.ws,.wsc,.col,.zip" />
-        <span>Choose a ROM file</span>
-      </label>
-      <p class="hint">Drag &amp; drop a ROM here, or click to browse. Supports Game Boy / Color / Advance, NES, SNES, Nintendo 64, DS, PlayStation (.pbp), Sega Genesis / Game Gear / Master System, PC Engine, Atari, and more. (N64, DS and PS1 are heavy and run best on desktop.)</p>
-      <details class="controls-help">
-        <summary>How do I play?</summary>
-        <p>Arrow keys move (D-pad). Prefer a mouse or touch? Once a game is running, turn on the on-screen joystick (with A, B, Start and Select) from the controls below the screen. To see or remap every button for keyboard or gamepad, open the game's own menu from its control bar. On phones and tablets, EmulatorJS's touch controls also appear automatically.</p>
-      </details>
-      <div id="builtin" hidden>
-        <h2>Built-in games (free homebrew)</h2>
-        <ul id="builtin-list"></ul>
+      <!-- Home: choose a console -->
+      <div id="console-view">
+        <svg class="picker-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="14" y="6" width="36" height="52" rx="5" fill="rgba(155,188,15,0.12)" stroke="currentColor" stroke-width="2.5" />
+          <rect x="21" y="14" width="22" height="14" rx="2" fill="currentColor" opacity="0.3" />
+          <rect x="21" y="42" width="14" height="3" rx="1.5" fill="currentColor" />
+          <rect x="21" y="48" width="22" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+        <h2 class="picker-title">Play retro games in your browser</h2>
+        <p class="hint">Choose a console to start.</p>
+        <div id="console-grid" role="group" aria-label="Choose a console"></div>
+        <div id="recent" hidden>
+          <div class="recent-head">
+            <h2>Recently played</h2>
+            <button id="clear-roms" class="recent-clear">Clear all</button>
+          </div>
+          <ul id="recent-list"></ul>
+          <p id="storage" class="hint"></p>
+        </div>
       </div>
-      <details class="url-load">
-        <summary>Load from a URL</summary>
-        <div class="url-row">
-          <input type="url" id="rom-url" placeholder="https://example.com/game.gb" aria-label="ROM URL" />
-          <button id="load-url">Load</button>
+
+      <!-- Load a game for the chosen console -->
+      <div id="load-view" hidden>
+        <button id="back-to-consoles" class="back-btn">&larr; Consoles</button>
+        <h2 id="load-title" class="picker-title"></h2>
+        <label class="filebtn">
+          <input type="file" id="rom-input" accept=".gb,.gbc,.gba,.nes,.sfc,.smc,.n64,.z64,.v64,.nds,.pbp,.md,.gen,.smd,.gg,.sms,.pce,.vb,.a26,.a78,.lnx,.ngp,.ngc,.ws,.wsc,.col,.zip" />
+          <span>Choose a ROM file</span>
+        </label>
+        <p class="hint">Drag &amp; drop a ROM here, or click to browse.</p>
+        <details class="controls-help">
+          <summary>How do I play?</summary>
+          <p>Arrow keys move (D-pad). Prefer a mouse or touch? Once a game is running, turn on the on-screen controller from the controls below the screen. To see or remap every button for keyboard or gamepad, open the game's own menu from its control bar. On phones and tablets, EmulatorJS's touch controls also appear automatically.</p>
+        </details>
+        <div id="builtin" hidden>
+          <h2>Built-in games (free homebrew)</h2>
+          <ul id="builtin-list"></ul>
         </div>
-        <p class="hint">The host must allow cross-origin requests, or the fetch will be blocked.</p>
-      </details>
-      <p><button id="install-app" hidden>Install app</button></p>
-      <p id="picker-error" class="error" hidden role="alert"></p>
-      <div id="recent" hidden>
-        <div class="recent-head">
-          <h2>Recently played</h2>
-          <button id="clear-roms" class="recent-clear">Clear all</button>
-        </div>
-        <ul id="recent-list"></ul>
-        <p id="storage" class="hint"></p>
+        <details class="url-load">
+          <summary>Load from a URL</summary>
+          <div class="url-row">
+            <input type="url" id="rom-url" placeholder="https://example.com/game.gb" aria-label="ROM URL" />
+            <button id="load-url">Load</button>
+          </div>
+          <p class="hint">The host must allow cross-origin requests, or the fetch will be blocked.</p>
+        </details>
+        <p><button id="install-app" hidden>Install app</button></p>
+        <p id="picker-error" class="error" hidden role="alert"></p>
       </div>
     </section>
 

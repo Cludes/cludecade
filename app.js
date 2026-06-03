@@ -1134,20 +1134,28 @@ const CONSOLE_GROUPS = [
   ]],
 ];
 const consoleGrid = document.getElementById("console-grid");
-const consoleSelected = document.getElementById("console-selected");
+const consoleView = document.getElementById("console-view");
+const loadView = document.getElementById("load-view");
+const loadTitle = document.getElementById("load-title");
+const backToConsoles = document.getElementById("back-to-consoles");
 
-function selectConsole(core, label, btn) {
-  const deselect = selectedCore === core;
-  selectedCore = deselect ? null : core;
-  for (const el of consoleGrid.querySelectorAll(".console-btn")) {
-    const on = !deselect && el === btn;
-    el.classList.toggle("selected", on);
-    el.setAttribute("aria-pressed", on ? "true" : "false");
-  }
-  consoleSelected.textContent = selectedCore
-    ? label + " selected - now choose or drop a ROM and it'll load as " + label + "."
-    : "";
+// Home shows the console grid; picking one opens the load view for that console.
+function selectConsole(core, label) {
+  selectedCore = core;
+  if (loadTitle) loadTitle.textContent = "Load a " + label + " game";
+  if (consoleView) consoleView.hidden = true;
+  if (loadView) loadView.hidden = false;
+  hideError();
 }
+
+function showConsoleView() {
+  selectedCore = null;
+  if (loadView) loadView.hidden = true;
+  if (consoleView) consoleView.hidden = false;
+  hideError();
+}
+
+if (backToConsoles) backToConsoles.addEventListener("click", showConsoleView);
 
 if (consoleGrid) {
   for (const [groupName, items] of CONSOLE_GROUPS) {
@@ -1163,8 +1171,7 @@ if (consoleGrid) {
       b.className = "console-btn";
       b.textContent = label;
       b.dataset.core = core;
-      b.setAttribute("aria-pressed", "false");
-      b.addEventListener("click", () => selectConsole(core, label, b));
+      b.addEventListener("click", () => selectConsole(core, label));
       btns.appendChild(b);
     }
     group.append(lbl, btns);

@@ -128,7 +128,7 @@ main {
   color: #0e1014;
   border-color: var(--accent);
 }
-#console-selected { margin-top: 0; min-height: 1.1rem; }
+.back-btn { margin: 0 0 0.85rem; font-size: 0.82rem; }
 
 .filebtn {
   display: inline-block;
