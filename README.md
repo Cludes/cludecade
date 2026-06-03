@@ -1,4 +1,4 @@
-# Browser Game Boy
+# Cludecade
 
 A zero-backend retro emulator that runs entirely in the browser and deploys to GitHub Pages via GitHub Actions. Bring your own ROM; it never leaves your device.
 

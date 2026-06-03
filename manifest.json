@@ -1,6 +1,6 @@
 {
-  "name": "Browser Game Boy",
-  "short_name": "GameBoy",
+  "name": "Cludecade",
+  "short_name": "Cludecade",
   "description": "A browser-based retro emulator. Your ROM never leaves your device.",
   "start_url": "./",
   "scope": "./",
