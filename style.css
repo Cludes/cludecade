@@ -247,6 +247,45 @@ a:focus-visible {
 }
 #storage { margin-top: 0.8rem; text-align: left; }
 
+#builtin { margin: 2rem auto 0; max-width: 440px; text-align: left; }
+#builtin h2 {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.6rem;
+}
+#builtin-list { list-style: none; margin: 0; padding: 0; }
+#builtin-list li { margin-bottom: 0.4rem; }
+.builtin-game {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+}
+.builtin-game:hover:not(:disabled) { border-color: var(--accent); background: #222740; transform: none; }
+.b-name { font-weight: 600; }
+.b-meta { font-size: 0.72rem; color: var(--muted); }
+
+.url-load { max-width: 440px; margin: 1rem auto 0; text-align: left; }
+.url-load > summary { cursor: pointer; color: var(--accent); width: fit-content; margin: 0 auto; }
+.url-row { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
+#rom-url {
+  flex: 1;
+  min-width: 0;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.85rem;
+}
+.url-load .hint { text-align: center; margin-top: 0.6rem; }
+
 #game {
   width: 100%;
   aspect-ratio: 10 / 9;

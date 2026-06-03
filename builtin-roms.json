@@ -1,0 +1,9 @@
+[
+  {
+    "name": "uCity",
+    "file": "roms/ucity.gbc",
+    "system": "Game Boy Color",
+    "by": "AntonioND",
+    "license": "GPLv3"
+  }
+]

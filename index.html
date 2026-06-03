@@ -50,6 +50,18 @@
         <summary>How do I play?</summary>
         <p>Arrow keys move (D-pad). Prefer a mouse or touch? Once a game is running, turn on the on-screen joystick (with A, B, Start and Select) from the controls below the screen. To see or remap every button for keyboard or gamepad, open the game's own menu from its control bar. On phones and tablets, EmulatorJS's touch controls also appear automatically.</p>
       </details>
+      <div id="builtin" hidden>
+        <h2>Built-in games (free homebrew)</h2>
+        <ul id="builtin-list"></ul>
+      </div>
+      <details class="url-load">
+        <summary>Load from a URL</summary>
+        <div class="url-row">
+          <input type="url" id="rom-url" placeholder="https://example.com/game.gb" aria-label="ROM URL" />
+          <button id="load-url">Load</button>
+        </div>
+        <p class="hint">The host must allow cross-origin requests, or the fetch will be blocked.</p>
+      </details>
       <p><button id="install-app" hidden>Install app</button></p>
       <p id="picker-error" class="error" hidden role="alert"></p>
       <div id="recent" hidden>

@@ -57,6 +57,10 @@ const recentWrap = document.getElementById("recent");
 const recentList = document.getElementById("recent-list");
 const storageEl = document.getElementById("storage");
 const clearRomsBtn = document.getElementById("clear-roms");
+const builtinWrap = document.getElementById("builtin");
+const builtinList = document.getElementById("builtin-list");
+const romUrlInput = document.getElementById("rom-url");
+const loadUrlBtn = document.getElementById("load-url");
 const gameWrap = document.getElementById("game-wrap");
 const loadingEl = document.getElementById("loading");
 const saveControls = document.getElementById("save-controls");
@@ -119,18 +123,53 @@ function hideError() {
   pickerError.hidden = true;
 }
 
-// Validate, persist for quick-resume, then boot.
-async function loadRomFile(file) {
+// Validate, persist for quick-resume, then boot. Shared by the file picker,
+// drag-drop, the built-in shelf, and load-from-URL.
+async function loadRomData(name, bytes) {
   hideError();
-  const bytes = new Uint8Array(await file.arrayBuffer());
-  const core = await detectCore(file.name, bytes);
+  const core = await detectCore(name, bytes);
   if (!core) {
-    showError("Unsupported or unrecognised ROM: " + file.name);
+    showError("Unsupported or unrecognised ROM: " + name);
     return;
   }
   // Persist for resume; ignore quota/permission errors so play still works.
-  await saveRom(file.name, core, bytes).catch(() => {});
-  bootFromBytes(file.name, core, bytes);
+  await saveRom(name, core, bytes).catch(() => {});
+  bootFromBytes(name, core, bytes);
+}
+
+async function loadRomFile(file) {
+  loadRomData(file.name, new Uint8Array(await file.arrayBuffer()));
+}
+
+// Load a ROM from any URL the user pastes (we host nothing). Subject to the
+// remote host's CORS policy.
+async function loadRomFromUrl(url) {
+  hideError();
+  let res;
+  try {
+    res = await fetch(url);
+  } catch (e) {
+    showError("Could not fetch that URL (network or CORS blocked).");
+    return;
+  }
+  if (!res.ok) {
+    showError("Could not fetch ROM (HTTP " + res.status + ").");
+    return;
+  }
+  const name = (url.split("/").pop() || "game").split("?")[0] || "game";
+  loadRomData(name, new Uint8Array(await res.arrayBuffer()));
+}
+
+// Load a bundled homebrew ROM (same-origin asset).
+async function loadBuiltin(file) {
+  hideError();
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    loadRomData(file.split("/").pop(), new Uint8Array(await res.arrayBuffer()));
+  } catch (e) {
+    showError("Could not load built-in game: " + e.message);
+  }
 }
 
 // Resolve a core from the filename, peeking inside zips when needed.
@@ -956,6 +995,40 @@ function readZipEntries(bytes) {
 }
 
 renderRecent();
+
+// Load from URL.
+function submitUrl() {
+  const url = romUrlInput.value.trim();
+  if (url) loadRomFromUrl(url);
+}
+loadUrlBtn.addEventListener("click", submitUrl);
+romUrlInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") submitUrl();
+});
+
+// Built-in homebrew shelf, driven by builtin-roms.json.
+fetch("builtin-roms.json")
+  .then((r) => (r.ok ? r.json() : []))
+  .then((list) => {
+    if (!Array.isArray(list) || !list.length) return;
+    builtinWrap.hidden = false;
+    for (const g of list) {
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.className = "builtin-game";
+      const name = document.createElement("span");
+      name.className = "b-name";
+      name.textContent = g.name;
+      const meta = document.createElement("span");
+      meta.className = "b-meta";
+      meta.textContent = [g.system, g.by ? "by " + g.by : "", g.license].filter(Boolean).join(" · ");
+      btn.append(name, meta);
+      btn.addEventListener("click", () => loadBuiltin(g.file));
+      li.append(btn);
+      builtinList.append(li);
+    }
+  })
+  .catch(() => {});
 
 // Register the service worker for installability + instant offline shell.
 if ("serviceWorker" in navigator) {

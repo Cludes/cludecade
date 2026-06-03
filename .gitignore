@@ -10,6 +10,9 @@
 *.srm
 *.state
 
+# Bundled free homebrew (explicitly allowed - see ROMS-CREDITS.md)
+!roms/ucity.gbc
+
 # OS noise
 .DS_Store
 Thumbs.db
