@@ -189,22 +189,28 @@ function hideError() {
   pickerError.hidden = true;
 }
 
+// Console chosen on the front page (null = auto-detect from the file extension).
+let selectedCore = null;
+// Don't cache very large ROMs (PS1 / N64 etc.) for quick-resume - it would fill
+// IndexedDB. They still play, just won't appear in the recent list.
+const MAX_CACHE_BYTES = 48 * 1024 * 1024;
+
 // Validate, persist for quick-resume, then boot. Shared by the file picker,
-// drag-drop, the built-in shelf, and load-from-URL.
-async function loadRomData(name, bytes) {
+// drag-drop, the built-in shelf, and load-from-URL. coreOverride forces a core
+// (used when a console is picked, e.g. for disc images detection can't identify).
+async function loadRomData(name, bytes, coreOverride) {
   hideError();
-  const core = await detectCore(name, bytes);
+  const core = coreOverride || (await detectCore(name, bytes));
   if (!core) {
-    showError("Unsupported or unrecognised ROM: " + name);
+    showError("Unsupported or unrecognised ROM: " + name + ". Pick a console above if it can't be auto-detected.");
     return;
   }
-  // Persist for resume; ignore quota/permission errors so play still works.
-  await saveRom(name, core, bytes).catch(() => {});
+  if (bytes.length <= MAX_CACHE_BYTES) await saveRom(name, core, bytes).catch(() => {});
   bootFromBytes(name, core, bytes);
 }
 
 async function loadRomFile(file) {
-  loadRomData(file.name, new Uint8Array(await file.arrayBuffer()));
+  loadRomData(file.name, new Uint8Array(await file.arrayBuffer()), selectedCore);
 }
 
 // Load a ROM from any URL the user pastes (we host nothing). Subject to the
@@ -1107,6 +1113,58 @@ fetch("builtin-roms.json")
     }
   })
   .catch(() => {});
+
+// --- Console picker on the front page ---
+// Pick a console and the next ROM you load is forced to that core. Lets disc
+// systems (PlayStation etc.) and ambiguous formats load without guessing.
+const CONSOLE_LIST = [
+  ["gb", "Game Boy"],
+  ["gbc", "Game Boy Color"],
+  ["gba", "Game Boy Advance"],
+  ["nes", "NES"],
+  ["snes", "SNES"],
+  ["n64", "Nintendo 64"],
+  ["nds", "Nintendo DS"],
+  ["psx", "PlayStation"],
+  ["segaMD", "Genesis"],
+  ["segaGG", "Game Gear"],
+  ["segaMS", "Master System"],
+  ["pce", "PC Engine"],
+  ["vb", "Virtual Boy"],
+  ["atari2600", "Atari 2600"],
+  ["atari7800", "Atari 7800"],
+  ["lynx", "Lynx"],
+  ["ngp", "Neo Geo Pocket"],
+  ["ws", "WonderSwan"],
+  ["coleco", "ColecoVision"],
+];
+const consoleGrid = document.getElementById("console-grid");
+const consoleSelected = document.getElementById("console-selected");
+
+function selectConsole(core, label, btn) {
+  const deselect = selectedCore === core;
+  selectedCore = deselect ? null : core;
+  for (const el of consoleGrid.querySelectorAll(".console-btn")) {
+    const on = !deselect && el === btn;
+    el.classList.toggle("selected", on);
+    el.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  consoleSelected.textContent = selectedCore
+    ? label + " selected - now choose or drop a ROM and it'll load as " + label + "."
+    : "";
+}
+
+if (consoleGrid) {
+  for (const [core, label] of CONSOLE_LIST) {
+    const b = document.createElement("button");
+    b.className = "console-btn";
+    b.textContent = label;
+    b.dataset.core = core;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", () => selectConsole(core, label, b));
+    consoleGrid.appendChild(b);
+  }
+}
 
 // Register the service worker for installability + instant offline shell.
 if ("serviceWorker" in navigator) {
