@@ -9,6 +9,10 @@ const CORES = {
   snes: "snes",
 };
 
+// EmulatorJS core name to request. The gambatte "gb" core handles both Game Boy
+// and Game Boy Color - EmulatorJS has no "gbc" core, so requesting it 404s.
+const EJS_CORE = { gb: "gb", gbc: "gb", gba: "gba", nes: "nes", snes: "snes" };
+
 // Friendly system names for the "Now playing" badge.
 const SYSTEMS = {
   gb: "Game Boy",
@@ -202,7 +206,7 @@ async function bootEmulator(core, romUrl, fileName) {
   loadingEl.hidden = false;
 
   window.EJS_player = "#game";
-  window.EJS_core = core;
+  window.EJS_core = EJS_CORE[core] || core;
   window.EJS_gameUrl = romUrl;
   // A blob: URL changes every session; pin the storage key to the filename so
   // auto-saved SRAM and save states survive page reloads.
