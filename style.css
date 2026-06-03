@@ -219,15 +219,29 @@ main {
 }
 .console-btn:active:not(:disabled) { transform: translateY(-1px); }
 .console-btn:focus-visible { outline-color: var(--brand, var(--accent)); }
-.back-btn { margin: 0 0 0.85rem; font-size: 0.82rem; }
+/* Quiet ghost back control rather than a heavy dark button. */
+.back-btn {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  background: none;
+  border: 1px solid transparent;
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+.back-btn:hover:not(:disabled) {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+  transform: none;
+}
 
 .filebtn {
   display: inline-block;
   cursor: pointer;
   background: var(--accent-grad);
   color: var(--accent-contrast);
-  padding: 0.85rem 1.6rem;
-  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--r-md);
   font-weight: 700;
   border: 1px solid rgba(155, 188, 15, 0.6);
   box-shadow: var(--shadow-sm);
@@ -265,13 +279,13 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-.hint { color: var(--muted); font-size: 0.82rem; margin-top: 1.25rem; line-height: 1.6; }
+.hint { color: var(--muted); font-size: var(--text-xs); margin-top: var(--space-4); line-height: 1.6; }
 
 .controls-help {
   max-width: 440px;
-  margin: 1rem auto 0;
+  margin: var(--space-4) auto 0;
   text-align: left;
-  font-size: 0.82rem;
+  font-size: var(--text-xs);
 }
 .controls-help summary {
   cursor: pointer;
@@ -363,7 +377,7 @@ a:focus-visible {
 }
 #storage { margin-top: 0.8rem; text-align: left; }
 
-#builtin { margin: 2rem auto 0; max-width: 440px; text-align: left; }
+#builtin { margin: var(--space-5) auto 0; max-width: 440px; text-align: left; }
 #builtin h2 {
   font-size: 0.8rem;
   color: var(--muted);
@@ -387,7 +401,7 @@ a:focus-visible {
 .b-name { font-weight: 600; }
 .b-meta { font-size: 0.72rem; color: var(--muted); }
 
-.url-load { max-width: 440px; margin: 1rem auto 0; text-align: left; }
+.url-load { max-width: 440px; margin: var(--space-4) auto 0; text-align: left; }
 .url-load > summary { cursor: pointer; color: var(--accent); width: fit-content; margin: 0 auto; }
 .url-row { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
 #rom-url {
