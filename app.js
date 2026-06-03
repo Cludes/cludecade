@@ -27,6 +27,7 @@ let currentFileName = "";
 let currentCore = "";
 let emulatorReady = false;
 let bootTimer = null;
+let gameRunning = false;
 
 // Curated per-game cheat database, auto-applied when a matching ROM loads.
 // Loaded once at startup; matching is done by normalised filename.
@@ -241,7 +242,9 @@ async function bootEmulator(core, romUrl, fileName) {
 
 function onEmulatorReady() {
   emulatorReady = true;
+  gameRunning = true;
   if (bootTimer) clearTimeout(bootTimer);
+  updateControls();
   loadingEl.hidden = true;
   saveControls.hidden = false;
   nowPlayingName.textContent = currentFileName;
@@ -1175,9 +1178,13 @@ function reflectToggle(btn, on) {
 // skin additionally wraps the screen in the console body.
 function updateControls() {
   if (!joystick) return;
-  const show = joystickOn || skinOn;
+  // The skin only takes over once a game is actually running, so the picker
+  // stays clean and loadable even when the skin setting is remembered.
+  const skinActive = skinOn && gameRunning;
+  const show = joystickOn || skinActive;
   joystick.hidden = !show;
-  if (gameWrap) gameWrap.classList.toggle("gb-skin", skinOn);
+  if (gameWrap) gameWrap.classList.toggle("gb-skin", skinActive);
+  document.body.classList.toggle("skin-mode", skinActive);
   if (!show) releaseJoystick();
 }
 
