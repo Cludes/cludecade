@@ -320,6 +320,18 @@
       [
         "Buy Rare Candy in Mart",
         "0120EECF"
+      ],
+      [
+        "99 of first bag item",
+        "0163ACD5"
+      ],
+      [
+        "99 of first Poke Ball slot",
+        "0163F1D5"
+      ],
+      [
+        "99 of first TM/HM slot",
+        "01638FD5"
       ]
     ]
   },

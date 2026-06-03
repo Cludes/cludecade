@@ -54,4 +54,5 @@ Autonomous improvement log. One line per shipped item: date, what shipped, commi
 - 2026-06-02 - Fix screen letterboxing: set the #game aspect ratio per system (GB/GBC 10:9, GBA 3:2, NES 8:7, SNES 4:3) so games fill the frame in and out of the skin - 8778503
 - 2026-06-02 - Disable EmulatorJS right-click context menu (EJS_Buttons.rightClick=false) - it popped up over the screen on right-click/trackpad tap; options remain in the bottom control bar - 8ed6c69
 - 2026-06-02 - Enlarge the immersive Game Boy console (max-width 460 -> 540px / 96vw) so it fills more of the screen and the emulator control bar has room - 9efe84f
-- 2026-06-02 - Scale the Game Boy faceplate D-pad and A/B buttons down under 480px so the controls fit narrow phones - pending
+- 2026-06-02 - Scale the Game Boy faceplate D-pad and A/B buttons down under 480px so the controls fit narrow phones - 246babc
+- 2026-06-02 - Add 3 verified Gold/Silver cheats from libretro (99 of first bag item / Poke Ball / TM slot); rest of GBC GameShark data too messy to use - pending
