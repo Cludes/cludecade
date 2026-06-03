@@ -22,6 +22,9 @@ const SYSTEMS = {
   snes: "SNES",
 };
 
+// Screen aspect ratio per core so games fill the frame instead of letterboxing.
+const ASPECT = { gb: "10 / 9", gbc: "10 / 9", gba: "3 / 2", nes: "8 / 7", snes: "4 / 3" };
+
 let romName = "game";
 let currentFileName = "";
 let currentCore = "";
@@ -249,6 +252,12 @@ function onEmulatorReady() {
   saveControls.hidden = false;
   nowPlayingName.textContent = currentFileName;
   nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
+  // Match the screen box to the system so games fill it (no letterboxing).
+  const gameEl = document.getElementById("game");
+  if (gameEl) {
+    gameEl.style.aspectRatio = ASPECT[currentCore] || "10 / 9";
+    window.dispatchEvent(new Event("resize"));
+  }
   exportSavBtn.disabled = false;
   importSavInput.disabled = false;
   exportStateBtn.disabled = false;
