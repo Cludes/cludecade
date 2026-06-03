@@ -1,18 +1,78 @@
 :root {
   color-scheme: dark;
+
+  /* ---- Surfaces: background ramp to raised controls ---- */
   --bg: #0e1014;
   --bg-2: #0a0c10;
-  --panel: #171a23;
-  --panel-2: #1c2030;
+  --surface-1: #171a23;   /* cards, panels */
+  --surface-2: #1c2030;   /* inputs, secondary buttons */
+  --surface-3: #222740;   /* hover / active surface */
+  --panel: var(--surface-1);    /* legacy aliases */
+  --panel-2: var(--surface-2);
+
+  /* ---- Text ramp ---- */
+  --text: #e8eaf1;        /* primary */
+  --text-2: #b6bccb;      /* secondary */
+  --muted: #969db0;       /* tertiary / hints */
+
+  /* ---- Accent (Game Boy green heritage) ---- */
   --accent: #9bbc0f;
+  --accent-bright: #c7e34a;
   --accent-dark: #2f5e2c;
-  --text: #e8eaf1;
-  --muted: #969db0;
+  --accent-contrast: #0e1014;   /* text on an accent fill */
+  --accent-soft: rgba(155, 188, 15, 0.12);
+  --accent-soft-border: rgba(155, 188, 15, 0.32);
+  --accent-grad: linear-gradient(180deg, #b6da1e, #7f9c0c);
+
+  /* ---- Brand colours (console families) ---- */
+  --brand-nintendo: #e60012;
+  --brand-sony: #2e6fdb;
+  --brand-sega: #1c9bd8;
+  --brand-other: #9bbc0f;
+
+  /* ---- Lines ---- */
   --border: #272c3a;
-  --radius: 14px;
-  --radius-sm: 9px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --border-strong: #3a4255;
+
+  /* ---- Semantic ---- */
+  --danger: #c0504a;
+  --danger-text: #ff9a9a;
+  --error: #ff8e8e;
+
+  /* ---- Radius scale ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+  --radius: 14px;         /* legacy alias */
+  --radius-sm: 9px;       /* legacy alias */
+
+  /* ---- Spacing scale (8px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* ---- Type ---- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-md: 0.92rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2rem;
+
+  /* ---- Elevation ---- */
+  --e1: 0 2px 8px rgba(0, 0, 0, 0.30);
+  --e2: 0 8px 24px rgba(0, 0, 0, 0.38);
+  --e3: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow: var(--e3);          /* legacy alias */
+  --shadow-sm: var(--e1);       /* legacy alias */
 }
 
 * { box-sizing: border-box; }
@@ -24,11 +84,11 @@ html { scrollbar-color: var(--border) transparent; scrollbar-width: thin; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: #3a4255; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: var(--font-sans);
   color: var(--text);
   min-height: 100vh;
   display: flex;
@@ -53,7 +113,7 @@ h1 {
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(180deg, #c7e34a, var(--accent));
+  background: linear-gradient(180deg, var(--accent-bright), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -144,7 +204,7 @@ main {
 }
 .console-btn:hover:not(:disabled) {
   transform: translateY(-3px);
-  background: #20243a;
+  background: var(--surface-3);
   border-color: var(--brand, var(--accent));
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
 }
@@ -155,8 +215,8 @@ main {
 .filebtn {
   display: inline-block;
   cursor: pointer;
-  background: linear-gradient(180deg, #b6da1e, #7f9c0c);
-  color: #0e1014;
+  background: var(--accent-grad);
+  color: var(--accent-contrast);
   padding: 0.85rem 1.6rem;
   border-radius: var(--radius-sm);
   font-weight: 700;
@@ -213,7 +273,7 @@ a:focus-visible {
 .controls-help p { color: var(--muted); margin: 0.5rem 0 0; line-height: 1.6; }
 
 .error {
-  color: #ff8e8e;
+  color: var(--error);
   font-size: 0.85rem;
   margin-top: 1rem;
 }
@@ -263,7 +323,7 @@ a:focus-visible {
 }
 .recent-resume:hover {
   border-color: var(--accent);
-  background: #222740;
+  background: var(--surface-3);
   transform: translateY(-1px);
 }
 .recent-top {
@@ -314,7 +374,7 @@ a:focus-visible {
   border: 1px solid var(--border);
   padding: 0.6rem 0.75rem;
 }
-.builtin-game:hover:not(:disabled) { border-color: var(--accent); background: #222740; transform: none; }
+.builtin-game:hover:not(:disabled) { border-color: var(--accent); background: var(--surface-3); transform: none; }
 .b-name { font-weight: 600; }
 .b-meta { font-size: 0.72rem; color: var(--muted); }
 
@@ -375,7 +435,7 @@ a:focus-visible {
 /* Active state for the control toggle buttons. */
 #controls-row button.active {
   background: var(--accent);
-  color: #0e1014;
+  color: var(--accent-contrast);
   border-color: var(--accent);
 }
 
@@ -618,8 +678,8 @@ a:focus-visible {
   border-radius: 50%;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0e1014;
-  background: linear-gradient(180deg, #b6da1e, #7f9c0c);
+  color: var(--accent-contrast);
+  background: var(--accent-grad);
   border: 1px solid rgba(155, 188, 15, 0.55);
   box-shadow: var(--shadow-sm);
   touch-action: none;
@@ -627,7 +687,7 @@ a:focus-visible {
   -webkit-user-select: none;
 }
 .action-btn:hover:not(:disabled) {
-  background: linear-gradient(180deg, #c2e62a, #8aac0d);
+  background: linear-gradient(180deg, var(--accent-bright), #8aac0d);
   border-color: rgba(155, 188, 15, 0.7);
   transform: none;
 }
@@ -654,7 +714,7 @@ a:focus-visible {
   height: 60px;
   margin: -30px 0 0 -30px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #b6da1e, #7f9c0c);
+  background: var(--accent-grad);
   border: 1px solid rgba(155, 188, 15, 0.6);
   box-shadow: var(--shadow-sm);
   transition: transform 0.08s ease-out;
@@ -747,16 +807,16 @@ button {
   font-size: 0.85rem;
   transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease;
 }
-button:hover:not(:disabled) { border-color: var(--accent); background: #222740; transform: translateY(-1px); }
+button:hover:not(:disabled) { border-color: var(--accent); background: var(--surface-3); transform: translateY(-1px); }
 button:active:not(:disabled) { transform: translateY(0); }
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* Destructive actions (clear all, remove a game) signal intent on hover. */
 .recent-clear:hover:not(:disabled),
 .recent-del:hover:not(:disabled) {
-  border-color: #c0504a;
+  border-color: var(--danger);
   background: rgba(192, 80, 74, 0.16);
-  color: #ff9a9a;
+  color: var(--danger-text);
 }
 
 select {
@@ -807,7 +867,7 @@ select:hover { border-color: var(--accent); }
   animation: spin 0.7s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-#loading.failed { color: #ff8e8e; }
+#loading.failed { color: var(--error); }
 #loading.failed::before { display: none; }
 
 footer p { color: var(--muted); font-size: 0.78rem; max-width: 600px; margin: 0.3rem auto; }
