@@ -1117,26 +1117,18 @@ fetch("builtin-roms.json")
 // --- Console picker on the front page ---
 // Pick a console and the next ROM you load is forced to that core. Lets disc
 // systems (PlayStation etc.) and ambiguous formats load without guessing.
-const CONSOLE_LIST = [
-  ["gb", "Game Boy"],
-  ["gbc", "Game Boy Color"],
-  ["gba", "Game Boy Advance"],
-  ["nes", "NES"],
-  ["snes", "SNES"],
-  ["n64", "Nintendo 64"],
-  ["nds", "Nintendo DS"],
-  ["psx", "PlayStation"],
-  ["segaMD", "Genesis"],
-  ["segaGG", "Game Gear"],
-  ["segaMS", "Master System"],
-  ["pce", "PC Engine"],
-  ["vb", "Virtual Boy"],
-  ["atari2600", "Atari 2600"],
-  ["atari7800", "Atari 7800"],
-  ["lynx", "Lynx"],
-  ["ngp", "Neo Geo Pocket"],
-  ["ws", "WonderSwan"],
-  ["coleco", "ColecoVision"],
+const CONSOLE_GROUPS = [
+  ["Nintendo", [
+    ["gb", "Game Boy"], ["gbc", "Game Boy Color"], ["gba", "Game Boy Advance"],
+    ["nes", "NES"], ["snes", "SNES"], ["n64", "Nintendo 64"], ["nds", "Nintendo DS"],
+  ]],
+  ["Sony", [["psx", "PlayStation"]]],
+  ["Sega", [["segaMD", "Genesis"], ["segaGG", "Game Gear"], ["segaMS", "Master System"]]],
+  ["Other", [
+    ["pce", "PC Engine"], ["vb", "Virtual Boy"], ["atari2600", "Atari 2600"],
+    ["atari7800", "Atari 7800"], ["lynx", "Lynx"], ["ngp", "Neo Geo Pocket"],
+    ["ws", "WonderSwan"], ["coleco", "ColecoVision"],
+  ]],
 ];
 const consoleGrid = document.getElementById("console-grid");
 const consoleSelected = document.getElementById("console-selected");
@@ -1155,14 +1147,25 @@ function selectConsole(core, label, btn) {
 }
 
 if (consoleGrid) {
-  for (const [core, label] of CONSOLE_LIST) {
-    const b = document.createElement("button");
-    b.className = "console-btn";
-    b.textContent = label;
-    b.dataset.core = core;
-    b.setAttribute("aria-pressed", "false");
-    b.addEventListener("click", () => selectConsole(core, label, b));
-    consoleGrid.appendChild(b);
+  for (const [groupName, items] of CONSOLE_GROUPS) {
+    const group = document.createElement("div");
+    group.className = "console-group";
+    const lbl = document.createElement("span");
+    lbl.className = "cg-label";
+    lbl.textContent = groupName;
+    const btns = document.createElement("div");
+    btns.className = "cg-btns";
+    for (const [core, label] of items) {
+      const b = document.createElement("button");
+      b.className = "console-btn";
+      b.textContent = label;
+      b.dataset.core = core;
+      b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", () => selectConsole(core, label, b));
+      btns.appendChild(b);
+    }
+    group.append(lbl, btns);
+    consoleGrid.appendChild(group);
   }
 }
 

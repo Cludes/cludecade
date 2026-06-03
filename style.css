@@ -107,12 +107,21 @@ main {
 
 #console-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-  max-width: 580px;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 600px;
   margin: 0 auto 0.6rem;
 }
+.console-group { display: flex; align-items: baseline; gap: 0.5rem; }
+.cg-label {
+  flex: 0 0 64px;
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.cg-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .console-btn { font-size: 0.78rem; padding: 0.4rem 0.7rem; }
 .console-btn.selected {
   background: var(--accent);
