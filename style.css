@@ -956,9 +956,17 @@ footer a:hover { text-decoration: underline; }
   .console-skin #joystick:not([hidden])::before,
   .console-skin #joystick:not([hidden])::after { display: none; }
   .console-skin #joystick:not([hidden]) { padding: 1.4rem 1.4rem 1.6rem; }
-  /* Stack the console-picker brand label above its buttons on narrow phones. */
-  .console-group { flex-direction: column; align-items: stretch; gap: 0.3rem; }
-  .cg-label { flex: none; text-align: left; }
+  /* Scale the console gamepad down so the d-pad + buttons don't overflow ~360px. */
+  .console-skin .joystick-main { gap: 1.4rem; }
+  .console-skin #joystick-base { width: 92px; height: 92px; }
+  .console-skin #joystick-base::before { width: 32px; height: 92px; }
+  .console-skin #joystick-base::after { width: 92px; height: 32px; }
+  .console-skin .action-btn { width: 44px; height: 44px; }
+  .console-skin[data-system="snes"] #joystick-actions,
+  .console-skin[data-system="psx"] #joystick-actions {
+    grid-template-columns: repeat(3, 44px);
+    grid-template-rows: repeat(3, 44px);
+  }
 }
 
 /* Honour reduced-motion preferences: no spinner rotation or transitions. */
