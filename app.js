@@ -1399,6 +1399,14 @@ const CONTROLLERS = {
   // N64: safe subset (A=8, B=0, L/R, Start). C-buttons and Z are omitted until their
   // per-core RetroPad mapping is verified; the N64 has no Select button.
   n64: { face: [["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Start", 3]] },
+  // Nintendo DS: A/B/X/Y diamond + L/R + Select/Start (maps directly to RetroPad).
+  nds: { face: [["Y", 1], ["X", 9], ["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
+  // Sega Master System / Game Gear (genesis_plus_gx): two fire buttons + Start.
+  // The 1/2 labels are best-effort; both are valid fire inputs (B=0, A=8).
+  segaMS: { face: [["1", 0], ["2", 8]], meta: [["Start", 3]] },
+  segaGG: { face: [["1", 0], ["2", 8]], meta: [["Start", 3]] },
+  // PC Engine / TurboGrafx-16: II / I + Select / Run (Run = Start). I/II best-effort.
+  pce: { face: [["II", 0], ["I", 8]], meta: [["Select", 2], ["Run", 3]] },
 };
 
 function makeHoldBtn(label, index, cls) {

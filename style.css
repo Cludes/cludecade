@@ -704,6 +704,20 @@ a:focus-visible {
   font-weight: 700;
 }
 
+/* Nintendo DS: A/B/X/Y diamond (same arrangement as SNES), neutral buttons. */
+.console-skin[data-system="nds"] #joystick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  grid-template-rows: repeat(3, 46px);
+  place-items: center;
+  max-width: none;
+  gap: 0.2rem;
+}
+.console-skin[data-system="nds"] .action-btn:nth-child(1) { grid-area: 2 / 1; }
+.console-skin[data-system="nds"] .action-btn:nth-child(2) { grid-area: 1 / 2; }
+.console-skin[data-system="nds"] .action-btn:nth-child(3) { grid-area: 3 / 2; }
+.console-skin[data-system="nds"] .action-btn:nth-child(4) { grid-area: 2 / 3; }
+
 /* Immersive mode: with a game running and the skin on, the Game Boy fills the
    view and the page chrome gets out of the way. */
 .skin-mode header,
@@ -965,7 +979,8 @@ footer a:hover { text-decoration: underline; }
   .console-skin #joystick-base::after { width: 92px; height: 32px; }
   .console-skin .action-btn { width: 44px; height: 44px; }
   .console-skin[data-system="snes"] #joystick-actions,
-  .console-skin[data-system="psx"] #joystick-actions {
+  .console-skin[data-system="psx"] #joystick-actions,
+  .console-skin[data-system="nds"] #joystick-actions {
     grid-template-columns: repeat(3, 44px);
     grid-template-rows: repeat(3, 44px);
   }
