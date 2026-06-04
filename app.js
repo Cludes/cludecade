@@ -388,6 +388,26 @@ function timestamp() {
   );
 }
 
+// --- Screenshot (uses EmulatorJS's core capture, writes a real PNG) ---
+
+const screenshotBtn = document.getElementById("screenshot-btn");
+async function takeScreenshot() {
+  const g = gm();
+  if (!g || typeof g.screenshot !== "function") {
+    setStatus("Screenshot not available yet.");
+    return;
+  }
+  try {
+    const data = await g.screenshot();
+    const base = (nowPlayingName.textContent || "screenshot").replace(/\.[^.]+$/, "") || "screenshot";
+    downloadBytes(data, base + "-" + timestamp() + ".png");
+    setStatus("Screenshot saved.");
+  } catch (e) {
+    setStatus("Screenshot failed.");
+  }
+}
+if (screenshotBtn) screenshotBtn.addEventListener("click", takeScreenshot);
+
 // --- In-game save (.sav / SRAM) ---
 
 exportSavBtn.addEventListener("click", () => {
