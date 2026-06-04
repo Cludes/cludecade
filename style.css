@@ -669,6 +669,13 @@ a:focus-visible {
 .console-skin[data-system="snes"] .action-btn:nth-child(4) { grid-area: 2 / 3; background: radial-gradient(circle at 35% 30%, #db5a4e, #c0392b); }
 .console-skin[data-system="snes"] .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
 
+/* NES: two round dark-red face buttons (B, A). */
+.console-skin[data-system="nes"] .action-btn {
+  background: radial-gradient(circle at 38% 30%, #d2424a, #9e1f29 72%);
+  border: 1px solid #6e121a;
+  color: #ffe2e4;
+}
+
 /* PlayStation: Sony face diamond - dark buttons, coloured symbols
    (Square pink / Triangle green / Cross blue / Circle red). DOM order: square, triangle, cross, circle. */
 .console-skin[data-system="psx"] #joystick-actions {
