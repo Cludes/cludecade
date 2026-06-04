@@ -518,7 +518,8 @@ a:focus-visible {
 .meta-btn.pressed { filter: brightness(0.85); transform: scale(0.96); }
 
 /* Active state for the control toggle buttons. */
-#controls-row button.active {
+#controls-row button.active,
+#fast-forward-btn.active {
   background: var(--accent);
   color: var(--accent-contrast);
   border-color: var(--accent);

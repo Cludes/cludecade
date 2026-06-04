@@ -408,6 +408,23 @@ async function takeScreenshot() {
 }
 if (screenshotBtn) screenshotBtn.addEventListener("click", takeScreenshot);
 
+// --- Fast-forward toggle (EmulatorJS core fast-forward, ratio ~3x) ---
+
+const fastForwardBtn = document.getElementById("fast-forward-btn");
+let fastForwardOn = false;
+function toggleFastForward() {
+  const g = gm();
+  if (!g || typeof g.toggleFastForward !== "function") {
+    setStatus("Fast-forward not available yet.");
+    return;
+  }
+  fastForwardOn = !fastForwardOn;
+  g.toggleFastForward(fastForwardOn ? 1 : 0);
+  reflectToggle(fastForwardBtn, fastForwardOn);
+  setStatus(fastForwardOn ? "Fast-forward on (3x)." : "Fast-forward off.");
+}
+if (fastForwardBtn) fastForwardBtn.addEventListener("click", toggleFastForward);
+
 // --- In-game save (.sav / SRAM) ---
 
 exportSavBtn.addEventListener("click", () => {
