@@ -1431,6 +1431,12 @@ const CONTROLLERS = {
   ws: { face: [["B", 0], ["A", 8]], meta: [["Start", 3]] },
 };
 
+// Inline SVG controller-body silhouettes, overlaid by the live HTML controls.
+// Hidden unless the console skin is active (CSS gates .pad-shell on .console-skin).
+const SHELLS = {
+  n64: `<svg class="pad-shell" viewBox="0 0 340 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><defs><linearGradient id="n64sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.5"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs><g fill="#cfd2d6"><rect x="40" y="116" width="56" height="110" rx="28"/><rect x="244" y="116" width="56" height="110" rx="28"/><rect x="148" y="22" width="44" height="216" rx="22"/><rect x="16" y="42" width="308" height="100" rx="50"/></g><rect x="16" y="42" width="308" height="100" rx="50" fill="url(#n64sheen)"/><circle cx="170" cy="127" r="33" fill="#b6b9be"/><circle cx="296" cy="100" r="22" fill="#bfc2c7"/><text x="296" y="105" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="#7d8085">C</text></svg>`,
+};
+
 function makeHoldBtn(label, index, cls) {
   const b = document.createElement("button");
   b.className = cls;
@@ -1446,6 +1452,11 @@ function renderController(core) {
   if (!joystickActions || !joystickMeta) return;
   const def = CONTROLLERS[core] || CONTROLLERS.gb;
   activeDpad = def.dpad || DPAD;
+  if (joystick) {
+    const prevShell = joystick.querySelector(".pad-shell");
+    if (prevShell) prevShell.remove();
+    if (SHELLS[core]) joystick.insertAdjacentHTML("afterbegin", SHELLS[core]);
+  }
   joystickActions.innerHTML = "";
   for (const [label, index] of def.face) joystickActions.appendChild(makeHoldBtn(label, index, "action-btn"));
   joystickMeta.innerHTML = "";
