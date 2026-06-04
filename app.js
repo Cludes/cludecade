@@ -834,6 +834,14 @@ async function renderRecent() {
     resume.title = "Resume " + rom.fileName;
     resume.addEventListener("click", () => resumeRom(rom.fileName));
 
+    const cover = document.createElement("span");
+    cover.className = "b-cover";
+    cover.textContent = (rom.fileName || "?").charAt(0).toUpperCase();
+    cover.style.setProperty("--cover", systemColor(SYSTEMS[rom.core] || ""));
+
+    const info = document.createElement("div");
+    info.className = "recent-info";
+
     const top = document.createElement("div");
     top.className = "recent-top";
 
@@ -853,7 +861,8 @@ async function renderRecent() {
     if (rom.playTime > 0) parts.push(formatDuration(rom.playTime) + " played");
     sub.textContent = parts.join(" · ");
 
-    resume.append(top, sub);
+    info.append(top, sub);
+    resume.append(cover, info);
 
     const del = document.createElement("button");
     del.className = "recent-del";
