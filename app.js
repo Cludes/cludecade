@@ -1139,16 +1139,34 @@ function makeBuiltinButton(g) {
   return li;
 }
 
+let builtinGames = [];
+
+// The core a built-in game runs on, derived from its file extension.
+function gameCore(g) {
+  const ext = (g.file || "").split(".").pop().toLowerCase();
+  return CORES[ext] || null;
+}
+
+// Load view: show only the example games for the currently selected console.
+function renderBuiltinForCore(core) {
+  if (!builtinList || !builtinWrap) return;
+  builtinList.innerHTML = "";
+  const matches = builtinGames.filter((g) => gameCore(g) === core);
+  for (const g of matches) builtinList.append(makeBuiltinButton(g));
+  builtinWrap.hidden = matches.length === 0;
+}
+
 fetch("builtin-roms.json")
   .then((r) => (r.ok ? r.json() : []))
   .then((list) => {
     if (!Array.isArray(list) || !list.length) return;
-    if (builtinWrap) builtinWrap.hidden = false;
+    builtinGames = list;
+    // Home shelf shows every example ("try anything").
     if (homeExamples) homeExamples.hidden = false;
     for (const g of list) {
-      if (builtinList) builtinList.append(makeBuiltinButton(g));
       if (examplesList) examplesList.append(makeBuiltinButton(g));
     }
+    if (selectedCore) renderBuiltinForCore(selectedCore);
   })
   .catch(() => {});
 
@@ -1178,6 +1196,7 @@ const backToConsoles = document.getElementById("back-to-consoles");
 function selectConsole(core, label) {
   selectedCore = core;
   if (loadTitle) loadTitle.textContent = "Load a " + label + " game";
+  renderBuiltinForCore(core);
   if (consoleView) consoleView.hidden = true;
   if (loadView) loadView.hidden = false;
   hideError();
