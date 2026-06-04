@@ -1,5 +1,12 @@
 [
   {
+    "name": "2048",
+    "file": "roms/2048.gb",
+    "system": "Game Boy",
+    "by": "Sanqui",
+    "license": "Zlib"
+  },
+  {
     "name": "uCity",
     "file": "roms/ucity.gbc",
     "system": "Game Boy Color",

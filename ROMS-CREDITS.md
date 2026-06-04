@@ -12,6 +12,16 @@ The games under `roms/` are free, legally redistributable homebrew - not commerc
 
 The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
 
+## 2048 (`roms/2048.gb`)
+
+- A Game Boy port of the 2048 sliding-tile puzzle.
+- Author: Sanqui
+- License: Zlib
+- Source: https://github.com/Sanqui/2048-gb
+- ROM: http://sanqui.rustedlogic.net/etc/2048.gb
+
+Distributed here under the permissive Zlib license; source is available at the link above.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).
