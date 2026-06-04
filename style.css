@@ -380,6 +380,20 @@ a:focus-visible {
 }
 #storage { margin-top: 0.8rem; text-align: left; }
 
+/* Prominent "try one of these" example-games shelf on the home screen. */
+#home-examples { margin: var(--space-6) auto 0; max-width: 460px; text-align: center; }
+.examples-head {
+  font-size: var(--text-sm);
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-1);
+}
+.examples-hint { margin-top: 0; }
+#examples-list { list-style: none; margin: var(--space-3) 0 0; padding: 0; text-align: left; }
+#examples-list li { margin-bottom: var(--space-2); }
+#examples-list .builtin-game { border-radius: var(--r-md); }
+
 #builtin { margin: var(--space-5) auto 0; max-width: 440px; text-align: left; }
 #builtin h2 {
   font-size: 0.8rem;

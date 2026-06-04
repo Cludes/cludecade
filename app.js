@@ -1093,26 +1093,36 @@ romUrlInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") submitUrl();
 });
 
-// Built-in homebrew shelf, driven by builtin-roms.json.
+// Built-in homebrew shelf, driven by builtin-roms.json. Rendered both as a
+// prominent "try one of these" shelf on the home and in the per-console load view.
+const homeExamples = document.getElementById("home-examples");
+const examplesList = document.getElementById("examples-list");
+
+function makeBuiltinButton(g) {
+  const li = document.createElement("li");
+  const btn = document.createElement("button");
+  btn.className = "builtin-game";
+  const name = document.createElement("span");
+  name.className = "b-name";
+  name.textContent = g.name;
+  const meta = document.createElement("span");
+  meta.className = "b-meta";
+  meta.textContent = [g.system, g.by ? "by " + g.by : "", g.license].filter(Boolean).join(" · ");
+  btn.append(name, meta);
+  btn.addEventListener("click", () => loadBuiltin(g.file));
+  li.append(btn);
+  return li;
+}
+
 fetch("builtin-roms.json")
   .then((r) => (r.ok ? r.json() : []))
   .then((list) => {
     if (!Array.isArray(list) || !list.length) return;
-    builtinWrap.hidden = false;
+    if (builtinWrap) builtinWrap.hidden = false;
+    if (homeExamples) homeExamples.hidden = false;
     for (const g of list) {
-      const li = document.createElement("li");
-      const btn = document.createElement("button");
-      btn.className = "builtin-game";
-      const name = document.createElement("span");
-      name.className = "b-name";
-      name.textContent = g.name;
-      const meta = document.createElement("span");
-      meta.className = "b-meta";
-      meta.textContent = [g.system, g.by ? "by " + g.by : "", g.license].filter(Boolean).join(" · ");
-      btn.append(name, meta);
-      btn.addEventListener("click", () => loadBuiltin(g.file));
-      li.append(btn);
-      builtinList.append(li);
+      if (builtinList) builtinList.append(makeBuiltinButton(g));
+      if (examplesList) examplesList.append(makeBuiltinButton(g));
     }
   })
   .catch(() => {});
