@@ -28,6 +28,13 @@
     "license": "GPLv3"
   },
   {
+    "name": "Concentration Room",
+    "file": "roms/croom.nes",
+    "system": "NES",
+    "by": "Damian Yerrick",
+    "license": "GPLv3"
+  },
+  {
     "name": "uCity",
     "file": "roms/ucity.gbc",
     "system": "Game Boy Color",

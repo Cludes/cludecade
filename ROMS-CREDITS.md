@@ -49,6 +49,15 @@ The binary is distributed here under the GPLv3; the corresponding source is avai
 
 The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
 
+## Concentration Room (`roms/croom.nes`)
+
+- An NES memory/concentration puzzle game.
+- Author: Damian Yerrick (pinobatch)
+- License: GPLv3
+- Source + release: https://github.com/pinobatch/croom-nes
+
+The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).

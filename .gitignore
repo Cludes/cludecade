@@ -40,6 +40,7 @@
 !roms/libbet.gb
 !roms/nova.nes
 !roms/thwaite.nes
+!roms/croom.nes
 
 # OS noise
 .DS_Store
