@@ -879,10 +879,10 @@ button {
   background: var(--panel-2);
   color: var(--text);
   border: 1px solid var(--border);
-  padding: 0.45rem 0.9rem;
-  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--r-sm);
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease;
 }
 button:hover:not(:disabled) { border-color: var(--accent); background: var(--surface-3); transform: translateY(-1px); }
@@ -902,9 +902,9 @@ select {
   -webkit-appearance: none;
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.4rem 1.7rem 0.4rem 0.6rem;
-  font-size: 0.8rem;
+  border-radius: var(--r-sm);
+  padding: var(--space-2) 1.7rem var(--space-2) var(--space-2);
+  font-size: var(--text-sm);
   cursor: pointer;
   /* Custom caret (inline SVG data URI - no external request). */
   background-color: var(--panel-2);
@@ -916,19 +916,19 @@ select:hover { border-color: var(--accent); }
 
 .status {
   color: var(--accent);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   min-height: 1.1rem;
-  margin: 0.5rem 0 0;
+  margin: var(--space-2) 0 0;
 }
 .status.inline { margin: 0; min-height: 0; }
 
 /* Confirmation/feedback messages read as a distinct chip when present. */
 #status:not(:empty) {
   display: inline-block;
-  background: rgba(155, 188, 15, 0.1);
-  border: 1px solid rgba(155, 188, 15, 0.25);
-  border-radius: var(--radius-sm);
-  padding: 0.4rem 0.7rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-soft-border);
+  border-radius: var(--r-sm);
+  padding: var(--space-2) var(--space-3);
 }
 
 /* Spinner on the loading line (pseudo-element survives JS textContent updates). */
