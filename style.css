@@ -719,109 +719,69 @@ a:focus-visible {
 .console-skin[data-system="nds"] .action-btn:nth-child(3) { grid-area: 3 / 2; }
 .console-skin[data-system="nds"] .action-btn:nth-child(4) { grid-area: 2 / 3; }
 
-/* ---- Nintendo 64: real public-domain controller photo + invisible hit-areas ---- */
-/* Photo: Evan Amos / Vanamo Online Game Museum, public domain (see ROMS-CREDITS.md). */
+/* ---- Nintendo 64: clean pad in the standard console body (analog stick + C-cluster) ---- */
 .pad-shell { display: none; }
-.console-skin[data-system="n64"] #joystick:not([hidden]) {
-  position: relative;
-  width: min(440px, 96vw);
-  aspect-ratio: 960 / 765;
-  margin: 0.4rem auto 0;
-  padding: 0;
-  background: none;
-  border: none;
-  box-shadow: none;
-  overflow: visible;
-}
-.console-skin[data-system="n64"] #joystick:not([hidden])::before,
-.console-skin[data-system="n64"] #joystick:not([hidden])::after { display: none; }
-.console-skin[data-system="n64"] .pad-shell {
-  display: block;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 14px;
-  z-index: 0;
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.45));
-}
-.console-skin[data-system="n64"] .joystick-main { position: absolute; inset: 0; z-index: 1; }
-.console-skin[data-system="n64"] #joystick-meta { position: absolute; inset: 0; z-index: 2; }
-.console-skin[data-system="n64"] .joystick-main::before { display: none; }
-/* Transparent drag hotspot over the photo's analog stick. */
+/* Centre control is a round analog stick (drives the left analog stick), not a cross. */
 .console-skin[data-system="n64"] #joystick-base {
-  position: absolute;
-  left: 50%;
-  top: 64%;
-  transform: translate(-50%, -50%);
-  width: 17%;
-  height: 21%;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  background: none;
-  border: none;
-  box-shadow: none;
+  background: radial-gradient(circle at 50% 40%, var(--surface-3), var(--surface-1) 72%);
+  border: 1px solid var(--bg);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 .console-skin[data-system="n64"] #joystick-base::before,
 .console-skin[data-system="n64"] #joystick-base::after { display: none; }
-.console-skin[data-system="n64"] #joystick-base:active { background: rgba(255, 255, 255, 0.18); }
-.console-skin[data-system="n64"] #joystick-thumb { display: none; }
-/* Transparent button hit-areas over the photo's buttons; highlight on press. */
-.console-skin[data-system="n64"] #joystick-actions { position: absolute; inset: 0; max-width: none; }
-.console-skin[data-system="n64"] .action-btn {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 8.5%;
-  height: 10.5%;
-  border: none;
+.console-skin[data-system="n64"] #joystick-thumb {
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
   border-radius: 50%;
-  background: none;
-  color: transparent;
-  box-shadow: none;
-  font-size: 0;
+  background: radial-gradient(circle at 50% 38%, #d7dade, #abafb5 72%, #9a9ea4);
+  border: 1px solid #84878c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
 }
-.console-skin[data-system="n64"] .action-btn.pressed {
-  background: rgba(255, 255, 255, 0.32);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55);
+/* Right cluster: green B / blue A diagonal + yellow C-button diamond. */
+.console-skin[data-system="n64"] #joystick-actions {
+  display: grid;
+  grid-template-columns: 46px 46px 36px 36px;
+  grid-template-rows: 36px 36px 36px;
+  gap: 3px;
+  max-width: none;
+  place-items: center;
 }
-.console-skin[data-system="n64"] .action-btn:nth-child(1) { left: 63%; top: 40%; } /* B */
-.console-skin[data-system="n64"] .action-btn:nth-child(2) { left: 69%; top: 49%; } /* A */
-.console-skin[data-system="n64"] .action-btn:nth-child(n+3) { width: 6%; height: 7.5%; } /* C buttons */
-.console-skin[data-system="n64"] .action-btn:nth-child(3) { left: 80%; top: 30%; } /* C-up */
-.console-skin[data-system="n64"] .action-btn:nth-child(4) { left: 80%; top: 44%; } /* C-down */
-.console-skin[data-system="n64"] .action-btn:nth-child(5) { left: 75%; top: 37%; } /* C-left */
-.console-skin[data-system="n64"] .action-btn:nth-child(6) { left: 85%; top: 37%; } /* C-right */
-/* L / R / Z are on the top/back of the real pad, so show small labels; START is a
-   transparent hit-area over the photo's red button. */
-.console-skin[data-system="n64"] .meta-btn {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(180deg, #cdd0d4, #abafb5);
-  border: 1px solid #8a8e94;
-  color: #2a2d31;
-  box-shadow: 0 2px 0 #7d8187;
-  padding: 0.12rem 0.4rem;
-  font-size: 0.5rem;
+.console-skin[data-system="n64"] .action-btn { border: none; font-weight: 700; box-shadow: 0 3px 0 rgba(0, 0, 0, 0.32); }
+.console-skin[data-system="n64"] .action-btn:nth-child(1) { /* B - green */
+  grid-area: 1 / 1 / 2 / 2;
+  width: 42px; height: 42px;
+  background: radial-gradient(circle at 38% 30%, #57d088, #1f9b53);
+  color: #08361b;
 }
-.console-skin[data-system="n64"] .meta-btn:nth-child(1) { left: 27%; top: 7%; } /* L */
-.console-skin[data-system="n64"] .meta-btn:nth-child(2) { left: 73%; top: 7%; } /* R */
-.console-skin[data-system="n64"] .meta-btn:nth-child(3) { left: 50%; top: 4%; } /* Z */
-.console-skin[data-system="n64"] #joystick-meta .meta-btn:last-child { /* START hit-area */
-  left: 50%;
-  top: 43%;
-  width: 7%;
-  height: 9%;
-  padding: 0;
-  border-radius: 50%;
-  background: none;
-  border: none;
-  color: transparent;
-  box-shadow: none;
-  font-size: 0;
+.console-skin[data-system="n64"] .action-btn:nth-child(2) { /* A - blue */
+  grid-area: 2 / 2 / 3 / 3;
+  width: 46px; height: 46px;
+  background: radial-gradient(circle at 38% 30%, #6098f2, #2456c8);
+  color: #fff;
 }
-.console-skin[data-system="n64"] #joystick-meta .meta-btn:last-child.pressed {
-  background: rgba(255, 255, 255, 0.32);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55);
+.console-skin[data-system="n64"] .action-btn:nth-child(n+3) { /* C buttons - yellow */
+  width: 32px; height: 32px;
+  font-size: 0.62rem;
+  color: #5a3d00;
+  background: radial-gradient(circle at 38% 30%, #ffd451, #e3a91d);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+.console-skin[data-system="n64"] .action-btn:nth-child(3) { grid-area: 1 / 3 / 2 / 5; } /* C-up */
+.console-skin[data-system="n64"] .action-btn:nth-child(4) { grid-area: 3 / 3 / 4 / 5; } /* C-down */
+.console-skin[data-system="n64"] .action-btn:nth-child(5) { grid-area: 2 / 3 / 3 / 4; } /* C-left */
+.console-skin[data-system="n64"] .action-btn:nth-child(6) { grid-area: 2 / 4 / 3 / 5; } /* C-right */
+.console-skin[data-system="n64"] .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.32); }
+/* Start in N64 red; L / R / Z keep the standard grey pill look. */
+.console-skin[data-system="n64"] #joystick-meta .meta-btn:last-child {
+  background: radial-gradient(circle at 40% 35%, #ea5a51, #c0291f);
+  border: 1px solid #8e1e16;
+  color: #fff;
+  box-shadow: 0 2px 0 #7a160f;
 }
 
 /* Immersive mode: with a game running and the skin on, the Game Boy fills the
@@ -1090,7 +1050,13 @@ footer a:hover { text-decoration: underline; }
     grid-template-columns: repeat(3, 44px);
     grid-template-rows: repeat(3, 44px);
   }
-  /* N64 SVG shell self-scales (aspect-ratio box); no per-width overrides needed. */
+  /* N64: scale the stick + C-cluster so they fit ~360px. */
+  .console-skin[data-system="n64"] #joystick-base { width: 84px; height: 84px; }
+  .console-skin[data-system="n64"] #joystick-thumb { width: 36px; height: 36px; margin: -18px 0 0 -18px; }
+  .console-skin[data-system="n64"] #joystick-actions { grid-template-columns: 40px 40px 30px 30px; grid-template-rows: 30px 30px 30px; }
+  .console-skin[data-system="n64"] .action-btn:nth-child(1) { width: 36px; height: 36px; }
+  .console-skin[data-system="n64"] .action-btn:nth-child(2) { width: 40px; height: 40px; }
+  .console-skin[data-system="n64"] .action-btn:nth-child(n+3) { width: 28px; height: 28px; }
 }
 
 /* Honour reduced-motion preferences: no spinner rotation or transitions. */

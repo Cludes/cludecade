@@ -1431,11 +1431,8 @@ const CONTROLLERS = {
   ws: { face: [["B", 0], ["A", 8]], meta: [["Start", 3]] },
 };
 
-// Real controller photos (public domain, Evan Amos / Vanamo Online Game Museum)
-// behind transparent hit-areas. Hidden unless the console skin is active.
-const SHELLS = {
-  n64: `<img class="pad-shell" src="controllers/n64.jpg" alt="" aria-hidden="true">`,
-};
+// Optional per-console body art injected behind the controls (none for now).
+const SHELLS = {};
 
 function makeHoldBtn(label, index, cls) {
   const b = document.createElement("button");
