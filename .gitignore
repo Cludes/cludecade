@@ -37,6 +37,7 @@
 # Bundled free homebrew (explicitly allowed - see ROMS-CREDITS.md)
 !roms/ucity.gbc
 !roms/2048.gb
+!roms/libbet.gb
 
 # OS noise
 .DS_Store

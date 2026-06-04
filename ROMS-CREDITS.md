@@ -22,6 +22,15 @@ The binary is distributed here under the GPLv3; the corresponding source is avai
 
 Distributed here under the permissive Zlib license; source is available at the link above.
 
+## Libbet and the Magic Floor (`roms/libbet.gb`)
+
+- A Game Boy puzzle game (rolling around a floor of tiles).
+- Author: Damian Yerrick (pinobatch)
+- License: Zlib
+- Source + release: https://github.com/pinobatch/libbet
+
+Distributed here under the permissive Zlib license; source is available at the link above.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).

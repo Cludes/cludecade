@@ -7,6 +7,13 @@
     "license": "Zlib"
   },
   {
+    "name": "Libbet and the Magic Floor",
+    "file": "roms/libbet.gb",
+    "system": "Game Boy",
+    "by": "Damian Yerrick",
+    "license": "Zlib"
+  },
+  {
     "name": "uCity",
     "file": "roms/ucity.gbc",
     "system": "Game Boy Color",
