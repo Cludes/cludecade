@@ -1431,10 +1431,10 @@ const CONTROLLERS = {
   ws: { face: [["B", 0], ["A", 8]], meta: [["Start", 3]] },
 };
 
-// Inline SVG controller-body silhouettes, overlaid by the live HTML controls.
-// Hidden unless the console skin is active (CSS gates .pad-shell on .console-skin).
+// Real controller photos (public domain, Evan Amos / Vanamo Online Game Museum)
+// behind transparent hit-areas. Hidden unless the console skin is active.
 const SHELLS = {
-  n64: `<svg class="pad-shell" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><defs><linearGradient id="n64sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.5"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs><g fill="#cfd2d6"><rect x="50" y="112" width="44" height="94" rx="22"/><rect x="246" y="112" width="44" height="94" rx="22"/><rect x="151" y="28" width="38" height="178" rx="19"/><rect x="18" y="42" width="304" height="86" rx="43"/></g><rect x="18" y="42" width="304" height="86" rx="43" fill="url(#n64sheen)"/><circle cx="170" cy="118" r="31" fill="#b6b9be"/><circle cx="296" cy="90" r="20" fill="#bfc2c7"/><text x="296" y="95" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="13" fill="#7d8085">C</text></svg>`,
+  n64: `<img class="pad-shell" src="controllers/n64.jpg" alt="" aria-hidden="true">`,
 };
 
 function makeHoldBtn(label, index, cls) {
