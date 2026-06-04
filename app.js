@@ -852,10 +852,12 @@ async function renderRecent() {
     const resume = document.createElement("button");
     resume.className = "recent-resume";
     resume.title = "Resume " + rom.fileName;
+    resume.setAttribute("aria-label", "Resume " + rom.fileName);
     resume.addEventListener("click", () => resumeRom(rom.fileName));
 
     const cover = document.createElement("span");
     cover.className = "b-cover";
+    cover.setAttribute("aria-hidden", "true");
     cover.textContent = (rom.fileName || "?").charAt(0).toUpperCase();
     cover.style.setProperty("--cover", systemColor(SYSTEMS[rom.core] || ""));
 
@@ -1140,8 +1142,10 @@ function makeBuiltinButton(g) {
   const li = document.createElement("li");
   const btn = document.createElement("button");
   btn.className = "builtin-game";
+  btn.setAttribute("aria-label", "Play " + g.name + (g.system ? ", " + g.system : ""));
   const cover = document.createElement("span");
   cover.className = "b-cover";
+  cover.setAttribute("aria-hidden", "true");
   cover.textContent = (g.name || "?").charAt(0).toUpperCase();
   cover.style.setProperty("--cover", systemColor(g.system));
   const text = document.createElement("span");
