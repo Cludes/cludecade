@@ -1226,6 +1226,9 @@ if (saveBackupDetails) {
 // path its touch gamepad uses. Default libretro D-pad indices: up 4, down 5,
 // left 6, right 7 (player 0). Keyboard input is unaffected.
 const DPAD = { up: 4, down: 5, left: 6, right: 7 };
+// The steer control drives the D-pad by default; a controller can override this
+// (e.g. N64 routes it to the left analog stick: up 19, down 18, left 17, right 16).
+let activeDpad = DPAD;
 const joystick = document.getElementById("joystick");
 const joystickBase = document.getElementById("joystick-base");
 const joystickThumb = document.getElementById("joystick-thumb");
@@ -1249,7 +1252,7 @@ function emuInput(index, pressed) {
 function setDir(dir, on) {
   if (dirState[dir] === on) return;
   dirState[dir] = on;
-  emuInput(DPAD[dir], on);
+  emuInput(activeDpad[dir], on);
 }
 
 function releaseJoystick() {
@@ -1396,9 +1399,16 @@ const CONTROLLERS = {
   psx: { face: [["□", 1], ["△", 9], ["✕", 0], ["○", 8]], shoulder: [["L1", 10], ["R1", 11]], meta: [["Select", 2], ["Start", 3]] },
   // Sega Genesis 3-button (genesis_plus_gx): A=Y(1), B=B(0), C=A(8), Start=3.
   segaMD: { face: [["A", 1], ["B", 0], ["C", 8]], meta: [["Start", 3]] },
-  // N64: safe subset (A=8, B=0, L/R, Start). C-buttons and Z are omitted until their
-  // per-core RetroPad mapping is verified; the N64 has no Select button.
-  n64: { face: [["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Start", 3]] },
+  // Nintendo 64 (mupen64plus-next): A=RetroPad A(8) blue, B=RetroPad B(0) green,
+  // Z=R2(13). C-buttons default to the RIGHT analog stick, which EmulatorJS exposes
+  // as buttons 20-23 (C-right 20, C-left 21, C-down 22, C-up 23). The centre stick
+  // drives the LEFT analog stick (dpad override) so games actually move.
+  n64: {
+    face: [["B", 0], ["A", 8], ["▲", 23], ["▼", 22], ["◀", 21], ["▶", 20]],
+    shoulder: [["L", 10], ["R", 11]],
+    meta: [["Z", 13], ["Start", 3]],
+    dpad: { up: 19, down: 18, left: 17, right: 16 },
+  },
   // Nintendo DS: A/B/X/Y diamond + L/R + Select/Start (maps directly to RetroPad).
   nds: { face: [["Y", 1], ["X", 9], ["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
   // Sega Master System / Game Gear (genesis_plus_gx): two fire buttons + Start.
@@ -1435,6 +1445,7 @@ function makeHoldBtn(label, index, cls) {
 function renderController(core) {
   if (!joystickActions || !joystickMeta) return;
   const def = CONTROLLERS[core] || CONTROLLERS.gb;
+  activeDpad = def.dpad || DPAD;
   joystickActions.innerHTML = "";
   for (const [label, index] of def.face) joystickActions.appendChild(makeHoldBtn(label, index, "action-btn"));
   joystickMeta.innerHTML = "";
