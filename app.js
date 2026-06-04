@@ -1407,6 +1407,18 @@ const CONTROLLERS = {
   segaGG: { face: [["1", 0], ["2", 8]], meta: [["Start", 3]] },
   // PC Engine / TurboGrafx-16: II / I + Select / Run (Run = Start). I/II best-effort.
   pce: { face: [["II", 0], ["I", 8]], meta: [["Select", 2], ["Run", 3]] },
+  // Virtual Boy: B/A + L/R + Select/Start.
+  vb: { face: [["B", 0], ["A", 8]], shoulder: [["L", 10], ["R", 11]], meta: [["Select", 2], ["Start", 3]] },
+  // Atari 2600: single Fire + the console Select/Reset switches (Stella maps Reset to Start).
+  atari2600: { face: [["Fire", 0]], meta: [["Select", 2], ["Reset", 3]] },
+  // Atari 7800: two fire buttons + Select / Pause.
+  atari7800: { face: [["1", 0], ["2", 8]], meta: [["Select", 2], ["Pause", 3]] },
+  // Atari Lynx: A / B + Pause (Pause maps to Start); Option buttons omitted.
+  lynx: { face: [["B", 0], ["A", 8]], meta: [["Pause", 3]] },
+  // Neo Geo Pocket: A / B + Option (Option maps to Start).
+  ngp: { face: [["B", 0], ["A", 8]], meta: [["Option", 3]] },
+  // WonderSwan: A / B + Start (vertical second d-pad not shown).
+  ws: { face: [["B", 0], ["A", 8]], meta: [["Start", 3]] },
 };
 
 function makeHoldBtn(label, index, cls) {
