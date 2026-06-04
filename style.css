@@ -213,6 +213,19 @@ main {
   font-weight: 600;
   line-height: 1.18;
 }
+/* Faint brand-coloured cartridge glyph, top-right, behind the label. */
+.console-glyph {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 26px;
+  height: 26px;
+  color: var(--brand, var(--accent));
+  fill: currentColor;
+  opacity: 0.16;
+  pointer-events: none;
+}
+.console-btn:hover:not(:disabled) .console-glyph { opacity: 0.28; }
 .console-btn:hover:not(:disabled) {
   transform: translateY(-3px);
   background: linear-gradient(160deg, var(--surface-3), var(--surface-2));

@@ -1243,6 +1243,11 @@ if (consoleGrid) {
       b.dataset.core = core;
       b.dataset.brand = groupName;
       b.style.setProperty("--brand", color);
+      // Faint brand-coloured cartridge glyph for a richer launcher tile.
+      b.insertAdjacentHTML(
+        "afterbegin",
+        '<svg class="console-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><rect x="9" y="5" width="6" height="5" rx="1" opacity="0.5"/><rect x="9.5" y="17" width="5" height="1.6" rx="0.8" opacity="0.75"/></svg>'
+      );
       // Brand eyebrow gives the tile hierarchy; skip it for the "Other" catch-all.
       if (groupName !== "Other") {
         const brand = document.createElement("span");
