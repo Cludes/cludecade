@@ -21,6 +21,13 @@
     "license": "GPLv3"
   },
   {
+    "name": "Thwaite",
+    "file": "roms/thwaite.nes",
+    "system": "NES",
+    "by": "Damian Yerrick",
+    "license": "GPLv3"
+  },
+  {
     "name": "uCity",
     "file": "roms/ucity.gbc",
     "system": "Game Boy Color",

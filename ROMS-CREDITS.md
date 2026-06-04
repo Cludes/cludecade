@@ -40,6 +40,15 @@ Distributed here under the permissive Zlib license; source is available at the l
 
 The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
 
+## Thwaite (`roms/thwaite.nes`)
+
+- An NES arcade game: shoot down missiles to protect towns.
+- Author: Damian Yerrick (pinobatch)
+- License: GPLv3
+- Source + release: https://github.com/pinobatch/thwaite-nes
+
+The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).
