@@ -38,6 +38,7 @@
 !roms/ucity.gbc
 !roms/2048.gb
 !roms/libbet.gb
+!roms/nova.nes
 
 # OS noise
 .DS_Store

@@ -31,6 +31,15 @@ Distributed here under the permissive Zlib license; source is available at the l
 
 Distributed here under the permissive Zlib license; source is available at the link above.
 
+## Nova the Squirrel (`roms/nova.nes`)
+
+- An NES platformer where you copy enemy abilities.
+- Author: NovaSquirrel
+- License: GPLv3
+- Source + release: https://github.com/NovaSquirrel/NovaTheSquirrel
+
+The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).

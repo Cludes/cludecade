@@ -14,6 +14,13 @@
     "license": "Zlib"
   },
   {
+    "name": "Nova the Squirrel",
+    "file": "roms/nova.nes",
+    "system": "NES",
+    "by": "NovaSquirrel",
+    "license": "GPLv3"
+  },
+  {
     "name": "uCity",
     "file": "roms/ucity.gbc",
     "system": "Game Boy Color",
