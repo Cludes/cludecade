@@ -1098,17 +1098,33 @@ romUrlInput.addEventListener("keydown", (e) => {
 const homeExamples = document.getElementById("home-examples");
 const examplesList = document.getElementById("examples-list");
 
+// Generated placeholder "cover" colour from the system name (no external art).
+function systemColor(system) {
+  const s = (system || "").toLowerCase();
+  if (s.includes("playstation")) return "#2e6fdb";
+  if (s.includes("genesis") || s.includes("sega") || s.includes("master system") || s.includes("game gear")) return "#1c9bd8";
+  if (s.includes("game boy") || s.includes("nes") || s.includes("snes") || s.includes("nintendo") || s.includes("virtual boy")) return "#e60012";
+  return "#9bbc0f";
+}
+
 function makeBuiltinButton(g) {
   const li = document.createElement("li");
   const btn = document.createElement("button");
   btn.className = "builtin-game";
+  const cover = document.createElement("span");
+  cover.className = "b-cover";
+  cover.textContent = (g.name || "?").charAt(0).toUpperCase();
+  cover.style.setProperty("--cover", systemColor(g.system));
+  const text = document.createElement("span");
+  text.className = "b-text";
   const name = document.createElement("span");
   name.className = "b-name";
   name.textContent = g.name;
   const meta = document.createElement("span");
   meta.className = "b-meta";
   meta.textContent = [g.system, g.by ? "by " + g.by : "", g.license].filter(Boolean).join(" · ");
-  btn.append(name, meta);
+  text.append(name, meta);
+  btn.append(cover, text);
   btn.addEventListener("click", () => loadBuiltin(g.file));
   li.append(btn);
   return li;
