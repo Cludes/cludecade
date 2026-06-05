@@ -441,6 +441,12 @@ if (fastForwardBtn) fastForwardBtn.addEventListener("click", toggleFastForward);
 
 const quickSaveBtn = document.getElementById("quick-save-btn");
 const quickLoadBtn = document.getElementById("quick-load-btn");
+const quickStateInfo = document.getElementById("quick-state-info");
+
+function showStateAge(savedAt) {
+  if (!quickStateInfo) return;
+  quickStateInfo.textContent = savedAt ? "saved " + relTime(savedAt) : "";
+}
 
 async function quickSaveState() {
   const g = gm();
@@ -451,8 +457,10 @@ async function quickSaveState() {
   try {
     const bytes = await g.getState();
     if (!bytes || !bytes.length) { setStatus("Nothing to save yet."); return; }
-    await romTx("states", "readwrite", (s) => s.put({ fileName: currentFileName, bytes, savedAt: Date.now() }));
+    const savedAt = Date.now();
+    await romTx("states", "readwrite", (s) => s.put({ fileName: currentFileName, bytes, savedAt }));
     if (quickLoadBtn) quickLoadBtn.disabled = false;
+    showStateAge(savedAt);
     setStatus("State saved.");
   } catch (e) {
     setStatus("Quick save failed.");
@@ -475,13 +483,24 @@ async function quickLoadState() {
 // Enable Load only when a quick save already exists for the running game.
 async function refreshQuickLoad() {
   if (!quickLoadBtn) return;
-  if (!currentFileName) { quickLoadBtn.disabled = true; return; }
+  if (!currentFileName) { quickLoadBtn.disabled = true; showStateAge(0); return; }
   const rec = await romTx("states", "readonly", (s) => s.get(currentFileName)).catch(() => null);
   quickLoadBtn.disabled = !(rec && rec.bytes);
+  showStateAge(rec && rec.bytes ? rec.savedAt : 0);
 }
 
 if (quickSaveBtn) quickSaveBtn.addEventListener("click", quickSaveState);
 if (quickLoadBtn) quickLoadBtn.addEventListener("click", quickLoadState);
+
+// Reset / restart the running game (confirm, since unsaved progress is lost).
+const resetGameBtn = document.getElementById("reset-game-btn");
+if (resetGameBtn) resetGameBtn.addEventListener("click", () => {
+  const g = gm();
+  if (!g || typeof g.restart !== "function") { setStatus("Reset not available yet."); return; }
+  if (!confirm("Restart the game from the beginning? Unsaved progress will be lost.")) return;
+  g.restart();
+  setStatus("Game restarted.");
+});
 
 // Classic emulator hotkeys for quick state, active only while a game runs.
 document.addEventListener("keydown", (e) => {
