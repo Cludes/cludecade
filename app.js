@@ -414,20 +414,29 @@ async function takeScreenshot() {
 }
 if (screenshotBtn) screenshotBtn.addEventListener("click", takeScreenshot);
 
-// --- Fast-forward toggle (EmulatorJS core fast-forward, ratio ~3x) ---
+// --- Fast-forward: click cycles Off -> 2x -> 3x -> 4x ---
 
 const fastForwardBtn = document.getElementById("fast-forward-btn");
-let fastForwardOn = false;
+const FF_RATIOS = [0, 2, 3, 4];
+let ffIndex = 0;
 function toggleFastForward() {
   const g = gm();
   if (!g || typeof g.toggleFastForward !== "function") {
     setStatus("Fast-forward not available yet.");
     return;
   }
-  fastForwardOn = !fastForwardOn;
-  g.toggleFastForward(fastForwardOn ? 1 : 0);
-  reflectToggle(fastForwardBtn, fastForwardOn);
-  setStatus(fastForwardOn ? "Fast-forward on (3x)." : "Fast-forward off.");
+  ffIndex = (ffIndex + 1) % FF_RATIOS.length;
+  const ratio = FF_RATIOS[ffIndex];
+  if (ratio === 0) {
+    g.toggleFastForward(0);
+    reflectToggle(fastForwardBtn, false);
+    setStatus("Fast-forward off.");
+  } else {
+    if (typeof g.setFastForwardRatio === "function") g.setFastForwardRatio(ratio);
+    g.toggleFastForward(1);
+    reflectToggle(fastForwardBtn, true);
+    setStatus("Fast-forward " + ratio + "x.");
+  }
 }
 if (fastForwardBtn) fastForwardBtn.addEventListener("click", toggleFastForward);
 
