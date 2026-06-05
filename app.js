@@ -524,6 +524,11 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+// Reassure the player their controller was detected (EmulatorJS handles input).
+window.addEventListener("gamepadconnected", () => {
+  if (gameRunning) setStatus("Gamepad connected.");
+});
+
 // Classic emulator hotkeys for quick state, active only while a game runs.
 document.addEventListener("keydown", (e) => {
   if (!gameRunning || e.altKey || e.ctrlKey || e.metaKey) return;
