@@ -1332,6 +1332,26 @@ body.playing:not(.skin-mode) #console-body::before {
   letter-spacing: -0.02em;
 }
 .np-header #change-game { flex-shrink: 0; }
+/* Icon + label controls read as a real player bar, not plain text buttons. */
+.np-header #change-game,
+.np-tools button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.btn-icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.8;
+}
+.np-tools button:hover:not(:disabled) .btn-icon,
+.np-tools button.active .btn-icon { opacity: 1; }
 /* One clean tools row, divided from the header - no verbose labels. */
 .np-tools {
   display: flex;
