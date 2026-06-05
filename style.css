@@ -1279,7 +1279,7 @@ footer a:hover { text-decoration: underline; }
   /* Class beats the bare h1 rule, so scale the hero explicitly for phones and
      keep the eyebrow chip from overflowing the viewport. */
   .hero { padding-left: var(--space-3); padding-right: var(--space-3); }
-  .hero-title { font-size: clamp(1.85rem, 9vw, 2.5rem); max-width: 16ch; }
+  .hero-title { font-size: clamp(1.5rem, 7.2vw, 2.3rem); max-width: 15ch; overflow-wrap: break-word; }
   .hero-eyebrow {
     white-space: normal;
     font-size: 0.6rem;
