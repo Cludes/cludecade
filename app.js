@@ -357,15 +357,8 @@ function onEmulatorReady() {
     autosaveState.textContent = "Not supported in this browser. Use Export .sav instead.";
     autostateState.textContent = "Not supported in this browser. Use Export state instead.";
   }
-
-  if (matchedCheatGame) {
-    setStatus(
-      matchedCheatGame.cheats.length +
-        " cheats loaded for " +
-        matchedCheatGame.game +
-        ". Open the Cheats menu (right-click or the menu button) to turn them on."
-    );
-  }
+  // Cheats (if matched) are loaded silently into EmulatorJS's Cheats menu; no
+  // on-screen notification.
 }
 
 function gm() {
