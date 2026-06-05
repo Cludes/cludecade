@@ -381,11 +381,12 @@ main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
   padding: var(--space-3);
   padding-left: calc(var(--space-3) + 3px);
   text-align: left;
-  /* Clean rounded box, tinted with the console's own brand colour. */
+  /* Premium calm: mostly the dark surface with a restrained brand tint; the
+     console identity reads from the left spine, the label, and the hover glow. */
   background:
-    linear-gradient(160deg, color-mix(in srgb, var(--brand, var(--accent)) 38%, var(--surface-1)), color-mix(in srgb, var(--brand, var(--accent)) 7%, var(--surface-1)) 84%);
+    linear-gradient(180deg, color-mix(in srgb, var(--brand, var(--accent)) 20%, var(--surface-1)), var(--surface-2));
   color: var(--text);
-  border: 1px solid color-mix(in srgb, var(--brand, var(--accent)) 34%, var(--border-strong));
+  border: 1px solid color-mix(in srgb, var(--brand, var(--accent)) 22%, var(--border));
   border-radius: var(--r-md);
   overflow: hidden;
   /* Calm at rest: a neutral soft elevation. The brand glow is saved for hover. */
@@ -1234,11 +1235,11 @@ body.playing:not(.skin-mode) #console-body::before {
 #save-controls {
   max-width: min(680px, 94vw);
   margin: var(--space-4) auto 0;
-  background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
+  background: linear-gradient(180deg, var(--surface-1), var(--surface-2));
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   box-shadow: var(--e2);
-  padding: var(--space-3) var(--space-4) var(--space-4);
+  padding: var(--space-5);
 }
 /* Gentle entrance when the panel first appears on game ready. */
 #save-controls:not([hidden]) { animation: panel-in 0.25s ease both; }
@@ -1315,7 +1316,7 @@ body.playing:not(.skin-mode) #console-body::before {
 .badge:empty { display: none; }
 
 button {
-  background: linear-gradient(180deg, var(--surface-3), var(--surface-2));
+  background: var(--surface-2);
   color: var(--text);
   border: 1px solid var(--border-strong);
   padding: var(--space-2) var(--space-3);
@@ -1324,16 +1325,13 @@ button {
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: -0.01em;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
 }
 button:hover:not(:disabled) {
-  border-color: var(--accent);
-  background: linear-gradient(180deg, var(--surface-3), var(--surface-3));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 0 1px var(--accent-soft-border), 0 6px 18px -10px rgba(0, 0, 0, 0.7);
-  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border-strong));
+  background: var(--surface-3);
 }
-button:active:not(:disabled) { transform: translateY(0); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04); }
+button:active:not(:disabled) { background: var(--surface-2); }
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* Destructive actions (clear all, remove a game) signal intent on hover. */
