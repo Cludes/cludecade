@@ -325,6 +325,7 @@ function onEmulatorReady() {
   saveControls.hidden = false;
   nowPlayingName.textContent = prettyName(currentFileName);
   nowPlayingName.title = currentFileName;
+  document.title = prettyName(currentFileName) + " - Cludecade";
   nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
   nowPlayingSystem.style.setProperty("--badge", systemColor(SYSTEMS[currentCore] || ""));
   if (npCover) {
@@ -941,6 +942,7 @@ async function listRoms() {
 async function deleteRom(fileName) {
   await romTx("roms", "readwrite", (s) => s.delete(fileName));
   await romTx("meta", "readwrite", (s) => s.delete(fileName));
+  await romTx("states", "readwrite", (s) => s.delete(fileName)).catch(() => {});
 }
 
 async function evictOldRoms() {
@@ -1074,6 +1076,7 @@ clearRomsBtn.addEventListener("click", async () => {
   if (!confirm("Remove all stored ROMs from this browser? Your in-game saves are not affected.")) return;
   await romTx("roms", "readwrite", (s) => s.clear());
   await romTx("meta", "readwrite", (s) => s.clear());
+  await romTx("states", "readwrite", (s) => s.clear()).catch(() => {});
   renderRecent();
 });
 
