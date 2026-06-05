@@ -572,5 +572,448 @@
         "SXXTPSSE"
       ]
     ]
+  },
+  {
+    "game": "Super Mario 64",
+    "system": "n64",
+    "match": [
+      [
+        "supermario"
+      ]
+    ],
+    "cheats": [
+      [
+        "No Red Coins Needed",
+        "802F2DDF 0000"
+      ],
+      [
+        "Giant Mario",
+        "810F0890 3F90"
+      ],
+      [
+        "Tiny Mario",
+        "810F0890 3E00"
+      ],
+      [
+        "Have All Doors Unlocked, Mario's Cap Is Gone, The Moat Is Drained, And The Red/Blue/Green Switches Are Activated",
+        "81207708 FFFF+8120770A FFFF"
+      ],
+      [
+        "Have All 175 Stars (Cheat Device 3.0 or Higher Needed!)",
+        "50000D02 0000+8120770C FFFF"
+      ],
+      [
+        "Have All 175 Stars & Maxed Out Coin Records For All Levels (Cheat Device 3.0 or Higher Needed!)",
+        "50001402 0000+8120770C FFFF"
+      ],
+      [
+        "Tiny-Huge Island",
+        "80207718 00FF"
+      ],
+      [
+        "1st 7 Castle Secret Stars",
+        "8020771B 00FF"
+      ],
+      [
+        "2nd 7 Castle Secret Stars",
+        "8020771C 00FF"
+      ],
+      [
+        "3rd 7 Castle Secret Stars",
+        "8020771D 00FF"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Kart 64",
+    "system": "n64",
+    "match": [
+      [
+        "mariokart"
+      ]
+    ],
+    "cheats": [
+      [
+        "P1 Infinite Balloons",
+        "8118D8C0 0002"
+      ],
+      [
+        "P2 Infinite Balloons",
+        "8118D8C2 0002"
+      ],
+      [
+        "P3 Infinite Balloons",
+        "8118D8C4 0002"
+      ],
+      [
+        "P4 Infinite Balloons",
+        "8118D8C6 0002"
+      ],
+      [
+        "P1 Always The Bomb",
+        "8118D8C0 FFFF"
+      ],
+      [
+        "P2 Always The Bomb [See Above Note]",
+        "8118D8C2 FFFF"
+      ],
+      [
+        "P3 Always The Bomb [See Above Note]",
+        "8118D8C4 FFFF"
+      ],
+      [
+        "P4 Always The Bomb [See Above Note]",
+        "8118D8C6 FFFF"
+      ],
+      [
+        "P1 Always Last Place",
+        "81164390 FFFF+81164392 FFFF"
+      ],
+      [
+        "P2 Always Last Place",
+        "81164394 FFFF+81164396 FFFF"
+      ]
+    ]
+  },
+  {
+    "game": "The Legend of Zelda: Ocarina of Time",
+    "system": "n64",
+    "match": [
+      [
+        "ocarina"
+      ]
+    ],
+    "cheats": [
+      [
+        "Totally Invincible",
+        "801DB498 0014"
+      ],
+      [
+        "Have 999 Rupees",
+        "8111A7C4 03E7+8133F1DE 03E7"
+      ],
+      [
+        "Infinite Energy",
+        "8111A600 0140"
+      ],
+      [
+        "Max Heart",
+        "8111A5FE 0140"
+      ],
+      [
+        "Max Skulltulas Killed",
+        "8011A6A1 00FF"
+      ],
+      [
+        "Infinite Magic",
+        "D011A609 0008+8011A60A 0001+8011A60C 0001+8011A603 0060"
+      ],
+      [
+        "L Button For Moon Jump",
+        "D01C84B5 0020+811DAA90 40CB"
+      ],
+      [
+        "Have Deku Stick/Infinite Deku Sticks",
+        "8011A644 0000+8011A65C 0009"
+      ],
+      [
+        "Have Deku Nuts/Infinite Deku Nuts",
+        "8011A645 0001+8011A65D 0009"
+      ],
+      [
+        "Have Bombs/Infinite Bombs",
+        "8011A646 0002+8011A65E 0009"
+      ]
+    ]
+  },
+  {
+    "game": "GoldenEye 007",
+    "system": "n64",
+    "match": [
+      [
+        "goldeneye"
+      ]
+    ],
+    "cheats": [
+      [
+        "Trevelyn Health Modifier",
+        "811DD27C 0000"
+      ],
+      [
+        "Infinite Ammo For Pp7, Klobb, And Zmg",
+        "810CDC96 013C"
+      ],
+      [
+        "Infinite Ammo For Kf7 And Ar33",
+        "810CDC9E 013C"
+      ],
+      [
+        "Infinite Ammo For Auto Shotgun",
+        "810CDCA2 013C"
+      ],
+      [
+        "Infinite Ammo For Golden Gun",
+        "810CDCC6 013C"
+      ],
+      [
+        "Infinite Rockets",
+        "810CDCAA 013C"
+      ],
+      [
+        "Infinite Tank Shells",
+        "810CDD02 013C"
+      ],
+      [
+        "Infinite Magnum Bullets",
+        "810CDCC2 013C"
+      ],
+      [
+        "Infinite Grenades",
+        "810CDCBE 013C"
+      ],
+      [
+        "Infinite 9Mm Bullets P1",
+        "810CDC96 013C"
+      ]
+    ]
+  },
+  {
+    "game": "Doom 64",
+    "system": "n64",
+    "match": [
+      [
+        "doom64"
+      ],
+      [
+        "doom"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Ammo For All Guns",
+        "8102A2E8 ACD9"
+      ],
+      [
+        "All Weapons (Cheat Device 3.0 or Higher Needed!)",
+        "50000A04 0000+810632BA 0001"
+      ],
+      [
+        "Always Have BFG 9000",
+        "800632DB 0001"
+      ],
+      [
+        "Always Have Chain Gun",
+        "800632CF 0001"
+      ],
+      [
+        "Always Have Missile Launcher",
+        "800632D3 0001"
+      ],
+      [
+        "Always Have Plasma Rifle",
+        "800632D7 0001"
+      ],
+      [
+        "Always Have Chainsaw",
+        "800632BB 0001"
+      ],
+      [
+        "Always Have Double Shotgun",
+        "800632CB 0001"
+      ],
+      [
+        "Always Have Gun",
+        "800632C3 0001"
+      ],
+      [
+        "Always Have Shotgun",
+        "800632C7 0001"
+      ]
+    ]
+  },
+  {
+    "game": "Banjo-Kazooie",
+    "system": "n64",
+    "match": [
+      [
+        "banjo"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Time On Jigsaw Puzzles",
+        "81385F32 1726"
+      ],
+      [
+        "You have 99 Notes",
+        "81385182 0064"
+      ],
+      [
+        "Infinite Lives",
+        "80385F8B 0009"
+      ],
+      [
+        "Infinite Health",
+        "80385F83 0008+80385F87 0008"
+      ],
+      [
+        "Infinite Red Feathers",
+        "80385F6F 0063"
+      ],
+      [
+        "Infinite Gold Feathers",
+        "80385F73 0063"
+      ],
+      [
+        "Infinite Air",
+        "81385F8E 0E10"
+      ],
+      [
+        "Infinite Mumbo Tokens",
+        "80385FC7 0077"
+      ],
+      [
+        "Infinite Eggs",
+        "80385F67 0063"
+      ],
+      [
+        "Infinite Health With Red Honeycombs",
+        "80385F87 0010"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic the Hedgehog 2",
+    "system": "segaMD",
+    "match": [
+      [
+        "hedgehog2"
+      ]
+    ],
+    "cheats": [
+      [
+        "Start with 5 lives (player 1)",
+        "AY8A-AADN"
+      ],
+      [
+        "Start with 7 lives (player 1)",
+        "A68A-AADN"
+      ],
+      [
+        "Start with 9 lives (player 1)",
+        "BE8A-AADN"
+      ],
+      [
+        "Start with 25 lives (player 1)",
+        "DE8A-AADN"
+      ],
+      [
+        "Start with 50 lives (player 1)",
+        "GJ8A-AADN"
+      ],
+      [
+        "Start with 75 lives (player 1)",
+        "KN8A-AADN"
+      ],
+      [
+        "Start with 99 lives (player 1)",
+        "NN8A-AADN"
+      ],
+      [
+        "Infinite lives (player 1)",
+        "JW3A-CA4Y"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic the Hedgehog",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "hedgehog"
+      ]
+    ],
+    "cheats": [
+      [
+        "Start with 5 lives",
+        "AY3T-AACL"
+      ],
+      [
+        "Once invincible, stay invincible for the rest of stage or until you die",
+        "AE0T-CABE"
+      ],
+      [
+        "Infinite lives",
+        "GJ6A-CA7A"
+      ],
+      [
+        "Ring Count Goes To 99 After Getting Hit",
+        "NRRT-AADY"
+      ],
+      [
+        "Infinite Rings",
+        "FFFE20:00C8"
+      ],
+      [
+        "Begin The Game With 99 Lives",
+        "NN3T-AACL"
+      ],
+      [
+        "Invincibility (Enemies Can't Touch You)",
+        "FFD030:00FF"
+      ],
+      [
+        "Invincibility (Always Have Shield)",
+        "FFFE2C:0000"
+      ]
+    ]
+  },
+  {
+    "game": "Streets of Rage 2",
+    "system": "segaMD",
+    "match": [
+      [
+        "streetsofrage2"
+      ],
+      [
+        "streets",
+        "rage"
+      ]
+    ],
+    "cheats": [
+      [
+        "Almost Invinciblity",
+        "5BJA-AF24"
+      ],
+      [
+        "Infinite Time",
+        "AK5A-AA86"
+      ],
+      [
+        "Both Players Are Invincible Against Shooting Attacks",
+        "AZFT-AAFA+ABFT-BD7E"
+      ],
+      [
+        "Both Players Are Invincible Against The Flying Bodies Of Enemies",
+        "AZJT-AAB6+ABJT-BD4A"
+      ],
+      [
+        "Both Players Are Invincible Against The Grappling Attacks Of Their Partners",
+        "AZKA-AAF0"
+      ],
+      [
+        "Max's Special #1 (Press A) Doesn't Hurt Him If It Was Successful",
+        "AL2T-AA8L"
+      ],
+      [
+        "Max's Special #2 (press Forwards + A) doesn't hurt him.",
+        "AL3A-AA6N"
+      ],
+      [
+        "Player 1 starts with 7 lives",
+        "V30A-BEB6"
+      ]
+    ]
   }
 ]
