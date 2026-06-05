@@ -570,7 +570,7 @@ a:focus-visible {
 }
 #examples-list .b-cover {
   width: 100%;
-  height: 64px;
+  height: 88px;
   border-radius: var(--r-sm);
   font-size: 1.9rem;
 }

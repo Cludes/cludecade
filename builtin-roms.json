@@ -11,35 +11,40 @@
     "file": "roms/libbet.gb",
     "system": "Game Boy",
     "by": "Damian Yerrick",
-    "license": "Zlib"
+    "license": "Zlib",
+    "image": "covers/libbet.png"
   },
   {
     "name": "Nova the Squirrel",
     "file": "roms/nova.nes",
     "system": "NES",
     "by": "NovaSquirrel",
-    "license": "GPLv3"
+    "license": "GPLv3",
+    "image": "covers/nova.png"
   },
   {
     "name": "Thwaite",
     "file": "roms/thwaite.nes",
     "system": "NES",
     "by": "Damian Yerrick",
-    "license": "GPLv3"
+    "license": "GPLv3",
+    "image": "covers/thwaite.png"
   },
   {
     "name": "Concentration Room",
     "file": "roms/croom.nes",
     "system": "NES",
     "by": "Damian Yerrick",
-    "license": "GPLv3"
+    "license": "GPLv3",
+    "image": "covers/croom.png"
   },
   {
     "name": "uCity",
     "file": "roms/ucity.gbc",
     "system": "Game Boy Color",
     "by": "AntonioND",
-    "license": "GPLv3"
+    "license": "GPLv3",
+    "image": "covers/ucity.png"
   },
   {
     "name": "Pong",

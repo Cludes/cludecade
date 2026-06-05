@@ -67,6 +67,20 @@ The binary is distributed here under the GPLv3; the corresponding source is avai
 
 Distributed here under the permissive MIT license; source is available at the link above.
 
+## Cover images (`covers/`)
+
+The example-game cover images are title screens / promotional art taken from each
+game's own source repository, and are redistributed here under that game's license:
+
+- `covers/libbet.png` - promotional card from pinobatch/libbet (Zlib)
+- `covers/nova.png` - title screen from NovaSquirrel/NovaTheSquirrel (GPLv3)
+- `covers/thwaite.png` - title screen from pinobatch/thwaite-nes (GPLv3)
+- `covers/croom.png` - screenshot from pinobatch/croom-nes (GPLv3)
+- `covers/ucity.png` - screenshot from AntonioND/ucity (GPLv3)
+
+Box art for non-example (user) ROMs is not bundled; it is fetched on demand from
+the libretro thumbnail CDN by game name, and only when a match exists.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).
