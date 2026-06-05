@@ -1709,3 +1709,31 @@ function renderController(core) {
   if (def.shoulder) for (const [label, index] of def.shoulder) joystickMeta.appendChild(makeHoldBtn(label, index, "meta-btn shoulder-btn"));
   for (const [label, index] of def.meta) joystickMeta.appendChild(makeHoldBtn(label, index, "meta-btn"));
 }
+
+// --- Rotating hero showcase: cycle iconic games to show the breadth of systems.
+// Each next image is preloaded and only swapped in on successful load, so a
+// missing snap simply keeps the current one. Respects reduced-motion.
+(function rotateHero() {
+  const heroImg = document.querySelector(".hero-window img");
+  if (!heroImg) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const SHOWCASE = [
+    ["Nintendo - Super Nintendo Entertainment System", "Super Mario World (USA)"],
+    ["Sega - Mega Drive - Genesis", "Sonic The Hedgehog (USA, Europe)"],
+    ["Nintendo - Super Nintendo Entertainment System", "Legend of Zelda, The - A Link to the Past (USA)"],
+    ["Nintendo - Nintendo 64", "Super Mario 64 (USA)"],
+  ];
+  const url = (e) => "https://thumbnails.libretro.com/" + encodeURIComponent(e[0]) +
+    "/Named_Snaps/" + encodeURIComponent(e[1]) + ".png";
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % SHOWCASE.length;
+    const next = new Image();
+    next.referrerPolicy = "no-referrer";
+    next.onload = () => {
+      heroImg.style.opacity = "0";
+      setTimeout(() => { heroImg.src = next.src; heroImg.style.opacity = "1"; }, 300);
+    };
+    next.src = url(SHOWCASE[i]);
+  }, 5000);
+})();

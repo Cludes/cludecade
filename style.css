@@ -282,6 +282,7 @@ main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
   display: block;
   width: 100%;
   background: #000;
+  transition: opacity 0.32s ease;
 }
 
 /* --- Home sections (open, generous spacing) --- */
