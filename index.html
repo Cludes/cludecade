@@ -104,6 +104,8 @@
         <details class="controls-help">
           <summary>How do I play?</summary>
           <p>Arrow keys move (D-pad). Prefer a mouse or touch? Once a game is running, turn on the on-screen controller from the controls below the screen. To see or remap every button for keyboard or gamepad, open the game's own menu from its control bar. On phones and tablets, EmulatorJS's touch controls also appear automatically.</p>
+          <p>Save anywhere: hit <strong>Save state</strong> (or press <kbd>F2</kbd>) to bookmark your spot, and <strong>Load state</strong> (<kbd>F4</kbd>) to jump back to it instantly.</p>
+          <p>Cheats: many popular games have built-in cheats. Open <strong>Cheats</strong> from the controls below the screen to turn them on.</p>
           <p>Want a retro CRT look? While a game is running, open its menu from the control bar and go to Settings - built-in Shaders (CRT, scanlines and more) are in there.</p>
         </details>
         <div id="builtin" hidden>
@@ -162,6 +164,7 @@
             <button id="reset-game-btn" title="Restart the game"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>Reset</button>
             <button id="fast-forward-btn" aria-pressed="false"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5l7 7-7 7M13 5l7 7-7 7"/></svg>Fast-forward</button>
             <button id="screenshot-btn"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg>Screenshot</button>
+            <button id="cheats-btn" title="Open the cheats menu"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6M10 2v6l-5 9.5A2 2 0 0 0 6.8 21h10.4a2 2 0 0 0 1.8-3.5L14 8V2"/><path d="M8 14h8"/></svg>Cheats</button>
           </div>
           <div class="tool-group">
             <button id="toggle-joystick" aria-pressed="false"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M12 11.5V18M8 20h8"/></svg>Joystick</button>

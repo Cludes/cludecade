@@ -485,6 +485,20 @@ async function refreshQuickLoad() {
 if (quickSaveBtn) quickSaveBtn.addEventListener("click", quickSaveState);
 if (quickLoadBtn) quickLoadBtn.addEventListener("click", quickLoadState);
 
+// Open EmulatorJS's own Cheats menu (where matched cheats are listed ready to
+// toggle, and custom codes can be added).
+const cheatsBtn = document.getElementById("cheats-btn");
+if (cheatsBtn) cheatsBtn.addEventListener("click", () => {
+  const emu = window.EJS_emulator;
+  if (emu && emu.cheatMenu) {
+    emu.cheatMenu.style.display = "";
+  } else if (emu && emu.elements && emu.elements.bottomBar && emu.elements.bottomBar.cheat) {
+    emu.elements.bottomBar.cheat[0].click();
+  } else {
+    setStatus("Cheats menu not available yet.");
+  }
+});
+
 // Reset / restart the running game (confirm, since unsaved progress is lost).
 const resetGameBtn = document.getElementById("reset-game-btn");
 if (resetGameBtn) resetGameBtn.addEventListener("click", () => {

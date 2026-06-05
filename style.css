@@ -522,6 +522,17 @@ a:focus-visible {
   margin: 0 auto;
 }
 .controls-help p { color: var(--muted); margin: 0.5rem 0 0; line-height: 1.6; }
+.controls-help strong { color: var(--text-2); font-weight: 600; }
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--text);
+}
 
 .error {
   color: var(--error);
