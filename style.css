@@ -902,11 +902,11 @@ body.playing:not(.skin-mode) #console-body {
 .gb-skin #joystick-base::before { width: 38px; height: 108px; }
 .gb-skin #joystick-base::after { width: 108px; height: 38px; }
 
-/* A / B as round dark-grey buttons (real GBC), angled. */
-.gb-skin #joystick-actions { transform: rotate(-22deg); gap: 0.9rem; }
+/* A / B as small round grey buttons (real GBC), gently angled and close. */
+.gb-skin #joystick-actions { transform: rotate(-18deg); gap: 0.55rem; }
 .gb-skin .action-btn {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   color: #ece9f2;
   background: radial-gradient(circle at 35% 30%, #6f6a7d, #423d52);
   border: 1px solid #2c2838;
@@ -915,8 +915,8 @@ body.playing:not(.skin-mode) #console-body {
 .gb-skin .action-btn:hover:not(:disabled) { filter: brightness(1.08); transform: none; }
 .gb-skin .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 #241f30; filter: none; }
 
-/* Start / Select as angled gray pills. */
-.gb-skin #joystick-meta { transform: rotate(-22deg); margin-top: 0.5rem; }
+/* Start / Select as near-horizontal grey pills (real GBC). */
+.gb-skin #joystick-meta { transform: rotate(-13deg); margin-top: 0.5rem; }
 .gb-skin .meta-btn {
   color: #cfcae0;
   background: #3a3550;
