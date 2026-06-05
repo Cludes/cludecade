@@ -146,6 +146,8 @@ const importBackupInput = document.getElementById("import-backup");
 const autostateInterval = document.getElementById("autostate-interval");
 const nowPlayingName = document.getElementById("now-playing-name");
 const nowPlayingSystem = document.getElementById("now-playing-system");
+const marqueeTitle = document.getElementById("marquee-title");
+const marqueeSystem = document.getElementById("marquee-system");
 const changeGameBtn = document.getElementById("change-game");
 
 // Reloading is the only clean way back to the picker, since EmulatorJS only
@@ -324,6 +326,8 @@ function onEmulatorReady() {
   saveControls.hidden = false;
   nowPlayingName.textContent = currentFileName;
   nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
+  if (marqueeTitle) marqueeTitle.textContent = (currentFileName || "").replace(/\.[^.]+$/, "");
+  if (marqueeSystem) marqueeSystem.textContent = SYSTEMS[currentCore] || "";
   // Match the screen box to the system so games fill it (no letterboxing).
   const gameEl = document.getElementById("game");
   if (gameEl) {
