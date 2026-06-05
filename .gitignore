@@ -41,6 +41,7 @@
 !roms/nova.nes
 !roms/thwaite.nes
 !roms/croom.nes
+!roms/pong.gba
 
 # OS noise
 .DS_Store

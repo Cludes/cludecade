@@ -58,6 +58,15 @@ The binary is distributed here under the GPLv3; the corresponding source is avai
 
 The binary is distributed here under the GPLv3; the corresponding source is available at the link above.
 
+## Pong (`roms/pong.gba`)
+
+- A simple Game Boy Advance Pong, made as a homebrew learning example.
+- Author: ZeroDayArcade
+- License: MIT
+- Source: https://github.com/ZeroDayArcade/Pong-Homebrew-GBA
+
+Distributed here under the permissive MIT license; source is available at the link above.
+
 ---
 
 Only ROMs you are legally entitled to distribute belong in this folder. Commercial game ROMs are copyrighted and must not be committed (the `.gitignore` blocks ROM extensions by default; bundled homebrew is allowlisted explicitly).

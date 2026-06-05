@@ -40,5 +40,12 @@
     "system": "Game Boy Color",
     "by": "AntonioND",
     "license": "GPLv3"
+  },
+  {
+    "name": "Pong",
+    "file": "roms/pong.gba",
+    "system": "Game Boy Advance",
+    "by": "ZeroDayArcade",
+    "license": "MIT"
   }
 ]
