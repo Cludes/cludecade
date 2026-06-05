@@ -1253,8 +1253,8 @@ function showConsoleView() {
 
 if (backToConsoles) backToConsoles.addEventListener("click", showConsoleView);
 
-// Brand accent colours for the console tiles.
-const BRAND_COLORS = { Nintendo: "#e60012", Sony: "#2e6fdb", Sega: "#1c9bd8", Other: "#9bbc0f" };
+// Brand accent colours for the console tiles (vivid neon arcade palette).
+const BRAND_COLORS = { Nintendo: "#ff2740", Sony: "#3b82f6", Sega: "#1fb6ff", Other: "#a6ff1a" };
 
 if (consoleGrid) {
   for (const [groupName, items] of CONSOLE_GROUPS) {
@@ -1270,17 +1270,20 @@ if (consoleGrid) {
         "afterbegin",
         '<svg class="console-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><rect x="9" y="5" width="6" height="5" rx="1" opacity="0.5"/><rect x="9.5" y="17" width="5" height="1.6" rx="0.8" opacity="0.75"/></svg>'
       );
-      // Brand eyebrow gives the tile hierarchy; skip it for the "Other" catch-all.
+      // The brand + name sit together on a label "sticker" panel, like a cart.
+      const labelPanel = document.createElement("span");
+      labelPanel.className = "console-label";
       if (groupName !== "Other") {
         const brand = document.createElement("span");
         brand.className = "console-brand";
         brand.textContent = groupName;
-        b.appendChild(brand);
+        labelPanel.appendChild(brand);
       }
       const name = document.createElement("span");
       name.className = "console-name";
       name.textContent = label;
-      b.appendChild(name);
+      labelPanel.appendChild(name);
+      b.appendChild(labelPanel);
       b.addEventListener("click", () => selectConsole(core, label));
       consoleGrid.appendChild(b);
     }
