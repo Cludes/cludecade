@@ -586,11 +586,17 @@ a:focus-visible {
   width: 100%;
   aspect-ratio: 10 / 9;
   background: #000;
-  border-radius: var(--radius);
+  border-radius: var(--r-lg);
   overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 0 1px rgba(155, 188, 15, 0.16), 0 0 46px -10px rgba(155, 188, 15, 0.32), var(--e3);
 }
+
+/* In-game view: hide the landing nav, centre + frame the screen and control bar. */
+body.playing .nav { display: none; }
+body.playing:not(.skin-mode) main { padding: var(--space-6) var(--space-4); }
+#game-wrap { max-width: 760px; margin: 0 auto; }
+#console-body { max-width: min(680px, 94vw); margin: 0 auto; }
 
 .hint-inline { color: var(--muted); font-size: 0.75rem; }
 
@@ -1044,11 +1050,12 @@ a:focus-visible {
 }
 
 #save-controls {
-  margin-top: var(--space-4);
-  background: var(--panel);
+  max-width: min(680px, 94vw);
+  margin: var(--space-4) auto 0;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  box-shadow: var(--shadow);
+  box-shadow: var(--e2);
   padding: var(--space-2) var(--space-4);
 }
 /* Gentle entrance when the panel first appears on game ready. */

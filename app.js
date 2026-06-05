@@ -270,6 +270,7 @@ function bootFromBytes(fileName, core, bytes) {
 async function bootEmulator(core, romUrl, fileName) {
   picker.hidden = true;
   gameWrap.hidden = false;
+  document.body.classList.add("playing");
   loadingEl.textContent = "Loading " + fileName + "...";
   loadingEl.hidden = false;
 
