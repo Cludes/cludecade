@@ -271,7 +271,7 @@ async function bootEmulator(core, romUrl, fileName) {
   picker.hidden = true;
   gameWrap.hidden = false;
   document.body.classList.add("playing");
-  loadingEl.textContent = "Loading " + fileName + "...";
+  loadingEl.textContent = "Loading " + prettyName(fileName) + "...";
   loadingEl.hidden = false;
 
   window.EJS_player = "#game";
@@ -325,6 +325,7 @@ function onEmulatorReady() {
   nowPlayingName.textContent = prettyName(currentFileName);
   nowPlayingName.title = currentFileName;
   nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
+  nowPlayingSystem.style.setProperty("--badge", systemColor(SYSTEMS[currentCore] || ""));
   // Match the screen box to the system so games fill it (no letterboxing).
   const gameEl = document.getElementById("game");
   if (gameEl) {
@@ -895,6 +896,7 @@ async function renderRecent() {
     const sys = document.createElement("span");
     sys.className = "badge";
     sys.textContent = SYSTEMS[rom.core] || "";
+    sys.style.setProperty("--badge", systemColor(SYSTEMS[rom.core] || ""));
 
     top.append(name, sys);
 
@@ -1237,6 +1239,7 @@ function makeBuiltinButton(g) {
     img.alt = "";
     img.className = "b-cover-img";
     img.loading = "lazy";
+    img.onerror = () => { img.remove(); cover.classList.remove("has-art"); };
     img.src = g.image;
     cover.appendChild(img);
     cover.classList.add("has-art");
