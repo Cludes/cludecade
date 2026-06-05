@@ -1292,7 +1292,7 @@ body.playing:not(.skin-mode) #console-body::before {
 }
 
 .now-playing {
-  flex: 1;
+  flex: 0 1 auto;
   min-width: 0;
   font-weight: 600;
   font-size: var(--text-base);
@@ -1300,6 +1300,37 @@ body.playing:not(.skin-mode) #console-body::before {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* "Now playing" header: tiny eyebrow over a prominent game title + chip, with
+   the session actions grouped to the right. Makes the game the hero of the panel. */
+#session-row { align-items: center; justify-content: space-between; gap: var(--space-4); }
+.now-playing-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+.now-playing-head .group-label { min-width: 0; }
+.now-playing-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  min-width: 0;
+}
+#session-row .now-playing {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  flex-shrink: 0;
 }
 
 .badge {

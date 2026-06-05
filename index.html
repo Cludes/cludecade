@@ -142,12 +142,18 @@
 
       <div id="save-controls" hidden>
         <div class="row" id="session-row">
-          <span class="group-label">Now playing</span>
-          <span id="now-playing-name" class="now-playing"></span>
-          <span id="now-playing-system" class="badge"></span>
-          <button id="fast-forward-btn" aria-pressed="false">Fast-forward</button>
-          <button id="screenshot-btn">Screenshot</button>
-          <button id="change-game">Change game</button>
+          <div class="now-playing-head">
+            <span class="group-label">Now playing</span>
+            <span class="now-playing-title">
+              <span id="now-playing-name" class="now-playing"></span>
+              <span id="now-playing-system" class="badge"></span>
+            </span>
+          </div>
+          <div class="session-actions">
+            <button id="fast-forward-btn" aria-pressed="false">Fast-forward</button>
+            <button id="screenshot-btn">Screenshot</button>
+            <button id="change-game">Change game</button>
+          </div>
         </div>
         <div class="row" id="controls-row">
           <span class="group-label">On-screen controls</span>
