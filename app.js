@@ -322,7 +322,8 @@ function onEmulatorReady() {
   updateControls();
   loadingEl.hidden = true;
   saveControls.hidden = false;
-  nowPlayingName.textContent = currentFileName;
+  nowPlayingName.textContent = prettyName(currentFileName);
+  nowPlayingName.title = currentFileName;
   nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
   // Match the screen box to the system so games fill it (no letterboxing).
   const gameEl = document.getElementById("game");
@@ -1179,6 +1180,18 @@ const LIBRETRO_FOLDERS = {
   ws: "Bandai - WonderSwan",
   coleco: "Coleco - ColecoVision",
 };
+
+// Turn a raw ROM filename into a clean title: drop the extension and the
+// No-Intro/GoodTools region/dump tags like "(USA)", "(U)", "[!]", "(Rev 1)".
+function prettyName(fn) {
+  const clean = String(fn || "")
+    .replace(/\.[^.]+$/, "")
+    .replace(/[([][^)\]]*[)\]]/g, "")
+    .replace(/[_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return clean || String(fn || "");
+}
 
 // Best-effort libretro box-art URL from a core + ROM/display name.
 function boxartUrl(core, name) {
