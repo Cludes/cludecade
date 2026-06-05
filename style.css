@@ -309,19 +309,23 @@ main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
   align-items: flex-start;
   justify-content: flex-end;
   gap: 4px;
-  min-height: 110px;
-  padding: var(--space-4);
+  min-height: 124px;
+  padding: var(--space-5) var(--space-4) var(--space-4);
   padding-left: calc(var(--space-4) + 3px);
   text-align: left;
+  /* Cartridge silhouette: notched top-right corner like a Game Boy cart. */
+  clip-path: polygon(0 0, 72% 0, 100% 22%, 100% 100%, 0 100%);
   /* Wall of colour: each tile is tinted with its own console brand colour. */
   background:
-    linear-gradient(155deg, color-mix(in srgb, var(--brand, var(--accent)) 34%, var(--surface-1)), color-mix(in srgb, var(--brand, var(--accent)) 6%, var(--surface-1)) 82%);
+    linear-gradient(160deg, color-mix(in srgb, var(--brand, var(--accent)) 38%, var(--surface-1)), color-mix(in srgb, var(--brand, var(--accent)) 7%, var(--surface-1)) 84%);
   color: var(--text);
-  border: 1px solid color-mix(in srgb, var(--brand, var(--accent)) 50%, var(--border-strong));
-  border-radius: var(--r-lg);
+  border-radius: var(--r-md);
   overflow: hidden;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 8px 22px -12px var(--brand, var(--accent)), var(--e1);
-  transition: transform 0.14s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 1px color-mix(in srgb, var(--brand, var(--accent)) 28%, transparent);
+  filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--brand, var(--accent)) 32%, transparent));
+  transition: transform 0.14s ease, filter 0.18s ease, background 0.18s ease;
 }
 /* Brand-coloured spine down the left edge of each tile (launcher style). */
 .console-btn::before {
@@ -347,30 +351,28 @@ main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
   line-height: 1.15;
   letter-spacing: -0.01em;
 }
-/* The old corner cartridge glyph read as a stray coloured square; replaced by
-   a soft brand-coloured ambient glow in the top-right (set on ::after below). */
 .console-glyph { display: none; }
+/* Grip ridges across the cartridge top (clear of the notched right corner). */
 .console-btn::after {
   content: "";
   position: absolute;
-  top: -34px;
-  right: -34px;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--brand, var(--accent)) 0%, transparent 70%);
-  opacity: 0.3;
+  top: 10px;
+  left: 14px;
+  width: 42px;
+  height: 9px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 2px, transparent 2px 6px);
+  opacity: 0.7;
   pointer-events: none;
   transition: opacity 0.18s ease;
 }
-.console-btn:hover:not(:disabled)::after { opacity: 0.5; }
-/* Neon glow in the console's own brand colour on hover. */
+.console-btn:hover:not(:disabled)::after { opacity: 1; }
+/* Cartridge lifts and glows in its own brand colour on hover. */
 .console-btn:hover:not(:disabled) {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   background:
-    linear-gradient(155deg, color-mix(in srgb, var(--brand, var(--accent)) 48%, var(--surface-1)), color-mix(in srgb, var(--brand, var(--accent)) 12%, var(--surface-1)) 82%);
-  border-color: var(--brand, var(--accent));
-  box-shadow: 0 0 0 1px var(--brand, var(--accent)), 0 12px 40px -8px var(--brand, var(--accent)), var(--e2);
+    linear-gradient(160deg, color-mix(in srgb, var(--brand, var(--accent)) 54%, var(--surface-1)), color-mix(in srgb, var(--brand, var(--accent)) 14%, var(--surface-1)) 84%);
+  filter: drop-shadow(0 12px 26px color-mix(in srgb, var(--brand, var(--accent)) 55%, transparent));
 }
 .console-btn:active:not(:disabled) { transform: translateY(-1px); }
 .console-btn:focus-visible { outline-color: var(--brand, var(--accent)); }
