@@ -483,6 +483,13 @@ async function refreshQuickLoad() {
 if (quickSaveBtn) quickSaveBtn.addEventListener("click", quickSaveState);
 if (quickLoadBtn) quickLoadBtn.addEventListener("click", quickLoadState);
 
+// Classic emulator hotkeys for quick state, active only while a game runs.
+document.addEventListener("keydown", (e) => {
+  if (!gameRunning || e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.key === "F2") { e.preventDefault(); quickSaveState(); }
+  else if (e.key === "F4") { e.preventDefault(); quickLoadState(); }
+});
+
 // --- In-game save (.sav / SRAM) ---
 
 exportSavBtn.addEventListener("click", () => {
