@@ -889,7 +889,8 @@ async function renderRecent() {
 
     const name = document.createElement("span");
     name.className = "recent-name";
-    name.textContent = rom.fileName;
+    name.textContent = prettyName(rom.fileName);
+    name.title = rom.fileName;
 
     const sys = document.createElement("span");
     sys.className = "badge";
