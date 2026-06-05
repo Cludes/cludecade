@@ -1214,7 +1214,8 @@ function addBoxart(coverEl, core, name) {
   img.alt = "";
   img.className = "b-cover-img";
   img.decoding = "async";
-  img.loading = "lazy";
+  // NB: no loading="lazy" here. A detached lazy image never starts loading, so
+  // onload would never fire and the art would never get appended.
   img.referrerPolicy = "no-referrer";
   img.onload = () => { coverEl.appendChild(img); coverEl.classList.add("has-art"); };
   img.src = url;
