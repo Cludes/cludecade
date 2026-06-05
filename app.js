@@ -509,6 +509,20 @@ if (resetGameBtn) resetGameBtn.addEventListener("click", () => {
   setStatus("Game restarted.");
 });
 
+// Auto-pause the game when the tab is hidden (saves CPU/battery and holds your
+// spot); resume on return - but only if we were the ones who paused it.
+let autoPaused = false;
+document.addEventListener("visibilitychange", () => {
+  const emu = window.EJS_emulator;
+  if (!gameRunning || !emu || typeof emu.pause !== "function") return;
+  if (document.hidden) {
+    if (!emu.paused) { emu.pause(); autoPaused = true; }
+  } else if (autoPaused) {
+    if (typeof emu.play === "function") emu.play();
+    autoPaused = false;
+  }
+});
+
 // Classic emulator hotkeys for quick state, active only while a game runs.
 document.addEventListener("keydown", (e) => {
   if (!gameRunning || e.altKey || e.ctrlKey || e.metaKey) return;
