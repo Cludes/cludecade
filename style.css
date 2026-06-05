@@ -915,8 +915,8 @@ body.playing:not(.skin-mode) #console-body {
 .gb-skin .action-btn:hover:not(:disabled) { filter: brightness(1.08); transform: none; }
 .gb-skin .action-btn.pressed { transform: translateY(2px); box-shadow: 0 1px 0 #241f30; filter: none; }
 
-/* Start / Select as near-horizontal grey pills (real GBC). */
-.gb-skin #joystick-meta { transform: rotate(-13deg); margin-top: 0.5rem; }
+/* Start / Select as straight horizontal grey pills (real GBC). */
+.gb-skin #joystick-meta { transform: none; margin-top: 0.5rem; }
 .gb-skin .meta-btn {
   color: #cfcae0;
   background: #3a3550;
