@@ -236,6 +236,54 @@ main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
 .hero-cta:hover::after { transform: translateX(3px); }
 .hero-cta:active { transform: translateY(0); }
 
+/* Hero product shot: a browser-window mockup showing a game (giga-style visual). */
+.hero-visual {
+  margin: clamp(2.75rem, 7vw, 4.5rem) auto 0;
+  max-width: 760px;
+  perspective: 1600px;
+}
+.hero-window {
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1a1d29, #0c0e15);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border-strong));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent),
+    0 40px 90px -36px rgba(0, 0, 0, 0.95),
+    0 0 90px -24px color-mix(in srgb, var(--accent) 32%, transparent);
+}
+.hero-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  background: linear-gradient(180deg, #20242f, #161922);
+  border-bottom: 1px solid var(--border);
+}
+.hero-bar span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+.hero-bar span:nth-child(1) { background: #ff5f57; }
+.hero-bar span:nth-child(2) { background: #febc2e; }
+.hero-bar span:nth-child(3) { background: #28c840; }
+.hero-bar em {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-window img {
+  display: block;
+  width: 100%;
+  background: #000;
+}
+
 /* --- Home sections (open, generous spacing) --- */
 .home-section { max-width: 720px; margin: 0 auto; padding: var(--space-7) var(--space-4); }
 .section-eyebrow {
