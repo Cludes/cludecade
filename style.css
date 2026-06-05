@@ -1190,6 +1190,7 @@ body.playing:not(.skin-mode) #console-body::before {
 .skin-mode .np-tools { justify-content: center; border-top: none; margin-top: var(--space-2); padding-top: 0; }
 .skin-mode .save-backup,
 .skin-mode #now-playing-system,
+.skin-mode .np-cover,
 .skin-mode .np-header .group-label { display: none; }
 .skin-mode #status { text-align: center; }
 .action-btn {
@@ -1317,7 +1318,15 @@ body.playing:not(.skin-mode) #console-body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-4);
+  gap: var(--space-3);
+}
+/* Album-art style cover thumbnail for the game that's currently playing. */
+.np-cover {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-sm);
+  font-size: 1.4rem;
 }
 .now-playing-head {
   display: flex;

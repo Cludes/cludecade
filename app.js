@@ -146,6 +146,7 @@ const importBackupInput = document.getElementById("import-backup");
 const autostateInterval = document.getElementById("autostate-interval");
 const nowPlayingName = document.getElementById("now-playing-name");
 const nowPlayingSystem = document.getElementById("now-playing-system");
+const npCover = document.getElementById("np-cover");
 const changeGameBtn = document.getElementById("change-game");
 
 // Reloading is the only clean way back to the picker, since EmulatorJS only
@@ -326,6 +327,13 @@ function onEmulatorReady() {
   nowPlayingName.title = currentFileName;
   nowPlayingSystem.textContent = SYSTEMS[currentCore] || "";
   nowPlayingSystem.style.setProperty("--badge", systemColor(SYSTEMS[currentCore] || ""));
+  if (npCover) {
+    npCover.querySelectorAll(".b-cover-img").forEach((el) => el.remove());
+    npCover.classList.remove("has-art");
+    npCover.textContent = (currentFileName || "?").charAt(0).toUpperCase();
+    npCover.style.setProperty("--cover", systemColor(SYSTEMS[currentCore] || ""));
+    addBoxart(npCover, currentCore, currentFileName);
+  }
   // Match the screen box to the system so games fill it (no letterboxing).
   const gameEl = document.getElementById("game");
   if (gameEl) {
