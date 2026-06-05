@@ -22,9 +22,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Cludecade</h1>
-    <p class="tag">Runs entirely in your browser. Your ROM never leaves your device.</p>
+  <header class="nav">
+    <a class="nav-brand" href="./">CLUDECADE</a>
+    <a class="nav-link" href="https://github.com/Cludes/cludecade" target="_blank" rel="noopener">Source &#8599;</a>
   </header>
 
   <main>
@@ -34,30 +34,33 @@
 
     <!-- ROM picker -->
     <section id="picker">
-      <!-- Home: choose a console -->
+      <!-- Home: hero + console picker -->
       <div id="console-view">
-        <svg class="picker-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <rect x="14" y="6" width="36" height="52" rx="5" fill="rgba(155,188,15,0.12)" stroke="currentColor" stroke-width="2.5" />
-          <rect x="21" y="14" width="22" height="14" rx="2" fill="currentColor" opacity="0.3" />
-          <rect x="21" y="42" width="14" height="3" rx="1.5" fill="currentColor" />
-          <rect x="21" y="48" width="22" height="3" rx="1.5" fill="currentColor" />
-        </svg>
-        <h2 class="picker-title">Play retro games in your browser</h2>
-        <p class="hint">Choose a console to start.</p>
-        <div id="console-grid" role="group" aria-label="Choose a console"></div>
-        <div id="home-examples" hidden>
-          <h2 class="examples-head">No ROM? Try one of these</h2>
-          <p class="hint examples-hint">Free homebrew games - click to play instantly.</p>
+        <section class="hero">
+          <span class="hero-eyebrow">Browser native &middot; BYO ROM &middot; Zero install</span>
+          <h1 class="hero-title">Play retro games right in your <span class="neon">browser</span></h1>
+          <p class="hero-sub">Game Boy to PlayStation, instantly. Bring your own ROM and it never leaves your device.</p>
+          <a class="hero-cta" href="#systems">Choose your system</a>
+        </section>
+
+        <section class="home-section" id="systems">
+          <p class="section-eyebrow">Choose your system</p>
+          <div id="console-grid" role="group" aria-label="Choose a console"></div>
+        </section>
+
+        <section class="home-section" id="home-examples" hidden>
+          <p class="section-eyebrow">No ROM? Try one of these</p>
           <ul id="examples-list"></ul>
-        </div>
-        <div id="recent" hidden>
+        </section>
+
+        <section class="home-section" id="recent" hidden>
           <div class="recent-head">
-            <h2>Recently played</h2>
+            <p class="section-eyebrow">Recently played</p>
             <button id="clear-roms" class="recent-clear">Clear all</button>
           </div>
           <ul id="recent-list"></ul>
           <p id="storage" class="hint"></p>
-        </div>
+        </section>
       </div>
 
       <!-- Load a game for the chosen console -->

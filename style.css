@@ -96,7 +96,7 @@
 ::selection { background: rgba(155, 188, 15, 0.35); }
 
 /* Themed scrollbars so the chrome matches the dark UI. */
-html { scrollbar-color: var(--border) transparent; scrollbar-width: thin; }
+html { scrollbar-color: var(--border) transparent; scrollbar-width: thin; scroll-behavior: smooth; scroll-padding-top: 72px; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
@@ -141,67 +141,124 @@ body::before {
   opacity: 0.55;
 }
 
-header, footer {
-  text-align: center;
-  padding: var(--space-4);
+footer { text-align: center; padding: var(--space-4); }
+
+/* Slim sticky top nav. */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) clamp(var(--space-4), 4vw, var(--space-6));
+  background: rgba(8, 9, 13, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
-
-header { padding-top: var(--space-7); }
-
-/* Arcade marquee wordmark: big, uppercase, neon-glowing. */
-h1 {
-  margin: var(--space-2) 0 0;
-  font-size: clamp(2.2rem, 7vw, 3rem);
+.nav-brand {
   font-weight: 800;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #dff15f, var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 0 24px rgba(155, 188, 15, 0.45)) drop-shadow(0 0 6px rgba(155, 188, 15, 0.55));
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+  filter: drop-shadow(0 0 10px rgba(155, 188, 15, 0.5));
 }
-/* Glowing neon rule under the wordmark. */
-h1::after {
-  content: "";
-  display: block;
-  width: 64px;
-  height: 2px;
-  margin: var(--space-3) auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  box-shadow: var(--glow);
-}
-/* Terminal-style tagline. */
-.tag {
-  color: var(--text-2);
-  margin: var(--space-3) 0 0;
+.nav-link {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s ease;
 }
+.nav-link:hover { color: var(--accent); }
 
-main {
-  flex: 1;
-  width: 100%;
+main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
+#picker { width: 100%; }
+
+/* --- Hero --- */
+.hero {
+  text-align: center;
   max-width: 760px;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: clamp(2.5rem, 9vw, 6rem) var(--space-4) clamp(1.5rem, 4vw, 3rem);
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--accent-soft-border);
+  border-radius: var(--r-pill);
+  background: var(--accent-soft);
+}
+.hero-title {
+  margin: var(--space-4) auto 0;
+  max-width: 18ch;
+  font-size: clamp(2.3rem, 7.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+.hero-title .neon {
+  color: var(--accent);
+  filter: drop-shadow(0 0 24px rgba(155, 188, 15, 0.55));
+}
+.hero-sub {
+  margin: var(--space-4) auto 0;
+  max-width: 32rem;
+  color: var(--text-2);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.hero-cta {
+  display: inline-block;
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent-grad);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  box-shadow: var(--glow), var(--shadow-sm);
+  transition: transform 0.12s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+.hero-cta:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: var(--glow-strong), var(--shadow); }
+
+/* --- Home sections (open, generous spacing) --- */
+.home-section { max-width: 720px; margin: 0 auto; padding: var(--space-5) var(--space-4); }
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 var(--space-4);
+  text-align: center;
 }
 
-#picker {
+/* --- Load view: a single focused card --- */
+#load-view {
+  max-width: 480px;
+  margin: var(--space-6) auto;
+  padding: clamp(1.75rem, 5vw, 2.75rem);
   text-align: center;
-  padding: 2.75rem 1.75rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--r-lg);
   background: linear-gradient(180deg, var(--panel), var(--panel-2));
   box-shadow: var(--shadow);
   transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
-#picker.dragover {
+#picker.dragover #load-view {
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(155, 188, 15, 0.14), var(--shadow);
+  box-shadow: var(--glow-strong), var(--shadow);
 }
 
 .picker-icon {
@@ -368,22 +425,17 @@ a:focus-visible {
   margin-top: 1rem;
 }
 
-#recent {
-  margin: var(--space-6) auto 0;
-  text-align: left;
-  max-width: 460px;
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-4);
-}
+#recent { text-align: left; }
 .recent-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-3);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
+.recent-head .section-eyebrow { margin: 0; text-align: left; }
 #recent h2 {
   font-size: var(--text-sm);
   color: var(--muted);
@@ -447,7 +499,7 @@ a:focus-visible {
 #storage { margin-top: 0.8rem; text-align: left; }
 
 /* Prominent "try one of these" example-games shelf on the home screen. */
-#home-examples { margin: var(--space-6) auto 0; max-width: 460px; text-align: center; }
+#examples-list, #recent-list { max-width: 520px; margin-left: auto; margin-right: auto; }
 .examples-head {
   font-size: var(--text-sm);
   color: var(--text);
@@ -456,7 +508,7 @@ a:focus-visible {
   margin: 0 0 var(--space-1);
 }
 .examples-hint { margin-top: 0; }
-#examples-list { list-style: none; margin: var(--space-3) 0 0; padding: 0; text-align: left; }
+#examples-list { list-style: none; margin: var(--space-3) auto 0; padding: 0; text-align: left; }
 #examples-list li { margin-bottom: var(--space-2); }
 #examples-list .builtin-game { border-radius: var(--r-md); }
 
@@ -1191,6 +1243,7 @@ footer a:hover { text-decoration: underline; }
 
 /* Honour reduced-motion preferences: no spinner rotation or transitions. */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   #loading::before { animation: none; }
   #save-controls:not([hidden]) { animation: none; }
   *, *::before, *::after { transition: none !important; }
