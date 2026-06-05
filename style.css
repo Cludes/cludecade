@@ -1276,6 +1276,18 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 480px) {
   main { padding: 0.85rem; }
   h1 { font-size: 1.7rem; }
+  /* Class beats the bare h1 rule, so scale the hero explicitly for phones and
+     keep the eyebrow chip from overflowing the viewport. */
+  .hero { padding-left: var(--space-3); padding-right: var(--space-3); }
+  .hero-title { font-size: clamp(1.85rem, 9vw, 2.5rem); max-width: 16ch; }
+  .hero-eyebrow {
+    white-space: normal;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.32rem 0.7rem;
+    max-width: 100%;
+  }
+  .hero-sub { font-size: 0.95rem; }
   #picker { padding: 2.5rem 1rem; }
   .group-label { min-width: 100%; }
   /* Comfortable tap targets on touch screens. */
