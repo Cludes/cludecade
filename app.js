@@ -1150,10 +1150,10 @@ const examplesList = document.getElementById("examples-list");
 // Generated placeholder "cover" colour from the system name (no external art).
 function systemColor(system) {
   const s = (system || "").toLowerCase();
-  if (s.includes("playstation")) return "#2e6fdb";
-  if (s.includes("genesis") || s.includes("sega") || s.includes("master system") || s.includes("game gear")) return "#1c9bd8";
-  if (s.includes("game boy") || s.includes("nes") || s.includes("snes") || s.includes("nintendo") || s.includes("virtual boy")) return "#e60012";
-  return "#9bbc0f";
+  if (s.includes("playstation")) return "#3b82f6";
+  if (s.includes("genesis") || s.includes("sega") || s.includes("master system") || s.includes("game gear")) return "#1fb6ff";
+  if (s.includes("game boy") || s.includes("nes") || s.includes("snes") || s.includes("nintendo") || s.includes("virtual boy")) return "#ff2740";
+  return "#a6ff1a";
 }
 
 function makeBuiltinButton(g) {
