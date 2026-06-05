@@ -1015,5 +1015,3701 @@
         "V30A-BEB6"
       ]
     ]
+  },
+  {
+    "game": "Sonic Compilation Sonic Classics",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "compilation",
+        "sonic",
+        "classics"
+      ]
+    ],
+    "cheats": [
+      [
+        "infinite lives",
+        "GJ6C-CA46"
+      ],
+      [
+        "99 lives",
+        "NN3W-AAAG"
+      ],
+      [
+        "You can't be hurt by enemies or spikes when you collect rings",
+        "ATTA-CABE"
+      ],
+      [
+        "Rings always count up to 999",
+        "AP2A-CAR4"
+      ],
+      [
+        "Grab rings from anywhere",
+        "AP2A-CAPA"
+      ],
+      [
+        "Dont lose rings when Hit",
+        "AWRW-AA3R"
+      ]
+    ]
+  },
+  {
+    "game": "Legend of Zelda The Link's Awakening DX",
+    "system": "gbc",
+    "match": [
+      [
+        "legend",
+        "zelda",
+        "links",
+        "awakening"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Energy",
+        "FAO-999-4C1"
+      ],
+      [
+        "All Items You Get Start At Max Power",
+        "09C-56B-E6E+09C-74A-E6E"
+      ],
+      [
+        "Get 5 Rupees For Each Single Rupee",
+        "054-EE9-E6E"
+      ],
+      [
+        "Get 50 Rupees For Each Single Rupee",
+        "324-EE9-E6E"
+      ],
+      [
+        "Get 255 Rupees For Each Single Rupee",
+        "FF4-EE9-E6E"
+      ],
+      [
+        "Infinite Rupees",
+        "FAF-BDA-4C1+FAF-B2A-4C1"
+      ],
+      [
+        "You Will Always Shoot Arrows (Have Them Or Not) Without Depleting Your Supply",
+        "12E-79E-EFA"
+      ],
+      [
+        "Infinite Arrow",
+        "000-92E"
+      ]
+    ]
+  },
+  {
+    "game": "Legend of Zelda The Oracle of Seasons",
+    "system": "gbc",
+    "match": [
+      [
+        "legend",
+        "zelda",
+        "oracle",
+        "seasons"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Gesundheit",
+        "$0D61BD2A"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Luigi Superstar Saga",
+    "system": "gba",
+    "match": [
+      [
+        "mario",
+        "luigi",
+        "superstar",
+        "saga"
+      ]
+    ],
+    "cheats": [
+      [
+        "Unlimited Coins",
+        "A9873144+203A53CE"
+      ],
+      [
+        "Have All Beans",
+        "143ABBA7+BEECBA00"
+      ],
+      [
+        "Have All Regular Items",
+        "CC877F1E+5812F01D"
+      ],
+      [
+        "Have All Weapons & Abilities",
+        "6B68E18A+81C203BF"
+      ],
+      [
+        "Mario Unlimited HP",
+        "9ABED4C3+47E9DB61"
+      ],
+      [
+        "Mario Unlimited BP",
+        "A56EB799+A8E7DB0B"
+      ],
+      [
+        "Mario Max HP",
+        "87AF86C9+1A28189A"
+      ],
+      [
+        "Mario Max BP",
+        "F2C9D210+E12F3192"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Trading Card Game",
+    "system": "gbc",
+    "match": [
+      [
+        "pokemon",
+        "trading",
+        "card",
+        "game"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Actions In 1 Turn",
+        "01003BCB"
+      ],
+      [
+        "Your PokÃÂ©mon Health Modifier",
+        "01??C8C2"
+      ],
+      [
+        "Opponent's PokÃÂ©mon Health Modifier",
+        "01??C8C3"
+      ]
+    ]
+  },
+  {
+    "game": "Shrek Swamp Kart Speedway",
+    "system": "gba",
+    "match": [
+      [
+        "shrek",
+        "swamp",
+        "kart",
+        "speedway"
+      ]
+    ],
+    "cheats": [
+      [
+        "Enable Code (Must Be On)",
+        "00009837+000A+1000D148+0007"
+      ],
+      [
+        "Instant Win",
+        "3202320E+0004"
+      ],
+      [
+        "Unlock Donkey",
+        "32027CE8+0001"
+      ],
+      [
+        "Unlock Wolf",
+        "32027CE9+0001"
+      ],
+      [
+        "Unlock Robin Hood",
+        "32027CEA+0001"
+      ],
+      [
+        "Unlock Prince Farquad",
+        "32027CEB+0001"
+      ],
+      [
+        "Unlock All Characters",
+        "82027CE8+0101+82027CEA+0101"
+      ],
+      [
+        "Unlock All Areas",
+        "42027C30+FFFF+00000012+0002"
+      ]
+    ]
+  },
+  {
+    "game": "Legend of Zelda The Majora's Mask",
+    "system": "n64",
+    "match": [
+      [
+        "legend",
+        "zelda",
+        "majoras",
+        "mask"
+      ]
+    ],
+    "cheats": [
+      [
+        "Have Magic Beans",
+        "801EF6EA 000A"
+      ],
+      [
+        "Have All-Night Mask",
+        "801EF6F9 0038"
+      ],
+      [
+        "Max Infinite Health",
+        "811EF6A4 0140+811EF6A6 0140"
+      ]
+    ]
+  },
+  {
+    "game": "Legend of Zelda The Oracle of Ages",
+    "system": "gbc",
+    "match": [
+      [
+        "legend",
+        "zelda",
+        "oracle",
+        "ages"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Gesundheit",
+        "$0D61C82A"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Kart Super Circuit",
+    "system": "gba",
+    "match": [
+      [
+        "mario",
+        "kart",
+        "super",
+        "circuit"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Low Time",
+        "83005C80+0000"
+      ],
+      [
+        "Infinite Retries",
+        "3300000C+0003"
+      ],
+      [
+        "Max Coins",
+        "33003D10+0063"
+      ],
+      [
+        "Always Have Single Green Shell",
+        "83003D12+1000"
+      ],
+      [
+        "Always Have Triple Green Shell",
+        "83003D12+1001"
+      ],
+      [
+        "Always Have Single Red Shell",
+        "83003D12+1002"
+      ],
+      [
+        "Always Have Triple Red Shell",
+        "83003D12+1003"
+      ],
+      [
+        "Always Have Blue Shell",
+        "83003D12+1004"
+      ]
+    ]
+  },
+  {
+    "game": "Metroid II Return of Samus",
+    "system": "gb",
+    "match": [
+      [
+        "metroid",
+        "ii",
+        "return",
+        "samus"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite missiles",
+        "00F-36B-E6E"
+      ],
+      [
+        "Infinite energy",
+        "80F-6DD-7F6"
+      ],
+      [
+        "Number Of Energy Tanks",
+        "010050D0"
+      ],
+      [
+        "Infinite Missles",
+        "013953D0"
+      ],
+      [
+        "Invincibility",
+        "018784D0"
+      ],
+      [
+        "Infinite Life",
+        "019951D0"
+      ],
+      [
+        "Infinite Energy Tanks",
+        "010952D0"
+      ],
+      [
+        "Moon Jump [Turn Off Switch To Come Down]",
+        "010A20D0"
+      ]
+    ]
+  },
+  {
+    "game": "Super Mario Bros. Deluxe",
+    "system": "gbc",
+    "match": [
+      [
+        "super",
+        "mario",
+        "bros",
+        "deluxe"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "90097FC1"
+      ],
+      [
+        "Always Have Star",
+        "9001DBC1"
+      ],
+      [
+        "Always Stay Big",
+        "0101C5C1"
+      ],
+      [
+        "Always Have Fire",
+        "0101AFC1"
+      ],
+      [
+        "Always Be Small Mario With Fire",
+        "0109C1C1"
+      ],
+      [
+        "Infinite Time",
+        "01907DC1"
+      ],
+      [
+        "Have All Red Coins",
+        "011F0AD3"
+      ],
+      [
+        "Always Have Fireball",
+        "006-1AA-7F2"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man Battle Network 2",
+    "system": "gba",
+    "match": [
+      [
+        "mega",
+        "man",
+        "battle",
+        "network"
+      ]
+    ],
+    "cheats": [
+      [
+        "Invincible",
+        "82008A9A+00FF"
+      ],
+      [
+        "Infinite HP",
+        "82008A94+270F"
+      ],
+      [
+        "Maximum HP",
+        "82001132+270F"
+      ],
+      [
+        "Infinite Zenny",
+        "82008A60+C350"
+      ]
+    ]
+  },
+  {
+    "game": "Zelda II The Adventure of Link",
+    "system": "nes",
+    "match": [
+      [
+        "zelda",
+        "ii",
+        "adventure",
+        "link"
+      ]
+    ],
+    "cheats": [
+      [
+        "Link Has Infinite Lives",
+        "SZKGKXVK"
+      ],
+      [
+        "Link Starts With 6 Lives",
+        "TASKPLLA"
+      ],
+      [
+        "Link Starts With 9 Lives",
+        "PASKPLLE"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby 64 The Crystal Shards",
+    "system": "n64",
+    "match": [
+      [
+        "kirby",
+        "64",
+        "crystal",
+        "shards"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "800D6F4F 0009"
+      ],
+      [
+        "Infinite Health",
+        "810D6E50 40C0"
+      ],
+      [
+        "Max Stars (Press L & R)",
+        "D0098AB5 0030+810D6E60 0000+D0098AB5 0030+810D6E62 001D"
+      ],
+      [
+        "Always Skips Playing Demo",
+        "810BE4F2 0007"
+      ],
+      [
+        "Always Have Power Modifier",
+        "8012E853 0000"
+      ],
+      [
+        "Always Show Symbol Modifer",
+        "800D6EAB 0000+800D6E93 0000"
+      ],
+      [
+        "P1 Infinite Falls",
+        "8018E28B 0005"
+      ],
+      [
+        "P2 Infinite Falls",
+        "8018E28F 0005"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Land III",
+    "system": "gb",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "land",
+        "iii"
+      ]
+    ],
+    "cheats": [
+      [
+        "Fake Infinite Bear, Bonus and DK Coins",
+        "019951DF"
+      ],
+      [
+        "Invincible",
+        "012630DF"
+      ],
+      [
+        "Infinite Lives",
+        "0106AAFF"
+      ]
+    ]
+  },
+  {
+    "game": "Mario vs. Donkey Kong",
+    "system": "gba",
+    "match": [
+      [
+        "mario",
+        "vs",
+        "donkey",
+        "kong"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Time",
+        "83000B54+4500"
+      ],
+      [
+        "Infinite Lives",
+        "33000BBC+0009"
+      ],
+      [
+        "Infinite Key Time",
+        "83001A80+0300"
+      ],
+      [
+        "Infinite Health",
+        "33003528+0006"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic 3D Blast Sonic 3D Flickies' Island",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "3d",
+        "blast",
+        "sonic"
+      ]
+    ],
+    "cheats": [
+      [
+        "Have All Chaos Emeralds",
+        "FF4F92:0007"
+      ],
+      [
+        "Invincibility",
+        "CC5A-CN4L"
+      ],
+      [
+        "Level Selection Menu Always Appears At Level Start",
+        "AJNA-AA32"
+      ],
+      [
+        "Infinite Lives",
+        "ATEA-AA5J"
+      ],
+      [
+        "Don't Lose Rings When Hit",
+        "BL5T-CA2W"
+      ],
+      [
+        "Don't Lose Rings In Special Stages",
+        "AMJA-CA42"
+      ],
+      [
+        "Always Go To The Special Stage",
+        "DADA-AAAR"
+      ],
+      [
+        "Infinite Rings",
+        "FF0A5A:0064"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Jr. Math",
+    "system": "nes",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "jr",
+        "math"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Get The Right Answer",
+        "AAUILSZP+AAKILSZA"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Blast Man II",
+    "system": "snes",
+    "match": [
+      [
+        "sonic",
+        "blast",
+        "man",
+        "ii"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "C295-7F6F"
+      ],
+      [
+        "Infinite Energy",
+        "C20B-EFA7"
+      ],
+      [
+        "Invincibility",
+        "C206-5F64"
+      ],
+      [
+        "P1 Infinite Spiceal",
+        "7E0DAD99"
+      ],
+      [
+        "P1 Infinite Health",
+        "7E0DA548"
+      ],
+      [
+        "P1 Infinite Lives",
+        "7E0DA999"
+      ],
+      [
+        "Infinite Health P1",
+        "7E0DA5FF"
+      ],
+      [
+        "Infinite Health P2",
+        "7E1DA7FF"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man The Wily Wars",
+    "system": "segaMD",
+    "match": [
+      [
+        "mega",
+        "man",
+        "wily",
+        "wars"
+      ]
+    ],
+    "cheats": [
+      [
+        "Can Always Access Wily Tower Game",
+        "ATNA-CAFG"
+      ],
+      [
+        "Invincible Against Enemies",
+        "J4CT-AA3E"
+      ],
+      [
+        "Invincible Against Spikes",
+        "H51T-EA50"
+      ],
+      [
+        "Extra Lives Are Worth 5 Lives",
+        "SEEA-DYWG"
+      ],
+      [
+        "9 lives in Mega Man 3",
+        "BHJT-AAEJ"
+      ],
+      [
+        "50 Lives in Mega Man 3",
+        "GMJT-AAEJ"
+      ],
+      [
+        "Inf. Energy Tanks",
+        "FFCB70:0001"
+      ],
+      [
+        "Lives",
+        "FFCB38:0003"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man Dr. Wily's Revenge",
+    "system": "gb",
+    "match": [
+      [
+        "mega",
+        "man",
+        "dr",
+        "wilys"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Moving Forward",
+        "01EA2AD8"
+      ],
+      [
+        "Moon Jump",
+        "01044AD8+01024CD8"
+      ],
+      [
+        "Infinite Energy",
+        "01A0A3DF"
+      ],
+      [
+        "Infinite Lives",
+        "010A08C1"
+      ],
+      [
+        "Invincibility! (Walk Through Enemies)",
+        "013D39D8"
+      ],
+      [
+        "Infinite Weapon Power",
+        "01002EC2"
+      ]
+    ]
+  },
+  {
+    "game": "Super Mario 64 DS",
+    "system": "nds",
+    "match": [
+      [
+        "super",
+        "mario",
+        "64",
+        "ds"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "020973EC+00000063"
+      ],
+      [
+        "Infinite Health",
+        "1208FCE4+00000880+1210679C+00000008"
+      ],
+      [
+        "Infinite Coins",
+        "02097454+00000064"
+      ],
+      [
+        "Refill Health (Select)",
+        "94000130+FFFB0000+1208FCE4+00000880+1210679C+00000008+D0000000+00000000"
+      ],
+      [
+        "Press L+R+SELECT For 7 Red Coins",
+        "94000130+000000FB+12097408+00000007+D0000000+00000000+92097408+00000008+12097608+0000FF80+D0000000+00000000"
+      ],
+      [
+        "Press B To Moon Jump",
+        "94000130+FFFD0000+021697C0+00019B23+0217ABE0+00019B23+D0000000+00000000"
+      ],
+      [
+        "Invincible",
+        "62093550+00000000+B2093550+00000000+200006A0+0000001C+D2000000+00000000"
+      ],
+      [
+        "Mario, Luigi and Wario Never Lose Cap",
+        "22094BA7+00000080"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Puzzle Challenge",
+    "system": "gbc",
+    "match": [
+      [
+        "pokemon",
+        "puzzle",
+        "challenge"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Score",
+        "01FF42C8+01FF43C8+01FF44C8"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Puzzle League",
+    "system": "n64",
+    "match": [
+      [
+        "pokemon",
+        "puzzle",
+        "league"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Tries (Puzzle University)",
+        "801A59FF 0004"
+      ],
+      [
+        "Max Tries Modifier (Puzzle University)",
+        "801A59FB 0000"
+      ],
+      [
+        "Max Score",
+        "811A151C 000F+811A151E 423F"
+      ],
+      [
+        "Push Z Button To Get 9999 Points",
+        "D01AB824 0020+811A151E 270F"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Andretti Racing",
+    "system": "segaMD",
+    "match": [
+      [
+        "mario",
+        "andretti",
+        "racing"
+      ]
+    ],
+    "cheats": [
+      [
+        "Great Acceleration P1",
+        "FF4E82:00FF"
+      ],
+      [
+        "Impossible Acceleration P1",
+        "FF4E82:00FF+FF4E82:00FF"
+      ],
+      [
+        "Master Code",
+        "R18B-860W"
+      ]
+    ]
+  },
+  {
+    "game": "Metroid Zero Mission",
+    "system": "gba",
+    "match": [
+      [
+        "metroid",
+        "zero",
+        "mission"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Missiles",
+        "83001538+03E7"
+      ],
+      [
+        "Infinite Super Missiles",
+        "3300153A+00C7"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby the Amazing Mirror",
+    "system": "gba",
+    "match": [
+      [
+        "kirby",
+        "amazing",
+        "mirror"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Health",
+        "32020FE0+0006"
+      ],
+      [
+        "Infinite Lives",
+        "32020FE2+0003"
+      ],
+      [
+        "Infinite Whistle",
+        "32020FBC+0003"
+      ],
+      [
+        "Have All Mirror Pieces",
+        "32038970+00FF"
+      ],
+      [
+        "Have All Spray Paint In Collection",
+        "82038974+3FFF"
+      ],
+      [
+        "Have All Maps In Collection",
+        "8203897C+03FF"
+      ],
+      [
+        "Have All Vitality Upgrades In Collection",
+        "32038980+0004"
+      ],
+      [
+        "Have All Chests/Switches Opened",
+        "42038960+FFFF+00000005+0002+3203896A+000F"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Classics",
+    "system": "nes",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "classics"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite lives",
+        "SXYAOP"
+      ],
+      [
+        "Start with 6 lives",
+        "TETANA"
+      ],
+      [
+        "Start with 9 lives",
+        "PETANE"
+      ],
+      [
+        "Invincibility",
+        "PEUXKUNY+PEKZXKNY+PESPYSNY+PAOXOSNY+PAVPPSNY"
+      ],
+      [
+        "Infinite Lives P1",
+        "0055:09"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Lemieux Hockey",
+    "system": "segaMD",
+    "match": [
+      [
+        "mario",
+        "lemieux",
+        "hockey"
+      ]
+    ],
+    "cheats": [
+      [
+        "Timer runs 6x faster",
+        "AKVT-CA2N"
+      ],
+      [
+        "Timer runs 1-1/3x faster",
+        "PBVT-DCTJ"
+      ],
+      [
+        "Timer runs at 1/2 speed",
+        "PBVT-DRTJ"
+      ],
+      [
+        "Timer runs at 1/3 speed",
+        "PBVT-DLTJ"
+      ],
+      [
+        "Timer runs at 1/6 speed",
+        "PBVT-DGTJ"
+      ],
+      [
+        "Freeze timer",
+        "AVVA-CA7T"
+      ],
+      [
+        "Freeze player 2's first penalty timer",
+        "AVVA-CA8Y"
+      ],
+      [
+        "Freeze player 2's second penalty timer",
+        "AVVA-CA92"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Pinball Land",
+    "system": "gb",
+    "match": [
+      [
+        "kirbys",
+        "pinball",
+        "land"
+      ]
+    ],
+    "cheats": [
+      [
+        "99 sec. allowed in Wispy-Woods bonus room",
+        "990-B99-6EB"
+      ],
+      [
+        "Infinite balls",
+        "005-34B-E69"
+      ],
+      [
+        "Infinite Kirby's",
+        "0103B0C0"
+      ],
+      [
+        "Infinite Time",
+        "010244C3"
+      ],
+      [
+        "Always Fight Bosses",
+        "0101D1C0"
+      ],
+      [
+        "Infinite M-Tomato",
+        "743-F6B-C49"
+      ],
+      [
+        "Infinite Bonus Room Time (Switch Off To Exit)",
+        "FAF-1AA-4C1"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Star Stacker",
+    "system": "gb",
+    "match": [
+      [
+        "kirbys",
+        "star",
+        "stacker"
+      ]
+    ],
+    "cheats": [
+      [
+        "Number Of Stars Modifier",
+        "013109BC"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Country",
+    "system": "gbc",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "country"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Bananas",
+        "01991BC3"
+      ],
+      [
+        "Infinite Lives",
+        "01991DC3"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Country",
+    "system": "gba",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "country"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Have Partner",
+        "73000FD6+0000+33000FD6+0001"
+      ],
+      [
+        "Infinite Lives",
+        "33000FC8+0009"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Pinball Party",
+    "system": "gba",
+    "match": [
+      [
+        "sonic",
+        "pinball",
+        "party"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Score",
+        "83002988+C9FF+8300298A+3B9A"
+      ],
+      [
+        "Infinite Tries (Chao Mini-Game)",
+        "330019B6+0000"
+      ],
+      [
+        "Infinite Rings (Chao Mini-Game)",
+        "83001970+6363"
+      ],
+      [
+        "Infinite Rings (Chao Garden)",
+        "83006194+2710"
+      ],
+      [
+        "Max Levels Chao",
+        "43001568+0063+00000005+0008"
+      ],
+      [
+        "Ball Always Saved",
+        "82035740+0017"
+      ]
+    ]
+  },
+  {
+    "game": "Mario's Time Machine",
+    "system": "nes",
+    "match": [
+      [
+        "marios",
+        "time",
+        "machine"
+      ]
+    ],
+    "cheats": [
+      [
+        "Kill One Koopa To Get Item",
+        "ZEUUGYAA"
+      ],
+      [
+        "All Stages Complete",
+        "0035:01+0036:01+0037:01+0038:01+0039:01+003A:01+003B:01+003C:01+003D:01+003E:01+003F:01+0040:01+0041:01+0042:01+0043:01+0044:01+0045:01+0046:01+0047:01+0048:01+0049:01"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Country",
+    "system": "snes",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "country"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite time",
+        "7E137F00"
+      ],
+      [
+        "Infinite lives",
+        "7E057708"
+      ],
+      [
+        "Infinite Health",
+        "7E057901"
+      ],
+      [
+        "Moon Jump",
+        "7E0EF380+7E052B09"
+      ],
+      [
+        "Donkey Kong Moon Jump",
+        "7E0EF200+7E0EF36C"
+      ],
+      [
+        "Donkey Kong Infinite Rolls",
+        "7E16E500"
+      ],
+      [
+        "Invincibility (Donkey Kong)",
+        "7E16D5FF"
+      ],
+      [
+        "Invincibility (Diddy Kong)",
+        "7E16D7FF"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Pinball Land",
+    "system": "gba",
+    "match": [
+      [
+        "mario",
+        "pinball",
+        "land"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "33000000+0003+3300579C+0003"
+      ],
+      [
+        "Max Yellow Coins",
+        "83000008+03E7+83000018+03E7"
+      ],
+      [
+        "Max Blue Coins",
+        "8300000C+03E7+8300001C+03E7"
+      ],
+      [
+        "Max Score",
+        "83000004+E0FF+83000006+05F5"
+      ],
+      [
+        "Max Stars Collected",
+        "33000014+0023+3300578C+0023"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Dream Land",
+    "system": "gb",
+    "match": [
+      [
+        "kirbys",
+        "dream",
+        "land"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite lives",
+        "FA6-DBB-4C1"
+      ],
+      [
+        "Infinite vitality bars except against end-of-stage boss",
+        "FA4-63B-4C1"
+      ],
+      [
+        "Start with 2 lives",
+        "021-BBF-F7E"
+      ],
+      [
+        "Start with 5 lives",
+        "051-BBF-F7E"
+      ],
+      [
+        "Start with 9 lives",
+        "091-BBF-F7E"
+      ],
+      [
+        "Max HP",
+        "010A87D0"
+      ],
+      [
+        "Infinite HP",
+        "010A86D0"
+      ],
+      [
+        "Invincibility",
+        "0146F5D3"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Block Ball",
+    "system": "gb",
+    "match": [
+      [
+        "kirbys",
+        "block",
+        "ball"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Play In Thru Block Mode With Timer Stuck At 97",
+        "010FD6C2+010FD7C2"
+      ],
+      [
+        "Infinite Lives",
+        "0109C9C1"
+      ],
+      [
+        "Lives You Start With (0-63 Hexidecimal) (From Debug)",
+        "01XXC9C1"
+      ],
+      [
+        "No. of Stars (0-63 Hexidecimal) (From Debug)",
+        "01XX36C2"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby Tilt 'n' Tumble",
+    "system": "gbc",
+    "match": [
+      [
+        "kirby",
+        "tilt",
+        "tumble"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "016392C1"
+      ],
+      [
+        "Have All Recovered Stars",
+        "016393C1"
+      ],
+      [
+        "Infinite Health",
+        "91063CC2"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby Mass Attack",
+    "system": "nds",
+    "match": [
+      [
+        "kirby",
+        "mass",
+        "attack"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Score",
+        "923021D8+00005544+94000130+FFFB0000+022FEB90+0098967F+D2000000+00000000"
+      ],
+      [
+        "Infinite Giant Invincibility Powerup",
+        "2237A20A+00000081"
+      ],
+      [
+        "Strato Patrol - Infinite Panic Attacks",
+        "2232FA0B+00000003"
+      ]
+    ]
+  },
+  {
+    "game": "Cocoto Kart Racer",
+    "system": "nds",
+    "match": [
+      [
+        "cocoto",
+        "kart",
+        "racer"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Fruits",
+        "5208EBF8+00000000+0208EC08+05840150+D2000000+00000000"
+      ],
+      [
+        "Infinite Items",
+        "5208EBF8+00000000+0208EC0C+05840144+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Ghost Trap",
+    "system": "snes",
+    "match": [
+      [
+        "kirbys",
+        "ghost",
+        "trap"
+      ]
+    ],
+    "cheats": [
+      [
+        "Unlock All Special Custom Mode Options",
+        "7E019401"
+      ],
+      [
+        "Enemies Can't Drop Dark Beans On You",
+        "7E071200+7E073700"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Land 2",
+    "system": "gb",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "land"
+      ]
+    ],
+    "cheats": [
+      [
+        "Unendlich Muenzen",
+        "$0DBA51E0"
+      ]
+    ]
+  },
+  {
+    "game": "Mario is Missing!",
+    "system": "nes",
+    "match": [
+      [
+        "mario",
+        "is",
+        "missing"
+      ]
+    ],
+    "cheats": [
+      [
+        "Have All Stolen Items",
+        "0486:07"
+      ],
+      [
+        "Always Have Yoshi",
+        "PAXUNIAA"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby Super Star",
+    "system": "snes",
+    "match": [
+      [
+        "kirby",
+        "super",
+        "star"
+      ]
+    ],
+    "cheats": [
+      [
+        "Score Always 999999",
+        "7EF5-2F6D+04F5-2FAD+DEF5-24DD"
+      ],
+      [
+        "Infinite 99 Lives",
+        "17F5-246D"
+      ],
+      [
+        "Always Have Invincibility",
+        "DC7E-0A0F"
+      ],
+      [
+        "Infinite Energy for Kirby",
+        "01F5-27DD"
+      ],
+      [
+        "Infinite Energy for Friend",
+        "7DF5-276D"
+      ],
+      [
+        "Always Have Full Mouth",
+        "D4F6-F7AF"
+      ],
+      [
+        "Always Have 2x Mouth Shot",
+        "D4F1-FFAF"
+      ],
+      [
+        "Never Use Mix",
+        "DFF5-FDAF"
+      ]
+    ]
+  },
+  {
+    "game": "Super Mario Kart",
+    "system": "snes",
+    "match": [
+      [
+        "super",
+        "mario",
+        "kart"
+      ]
+    ],
+    "cheats": [
+      [
+        "No Coins",
+        "20EB-CDA4"
+      ],
+      [
+        "Time Never Gets Past 1 Minute",
+        "3AC6-44DD"
+      ],
+      [
+        "Always In Last Place",
+        "AFC4-CDA4"
+      ],
+      [
+        "Invincibility",
+        "1A3E-CDA4"
+      ],
+      [
+        "Always Keep Coins",
+        "03EB-CDA4"
+      ],
+      [
+        "Unlimited Retries In GP Mode",
+        "C7EB-CDA4"
+      ],
+      [
+        "Cannot Pick Up Coins, ? Marks",
+        "EFEB-CDA4"
+      ],
+      [
+        "Always See The Front of The Kart",
+        "4CC4-CDA4"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Is Missing!",
+    "system": "snes",
+    "match": [
+      [
+        "mario",
+        "is",
+        "missing"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Get Yoshi After Using Globulator",
+        "DFED-4D04"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man Xtreme 2",
+    "system": "gbc",
+    "match": [
+      [
+        "mega",
+        "man",
+        "xtreme"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "1C0-78D"
+      ],
+      [
+        "Infinite Health",
+        "7EB-56D+7EB-6FD"
+      ],
+      [
+        "Inf Lives",
+        "010965C0"
+      ],
+      [
+        "Inf Health",
+        "012021C1"
+      ],
+      [
+        "Max Health",
+        "012084C0"
+      ],
+      [
+        "Have All Upgrades",
+        "01FF83C0"
+      ],
+      [
+        "Inf Zero's Weapon Energy",
+        "011C6DC0"
+      ],
+      [
+        "Have All of Zero's Weapons",
+        "01FFA0C0"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Golf Advance Tour",
+    "system": "gba",
+    "match": [
+      [
+        "mario",
+        "golf",
+        "tour"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Have 0 Shots (Perfect Score)",
+        "32000936+0000"
+      ],
+      [
+        "Max Score",
+        "8200052E+FF99"
+      ],
+      [
+        "Max Exp",
+        "83002610+270F"
+      ],
+      [
+        "Go To Level 99 With No Exp Usage",
+        "83002614+6C15+83002618+6C15"
+      ],
+      [
+        "Max Stats On Level Up",
+        "4300262E+6262+00000005+0002"
+      ],
+      [
+        "Infinite Power Shots",
+        "320009D4+0063+320313B2+0063"
+      ],
+      [
+        "Infinite Mulligans",
+        "320009D6+0063"
+      ]
+    ]
+  },
+  {
+    "game": "MM's Kart Racing",
+    "system": "nds",
+    "match": [
+      [
+        "mms",
+        "kart",
+        "racing"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Racing Speed",
+        "620676B4+00000000+B20676B4+00000000+94000130+FFFE0000+00000114+00020000+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man Soccer",
+    "system": "snes",
+    "match": [
+      [
+        "mega",
+        "man",
+        "soccer"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Choose Dr. Willy",
+        "CBCA-3F60+F0CA-3FA0+DDCA-34D0"
+      ],
+      [
+        "Infinite super shots for P1 in Round 1, P2 in Round 2",
+        "7E0AC609"
+      ],
+      [
+        "Infinite super shots for P2 in Round 1, P1 in Round 2",
+        "7E0AE609"
+      ],
+      [
+        "Both Teams Have Unlimited Power Kicks",
+        "7E0AE6FF"
+      ],
+      [
+        "Infinite Special Shots (Left Side Only)",
+        "7E0AC6FF"
+      ],
+      [
+        "Infinite Special Shots (Right Side Only)",
+        "7E1B32FF"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Blast Man",
+    "system": "snes",
+    "match": [
+      [
+        "sonic",
+        "blast",
+        "man"
+      ]
+    ],
+    "cheats": [
+      [
+        "Start with 11 lives",
+        "D76B-D46D"
+      ],
+      [
+        "Infinite lives",
+        "DDA5-6F60"
+      ],
+      [
+        "Infinite dynamite punches",
+        "C2C3-0464"
+      ],
+      [
+        "Start with 3/4 energy",
+        "7AB9-0DD7"
+      ],
+      [
+        "Start with 1/2 energy",
+        "46B9-0DD7"
+      ],
+      [
+        "Start with 1/4 energy",
+        "F0B9-0DD7"
+      ],
+      [
+        "Continue with 3/4 energy",
+        "7AB5-A407"
+      ],
+      [
+        "Continue with 1/2 energy",
+        "46B5-A407"
+      ]
+    ]
+  },
+  {
+    "game": "Tetris Dr. Mario",
+    "system": "snes",
+    "match": [
+      [
+        "tetris",
+        "dr",
+        "mario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Tetris Options Menu",
+        "7E1E1B03"
+      ],
+      [
+        "Dr Mario Options Menu",
+        "7E1E7203"
+      ],
+      [
+        "Debug Menu",
+        "809B8000"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Party DS",
+    "system": "nds",
+    "match": [
+      [
+        "mario",
+        "party",
+        "ds"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Health",
+        "5215E538+00420000+0215E53C+01C129BE+D2000000+00000000"
+      ],
+      [
+        "Invincible",
+        "5215D3EC+E5900000+0215D3F0+E3A010B4+0215D3F4+E1C019BC+0215D3F8+E1A00001+D2000000+00000000"
+      ],
+      [
+        "Max MP Points",
+        "2214D1BC+0001869F"
+      ],
+      [
+        "Max Points in Puzzle Mode (Mario Puzzle Party)",
+        "5215F79C+C5840CD8+0215F79C+E5840CD8+D2000000+00000000"
+      ],
+      [
+        "Max Points in Puzzle Mode (Bob-omb Breakers)",
+        "52160EA0+C58C3024+02160EA0+E58C3024+D2000000+00000000"
+      ],
+      [
+        "Max Points in Puzzle Mode (Piece Out)",
+        "521601B0+8582300C+021601B0+E582300C+D2000000+00000000"
+      ],
+      [
+        "Max Points in Puzzle Mode (Block Star)",
+        "5215DEF0+A5820040+0215DEF0+E5820040+D2000000+00000000"
+      ],
+      [
+        "Max Points in Puzzle Mode (Stick and Spin)",
+        "521626EC+C5802AE8+021626EC+E5802AE8+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong Jr.",
+    "system": "nes",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "jr"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives P1 (DK Jr.)",
+        "004C:09"
+      ],
+      [
+        "Invincibility",
+        "XZEIIKOZ"
+      ],
+      [
+        "Infinite Time",
+        "SXZNZA"
+      ],
+      [
+        "Walk Through Walls",
+        "NNIIIV+NNYILV"
+      ]
+    ]
+  },
+  {
+    "game": "Mario to Wario",
+    "system": "snes",
+    "match": [
+      [
+        "mario",
+        "to",
+        "wario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Have 99 Coins",
+        "7E1D3B63"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong 64",
+    "system": "n64",
+    "match": [
+      [
+        "donkey",
+        "kong",
+        "64"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Coins",
+        "817FC956 00FF"
+      ],
+      [
+        "Max Magical Instruments",
+        "817FC958 00FF"
+      ],
+      [
+        "Always Moonwalk/Strafe",
+        "806E061D 0001"
+      ],
+      [
+        "Infinite Health",
+        "817FCC4C 041F"
+      ],
+      [
+        "Infinite Oranges (Donkey Kong)",
+        "807FCC41 0096"
+      ],
+      [
+        "Infinite Ammo (Donkey Kong)",
+        "807FCC45 0096"
+      ],
+      [
+        "Infinite Crystal Coconuts",
+        "807FCC47 0096"
+      ],
+      [
+        "Infinite Banana Camera Film",
+        "807FCC49 0096"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic 3D Blast",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "3d",
+        "blast"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Rings",
+        "FF0A5A:0064"
+      ],
+      [
+        "Infinite Lives",
+        "FF0680:0003"
+      ],
+      [
+        "Have All Chaos Emeralds",
+        "FF4F92:07"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man Zero",
+    "system": "gba",
+    "match": [
+      [
+        "mega",
+        "man",
+        "zero"
+      ]
+    ],
+    "cheats": [
+      [
+        "Invincible",
+        "3202B634+0080"
+      ],
+      [
+        "Infinite Health",
+        "3202B62C+0020"
+      ],
+      [
+        "Max Health",
+        "3202B723+0020"
+      ],
+      [
+        "Max Speed",
+        "3202B71A+0041"
+      ],
+      [
+        "Infinite Retries",
+        "3202A5D0+0009"
+      ],
+      [
+        "Infinite Crystal",
+        "8202B79E+270F"
+      ],
+      [
+        "Infinite Dash",
+        "3202B6B8+0020"
+      ],
+      [
+        "Have All Weapons & Elements",
+        "8202B728+0F0F"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Kart DS",
+    "system": "nds",
+    "match": [
+      [
+        "mario",
+        "kart",
+        "ds"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Star Without A Star - Offline",
+        "6217ACF8+00000000+B217ACF8+00000000+2000004C+00000040+2000029C+00000001+1000053E+00000000+D2000000+00000000"
+      ],
+      [
+        "Infinite Star Without A Star - Wi-Fi",
+        "6217ACF8+00000000+B217ACF8+00000000+923CDD48+00000000+2000004C+00000040+2000053E+00000000+D0000000+00000000+923CDD78+00000000+200005F4+00000040+20000AE6+00000000+D0000000+00000000+923CDDA8+00000000+20000B9C+00000040+2000108E+00000000+D0000000+00000000+923CDDD8+00000000+20001144+00000040+20001636+00000000+D2000000+00000000"
+      ],
+      [
+        "Almost Invincible v2.0",
+        "2206BCC4+00000000+0206D1F0+E3500000"
+      ],
+      [
+        "Almost Invincible v2.1 - Wi-Fi",
+        "2206BCC4+00000000+220F9870+00000000"
+      ],
+      [
+        "All Items Look Like Spiny Shells",
+        "D3000000+0216C6D4+F216C40C+00000010+D2000000+00000000+D3000000+0216C6D4+F216C434+00000010+D2000000+00000000+D3000000+0216C6D4+F216C45C+00000010+D2000000+00000000+D3000000+0216C6D4+F216C52C+00000010+D2000000+00000000+D3000000+0216C6D4+F216C53C+0000000B+D2000000+00000000+D3000000+0216C6D4+F216C55C+00000010+D2000000+00000000+D3000000+0216C6D4+F216C57C+00000010+D2000000+00000000"
+      ],
+      [
+        "Most Items Look Like Stars",
+        "D3000000+0216C49C+F216C45C+00000010+D2000000+00000000+D3000000+0216C49C+F216C434+00000010+D2000000+00000000+D3000000+0216C49C+F216C40C+00000010+D2000000+00000000+D3000000+0216C49C+F216C55C+00000010+D2000000+00000000+D3000000+0216C49C+F216C57C+00000010+D2000000+00000000+D3000000+0216C49C+F216C52C+00000010+D2000000+00000000+0216C53C+00000000"
+      ],
+      [
+        "See Stars When Burned By Fireballs",
+        "22067D40+0000009B"
+      ],
+      [
+        "Max Course Visibility Range",
+        "12077348+000033FF+020773C0+E3A033FF"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man III",
+    "system": "gb",
+    "match": [
+      [
+        "mega",
+        "man",
+        "iii"
+      ]
+    ],
+    "cheats": [
+      [
+        "Unendlich Energie",
+        "$0DB9740D"
+      ],
+      [
+        "Unendlich Leben",
+        "$0D240871"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man II",
+    "system": "gb",
+    "match": [
+      [
+        "mega",
+        "man",
+        "ii"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Energy",
+        "01A5D0CF"
+      ],
+      [
+        "Invincibility",
+        "013C43CF"
+      ],
+      [
+        "Infinite Weapon Energy",
+        "0198E0CF"
+      ],
+      [
+        "Infinite Lives",
+        "0102E8CF"
+      ],
+      [
+        "Infinite Crash Bombs",
+        "01B5E0CF"
+      ],
+      [
+        "Infinite M. E.",
+        "01B5E1CF"
+      ],
+      [
+        "Infinite W. D.",
+        "01B5E2CF"
+      ],
+      [
+        "Moon Jump",
+        "01031ACF"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man IV",
+    "system": "gb",
+    "match": [
+      [
+        "mega",
+        "man",
+        "iv"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Energy",
+        "0198AEDE"
+      ],
+      [
+        "Infinite Weapon Modifier",
+        "0198??DE"
+      ],
+      [
+        "Infinite Lives",
+        "010034DF"
+      ],
+      [
+        "Infinite Weapon Power",
+        "01002EC2"
+      ],
+      [
+        "Infinite P-Chips",
+        "01033EDF+01E73DDF"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man ZX",
+    "system": "nds",
+    "match": [
+      [
+        "mega",
+        "man",
+        "zx"
+      ]
+    ],
+    "cheats": [
+      [
+        "Invincible",
+        "2214FBA4+00000042"
+      ],
+      [
+        "Moon Jump",
+        "94000130+FFFD0000+0214FB70+FFFFFD80+D2000000+00000000"
+      ],
+      [
+        "Low Boss Health (Press Select)",
+        "94000130+FFFB0000+121510AA+00000001+D2000000+00000000"
+      ],
+      [
+        "Infinite Health",
+        "2214FBB2+00000010"
+      ],
+      [
+        "Infinite Crystals",
+        "0214FC70+0001869F"
+      ],
+      [
+        "Infinite Lives",
+        "2214FC6C+00000009"
+      ],
+      [
+        "Infinite Weapon Energy",
+        "0214FC94+10101000+2214FC98+00000010"
+      ],
+      [
+        "Infinite Ground Dashing",
+        "92187D70+00001E4E+12187D70+00001E0E+D2000000+00000000+9203CA18+00001E4E+1203CA18+00001E0E+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man X2",
+    "system": "snes",
+    "match": [
+      [
+        "mega",
+        "man",
+        "x2"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Special Weapons (Once You Have Them - Only Works Without Powering Up Special Weapons)",
+        "828A-DFC4"
+      ],
+      [
+        "Infinite Special Weapons (Once You Have Them - Even Without Powering Up Special Weapons)",
+        "828A-DFC4+828E-D414"
+      ],
+      [
+        "Infinite Health",
+        "C223-0414"
+      ],
+      [
+        "Start With Max Health Bar",
+        "F0B1-676F"
+      ],
+      [
+        "Big Energy Pellets Fill Your Energy Bar To Full After Pick-Up",
+        "F02F-6469"
+      ],
+      [
+        "Small Energy Pellets Fill Your Energy Bar To Full After Pick-Up",
+        "F028-D7A1"
+      ],
+      [
+        "Start With 3/4 Weapon Energy & 3/4 Max Weapon Energy",
+        "F927-6DDF+9927-6FDF+F927-640F+F926-646F"
+      ],
+      [
+        "Start With 1/2 Weapon Energy & 1/2 Max Weapon Energy",
+        "D327-6DDF+0327-6FDF+D327-640F+D326-646F"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man X3",
+    "system": "snes",
+    "match": [
+      [
+        "mega",
+        "man",
+        "x3"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Health",
+        "C2AD-6FF7"
+      ],
+      [
+        "Both Zero's And X's Lightsaber Weapons Rapid Fire Huge Energy Waves",
+        "196A-D405"
+      ],
+      [
+        "Infinite Special Weapons (Once You Have Them)",
+        "82CB-0D2F"
+      ],
+      [
+        "Auto Pick-up On Life Energy Pods",
+        "AC2D-D701"
+      ],
+      [
+        "Start With Max Health Bar",
+        "F02A-ADF4"
+      ],
+      [
+        "Big Energy Pellets Fill Your Energy Bar To Full After Pick-Up",
+        "F02F-6469"
+      ],
+      [
+        "Small Energy Pellets Fill Your Energy Bar To Full After Pick-Up",
+        "F028-D7A1"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man 64",
+    "system": "n64",
+    "match": [
+      [
+        "mega",
+        "man",
+        "64"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Zenny",
+        "811BC406 FFFF"
+      ],
+      [
+        "Max Zenny",
+        "811BC404 0098+811BC406 967F"
+      ],
+      [
+        "Have All Special Items",
+        "8120564C FFFF+8120564E FFFF"
+      ],
+      [
+        "Have All Special Weapons",
+        "81205640 FFFF"
+      ],
+      [
+        "Have All Normal Items",
+        "81205650 FFFF+81205652 FFFF+81205654 FFFF+81205656 FFFF"
+      ],
+      [
+        "Infinite Health",
+        "80204A1F 00FF"
+      ],
+      [
+        "Infinite Blade Arm Ammo",
+        "80204EF3 00FF"
+      ],
+      [
+        "Infinite Shield Arm Ammo",
+        "81204F0A 045E"
+      ]
+    ]
+  },
+  {
+    "game": "Dr. Mario 64",
+    "system": "n64",
+    "match": [
+      [
+        "dr",
+        "mario",
+        "64"
+      ]
+    ],
+    "cheats": [
+      [
+        "Enable Code (M)",
+        "F100D2E0 2400"
+      ],
+      [
+        "P1 Dual Activator",
+        "D101D804 0000"
+      ],
+      [
+        "P1 Activator 1",
+        "D001D804 0000"
+      ],
+      [
+        "P1 Activator 2",
+        "D001D805 0000"
+      ],
+      [
+        "P2 Dual Activator",
+        "D101D80C 0000"
+      ],
+      [
+        "P2 Activator 1",
+        "D001D80C 0000"
+      ],
+      [
+        "P2 Activator 2",
+        "D001D80D 0000"
+      ],
+      [
+        "P3 Dual Activator",
+        "D101D814 0000"
+      ]
+    ]
+  },
+  {
+    "game": "Aerobiz Supersonic",
+    "system": "snes",
+    "match": [
+      [
+        "aerobiz",
+        "supersonic"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Money",
+        "7E25F97F+7E25FA96+7E25FB98"
+      ]
+    ]
+  },
+  {
+    "game": "Aerobiz Supersonic",
+    "system": "segaMD",
+    "match": [
+      [
+        "aerobiz",
+        "supersonic"
+      ]
+    ],
+    "cheats": [
+      [
+        "Have Tons Of Money",
+        "FF001E:00FF+FF0020:00FF"
+      ],
+      [
+        "Infinite Money",
+        "FF001F:0098+FF0020:967F"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Compilation",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "compilation"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Rings",
+        "FFFE20:00C8"
+      ],
+      [
+        "Infinite Lives",
+        "FFFE12:0009"
+      ],
+      [
+        "Begin With Several Hundred Rings On Each Level",
+        "CA3A-AA4C"
+      ],
+      [
+        "Begin The Game With 99 Lives",
+        "NN3T-AACL"
+      ],
+      [
+        "Invincibility (Enemies Can't Touch You)",
+        "FFD030:00FF"
+      ],
+      [
+        "Invincibility (Always Have Shield)",
+        "FFFE2C:0000"
+      ],
+      [
+        "Invincibility (Starman Effect)",
+        "FFFE2C:0001"
+      ],
+      [
+        "Infinite Time Underwater For Sonic",
+        "FFFE14:00FA"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Conquest",
+    "system": "nds",
+    "match": [
+      [
+        "pokemon",
+        "conquest"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max/Infinite Money (Read Comment)",
+        "E2004700+00000010+E59F4008+E5804014+95900014+E12FFF1E+52043F54+90200291+02043F58+95900014+94000130+FFFB0000+02043F58+EAFF01E8+D0000000+00000000+94000130+FDFE0000+02004710+000F423F+D0000000+00000000+94000130+FDFD0000+02004710+00000000+D0000000+00000000"
+      ],
+      [
+        "Warrior Skill Always Available",
+        "02041D88+E3A00000"
+      ],
+      [
+        "Turns Never Decrease",
+        "5204A8AC+E5841000+0204A8AC+E5941000+D0000000+00000000+5204AAA8+15850000+0204AAA8+15950000+D2000000+00000000"
+      ],
+      [
+        "Always Chest Drop",
+        "521039E0+0A000013+021039E0+EA000013+D2000000+00000000+5213C21C+1A000002+0213C21E+EA000002+D2000000+00000000"
+      ],
+      [
+        "Infinite Use of Energy",
+        "52041D84+03A00001+02041D88+E3A00000+D2000000+00000000"
+      ],
+      [
+        "HP Never Decrease",
+        "E2004188+00000068+E1A04000+E59FC058+E59C0014+E5900008+E1A00D80+E1A00DA0+E1A00800+E1A00820+E1A05000+E59C0020+E5900000+E1A00100+E1A00DA0+E1A00800+E1A00820+E1500005+1A000003+E3510006+E1A00000+33A04000+EA000001+E3510006+A3A04000+E1A00004+EA041E6A+020C4D64+5210BB90+EBFCDCE3+0210BB94+EAFBE17B+D0000000+00000000"
+      ],
+      [
+        "Enter Menu and All Items x99",
+        "E2000100+00000010+E3A01063+E5C01018+95D00018+EA010FC6+52044024+90800002+02044028+EAFEF034+D2000000+00000000"
+      ],
+      [
+        "Infinite Health",
+        "94000130+000000FF+02003FFC+00000001+D2000000+00000000+52003FFC+00000001+52136E9C+EB00653B+922ADAB8+00000000+0203FF28+EB00BD3F+D2000000+00000000+52003FFC+00000001+52136E9C+EB00653B+922ADAB8+00000001+0203FF28+E1A00000+D2000000+00000000+62136E9C+EB00653B+0203FF28+EB00BD3F+02003FFC+00000000+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Madagascar Kartz",
+    "system": "nds",
+    "match": [
+      [
+        "madagascar",
+        "kartz"
+      ]
+    ],
+    "cheats": [
+      [
+        "Unlimited Turbo Once Some is Aquired",
+        "02020464+E1A00000"
+      ],
+      [
+        "Max Mangos",
+        "6212AB90+00000000+B21A2B90+00000000+1000002C+000003E7+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Adventure",
+    "system": "nes",
+    "match": [
+      [
+        "kirbys",
+        "adventure"
+      ]
+    ],
+    "cheats": [
+      [
+        "Start With 2 Lives",
+        "PEVXIYGA"
+      ],
+      [
+        "Start With 9 Lives",
+        "AEVXIYGE"
+      ],
+      [
+        "Start With 17 Lives",
+        "AOVXIYGA"
+      ],
+      [
+        "Less Energy From 'Pep Drinks'",
+        "ZAKLLXAA"
+      ],
+      [
+        "More Energy From 'Pep Drinks'",
+        "APKLLXAA"
+      ],
+      [
+        "Full Energy From 'Pep Drinks'",
+        "YZKLLXAE"
+      ],
+      [
+        "Start With Less Energy",
+        "YONZZNYX"
+      ],
+      [
+        "Start With More Energy",
+        "YKNZZNYX"
+      ]
+    ]
+  },
+  {
+    "game": "Kirby's Avalanche",
+    "system": "snes",
+    "match": [
+      [
+        "kirbys",
+        "avalanche"
+      ]
+    ],
+    "cheats": [
+      [
+        "P1 Never Gets Rocks",
+        "7E071200"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Pinball",
+    "system": "gbc",
+    "match": [
+      [
+        "pokemon",
+        "pinball"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Balls",
+        "01029DD4"
+      ],
+      [
+        "Ball Saver Always On",
+        "91FFA4D4+91FFA3D4+91FFA2D4+91FFA1D4"
+      ],
+      [
+        "Infinite Time [Catch Em Mode]",
+        "91057AD5"
+      ],
+      [
+        "Infinite Dual PIKACHU Kickback",
+        "01291DD5"
+      ],
+      [
+        "Infinite AGAIN Mode",
+        "013F9BD4"
+      ],
+      [
+        "Infinite Go To Next Mode",
+        "0172EDD4"
+      ],
+      [
+        "Infinite Pokéballs",
+        "91059DD4"
+      ],
+      [
+        "Infinite Single Pikachu",
+        "910F17D5"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Stadium",
+    "system": "n64",
+    "match": [
+      [
+        "pokemon",
+        "stadium"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Quantity 1st Position",
+        "801720AE 0063"
+      ],
+      [
+        "Infinite Quantity 2nd Position",
+        "801720B0 0063"
+      ],
+      [
+        "Infinite Quantity 3rd Position",
+        "801720B2 0063"
+      ],
+      [
+        "Infinite Quantity 4th Position",
+        "801720B4 0063"
+      ],
+      [
+        "Infinite Quantity 5th Position",
+        "801720B6 0063"
+      ],
+      [
+        "Infinite Quantity 6th Position",
+        "801720B8 0063"
+      ],
+      [
+        "Infinite Quantity 7th Position",
+        "801720BA 0063"
+      ],
+      [
+        "Infinite Quantity 8th Position",
+        "801720BC 0063"
+      ]
+    ]
+  },
+  {
+    "game": "Mario's Picross",
+    "system": "gb",
+    "match": [
+      [
+        "marios",
+        "picross"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Time",
+        "01090BD8"
+      ]
+    ]
+  },
+  {
+    "game": "Metroid Fusion",
+    "system": "gba",
+    "match": [
+      [
+        "metroid",
+        "fusion"
+      ]
+    ],
+    "cheats": [
+      [
+        "Invincible",
+        "33001249+0001"
+      ],
+      [
+        "Always Run At Super Speed",
+        "83001252+A001"
+      ],
+      [
+        "Super Dash Always Charged",
+        "330012DC+005F"
+      ],
+      [
+        "Moon Jump",
+        "74000130+03FE+83001260+0040"
+      ],
+      [
+        "Ininite Health",
+        "83001310+0833"
+      ],
+      [
+        "Max Health",
+        "83001312+0833"
+      ],
+      [
+        "Infinite Missiles",
+        "83001314+03E7"
+      ],
+      [
+        "Max Missiles",
+        "83001316+03E7"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Ranger",
+    "system": "nds",
+    "match": [
+      [
+        "pokemon",
+        "ranger"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max/Infinite Styler Energy",
+        "D3000000+02245CD4+F2245CD0+00000001+D2000000+00000000+D3000000+02245CD4+F2245D20+00000001+D2000000+00000000"
+      ],
+      [
+        "Max Styler Energy",
+        "22245CD0+0000003C+22245CD4+0000003C+22245D20+0000003C"
+      ],
+      [
+        "Max/Infinite Partner Energy",
+        "D3000000+02245CDC+F2245CDA+00000002+D2000000+00000000"
+      ],
+      [
+        "Max Partner Energy",
+        "12245CDA+00000505+12245CDC+00000505"
+      ],
+      [
+        "Max/Infinite Experience",
+        "02135500+7FFFFFFF"
+      ],
+      [
+        "Walk Through Walls",
+        "94000130+FEFD0000+0200926C+E1A00000+D2000000+00000000+94000130+FDFD0000+0200926C+0A000005+D2000000+00000000"
+      ],
+      [
+        "99:59:59",
+        "0212EEFC+00057E3F"
+      ],
+      [
+        "Max/Infinite Time",
+        "1226EA68+00002A30"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Trozei!",
+    "system": "nds",
+    "match": [
+      [
+        "pokemon",
+        "trozei"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Score",
+        "0220F234+05F5E0FF"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Spinball",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "spinball"
+      ]
+    ],
+    "cheats": [
+      [
+        "Start with 2 lives",
+        "AKBT-4AHR"
+      ],
+      [
+        "Start with 5 lives",
+        "AZBT-4AHR"
+      ],
+      [
+        "Start with 7 lives",
+        "A7BT-4AHR"
+      ],
+      [
+        "Infinite lives",
+        "AXBA-4A4T"
+      ],
+      [
+        "Infinite balls in all bonus rounds",
+        "AXST-8A5L"
+      ],
+      [
+        "Infinite Balls In Bonus Levels",
+        "FFF20C:0003"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Knuckles",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic",
+        "knuckles"
+      ]
+    ],
+    "cheats": [
+      [
+        "Invincible against dynamic objects (bullets, enemies, for example), except Knuckles.",
+        "REBA-C6V6"
+      ],
+      [
+        "Invincible against static objects (spikes, for example)",
+        "RZBA-E6YA"
+      ],
+      [
+        "Invincible against Knuckles",
+        "ABTA-NA7Y"
+      ],
+      [
+        "Become Super/Hyper Sonic with 0 rings",
+        "AANT-CAHL"
+      ],
+      [
+        "Become Super/Hyper Knuckles with 0 rings",
+        "AB6A-CADA"
+      ],
+      [
+        "Don't use up rings to maintain the transformation of any Super/Hyper character",
+        "AAPT-CAB8"
+      ],
+      [
+        "Don't lose rings when hit",
+        "AWXT-CA4C"
+      ],
+      [
+        "Infinite time",
+        "HXRT-AA6A"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Colours",
+    "system": "nds",
+    "match": [
+      [
+        "sonic",
+        "colours"
+      ]
+    ],
+    "cheats": [
+      [
+        "[SELECT]Max Lives",
+        "94000130+FFFB0000+221208E6+00000063+D2000000+00000000"
+      ],
+      [
+        "[SELECT]Max Rings for Stage",
+        "94000130+FFFB0000+62120850+00000000+B2120850+00000000+100006F6+000003E7+100006F8+0000270F+D2000000+00000000"
+      ],
+      [
+        "Invincible",
+        "0201C05C+E3A01072"
+      ],
+      [
+        "Never Drown",
+        "5201DE4C+02811001+0201DE4C+02811000+0201DF90+02811000+D2000000+00000000"
+      ],
+      [
+        "Mission Time Never Runs Out",
+        "521809AC+D3A00001+021809AC+D3A00000+D2000000+00000000+5201E3EC+E1540005+0201E3EC+E3540001+D2000000+00000000"
+      ],
+      [
+        "Always Clear Special Stage",
+        "5213CD18+C3A00000+0213CD18+C3A00001+D2000000+00000000"
+      ],
+      [
+        "Collect Rings From Anywhere",
+        "5214810C+0A000003+0214810C+E1A00000+D2000000+00000000"
+      ],
+      [
+        "[A+B]Moon Jump",
+        "52143954+E2400901+02143950+E1811A00+02143954+E0830001+D2000000+00000000+94000130+FFFC0000+52143950+E1811A00+02143950+E3A00000+02143954+E2400901+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Tennis",
+    "system": "gbc",
+    "match": [
+      [
+        "mario",
+        "tennis"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Exp Points",
+        "96FF4ED1"
+      ],
+      [
+        "Infinite Skill Changers",
+        "96FF09D0"
+      ],
+      [
+        "Max Spin Custom Players",
+        "916378C9+916338C9"
+      ],
+      [
+        "Max Power Custom Players",
+        "916379C9+916339C9"
+      ],
+      [
+        "Max Control Custom Players",
+        "91637AC9+91633AC9"
+      ],
+      [
+        "Max Speed Custom Players",
+        "91637BC9+91633BC9"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Battle",
+    "system": "gba",
+    "match": [
+      [
+        "sonic",
+        "battle"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite HP",
+        "33001CFF+0064"
+      ],
+      [
+        "Max Power Bar",
+        "33001CD3+0048"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Dash",
+    "system": "nds",
+    "match": [
+      [
+        "pokemon",
+        "dash"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Series Points (Never Lose Cup)",
+        "2218C9D4+00000063"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Colors",
+    "system": "nds",
+    "match": [
+      [
+        "sonic",
+        "colors"
+      ]
+    ],
+    "cheats": [
+      [
+        "[SELECT]Max Lives",
+        "94000130+FFFB0000+221208E6+00000063+D2000000+00000000"
+      ],
+      [
+        "[SELECT]Max Rings for Stage",
+        "94000130+FFFB0000+62120850+00000000+B2120850+00000000+100006F6+000003E7+100006F8+0000270F+D2000000+00000000"
+      ],
+      [
+        "Invincible",
+        "0201C05C+E3A01072"
+      ],
+      [
+        "Never Drown",
+        "5201DE4C+02811001+0201DE4C+02811000+0201DF90+02811000+D2000000+00000000"
+      ],
+      [
+        "Mission Time Never Runs Out",
+        "521809AC+D3A00001+021809AC+D3A00000+D2000000+00000000+5201E3EC+E1540005+0201E3EC+E3540001+D2000000+00000000"
+      ],
+      [
+        "Always Clear Special Stage",
+        "5213CD18+C3A00000+0213CD18+C3A00001+D2000000+00000000"
+      ],
+      [
+        "Collect Rings From Anywhere",
+        "5214810C+0A000003+0214810C+E1A00000+D2000000+00000000"
+      ],
+      [
+        "Don't Lose Rings When Hit",
+        "5215EA70+1A00001A+0215EA70+EA00001A+D2000000+00000000"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Link!",
+    "system": "nds",
+    "match": [
+      [
+        "pokemon",
+        "link"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max Score",
+        "022101C4+05F5E0FF"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Tennis",
+    "system": "n64",
+    "match": [
+      [
+        "mario",
+        "tennis"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Have Nice Serve ",
+        "80153533 0001+D0066985 0010+80153533 0000"
+      ],
+      [
+        "Infinite Bounces",
+        "8015B16B 0000"
+      ],
+      [
+        "Max Rings In Ring Challenges",
+        "8106525C FFFF"
+      ],
+      [
+        "When you play in Tournament mode, you will always play on the composition court",
+        "810FF924 A267"
+      ]
+    ]
+  },
+  {
+    "game": "Pokemon Snap",
+    "system": "n64",
+    "match": [
+      [
+        "pokemon",
+        "snap"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Have 65535 Types Of Pokémon When Multiplying For The Score",
+        "8024A1DB 00FF"
+      ],
+      [
+        "Have All Levels",
+        "810C2212 0006"
+      ],
+      [
+        "Unlimited Film",
+        "800AC0E3 0000"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong",
+    "system": "gb",
+    "match": [
+      [
+        "donkey",
+        "kong"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "010343DA"
+      ],
+      [
+        "Infinite Time",
+        "01FF11C7"
+      ],
+      [
+        "Invincibility",
+        "010F214D1"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Yoshi",
+    "system": "gb",
+    "match": [
+      [
+        "mario",
+        "yoshi"
+      ]
+    ],
+    "cheats": [
+      [
+        "Enable Partially Unfinished Bullet Bill Enemy",
+        "058-FCE-E6A"
+      ],
+      [
+        "Title Screen Music Modifier",
+        "302-B3F-2AA"
+      ],
+      [
+        "Keep Objects Displayed While Paused",
+        "FA3-E0F-4C1+EA3-EDF-D5D"
+      ],
+      [
+        "Keep Objects Displayed While Paused (Short Version)",
+        "D93-DFF-5D4"
+      ]
+    ]
+  },
+  {
+    "game": "Super Mario Advance",
+    "system": "gba",
+    "match": [
+      [
+        "super",
+        "mario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Health",
+        "33001C76+003F"
+      ],
+      [
+        "Infinite Bonus Room Time",
+        "33001CCF+0060"
+      ],
+      [
+        "Moon Jump",
+        "D0000020+0001+83001C5A+FFC8"
+      ]
+    ]
+  },
+  {
+    "game": "Donkey Kong 3",
+    "system": "nes",
+    "match": [
+      [
+        "donkey",
+        "kong"
+      ]
+    ],
+    "cheats": [
+      [
+        "Start with infinite lives",
+        "SZNKOPVI"
+      ],
+      [
+        "Start with 9 lives",
+        "PEEGITLE"
+      ],
+      [
+        "Invincibility",
+        "AVVGELEY"
+      ],
+      [
+        "Fake Infinite Lives",
+        "0092:09"
+      ],
+      [
+        "Infinite Lives",
+        "0090:09"
+      ],
+      [
+        "Infinite Time",
+        "004E:81"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Party",
+    "system": "n64",
+    "match": [
+      [
+        "mario",
+        "party"
+      ]
+    ],
+    "cheats": [
+      [
+        "Lots of Coins (Use On Main Menu)",
+        "810ED142 FFFF"
+      ],
+      [
+        "Coins Modifier (Use On Main Menu)",
+        "810ED142 0000"
+      ],
+      [
+        "Stars Modifier (Use On Main Menu)",
+        "800ED145 0000"
+      ],
+      [
+        "Have FAKE 255 Stars (Mushroom Village)",
+        "800ED145 00FF"
+      ],
+      [
+        "Always On Turn Modifier (Use On Main Menu)",
+        "800ED5C9 0000"
+      ],
+      [
+        "Infinite Lives On Minigame Island",
+        "801F37BB 0063"
+      ],
+      [
+        "Lots of Coins On Minigame Island",
+        "800F37C4 0000"
+      ],
+      [
+        "999 Coins In Minigame Stadium (1st Slot)",
+        "811B571A 03E7"
+      ]
+    ]
+  },
+  {
+    "game": "Paper Mario",
+    "system": "n64",
+    "match": [
+      [
+        "paper",
+        "mario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite HP",
+        "8010F292 0032"
+      ],
+      [
+        "Max HP",
+        "8010F293 0032"
+      ],
+      [
+        "Infinite FP",
+        "8010F295 0032"
+      ],
+      [
+        "Max FP",
+        "8010F296 0032"
+      ],
+      [
+        "Max BP",
+        "8010F298 001E"
+      ],
+      [
+        "Infinite Coins",
+        "8010F29C 00E7"
+      ],
+      [
+        "Max Star Pieces",
+        "8010F29F 00A0"
+      ],
+      [
+        "Have All Star Spirits",
+        "8010F51E 0007"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Golf",
+    "system": "gbc",
+    "match": [
+      [
+        "mario",
+        "golf"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Under Par",
+        "0100A0C8"
+      ],
+      [
+        "Infinite Hitting Power",
+        "0106A8C8"
+      ],
+      [
+        "Opponent Always Gives Up After 1st Shot",
+        "010FE0C8"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Rush",
+    "system": "nds",
+    "match": [
+      [
+        "sonic",
+        "rush"
+      ]
+    ],
+    "cheats": [
+      [
+        "Max/Infinite Lives",
+        "222C45A4+00000009"
+      ],
+      [
+        "Max/Infinite Rings",
+        "9209190A+00000000+6236AC60+00000000+B236AC60+00000000+100003AE+000003E7+D2000000+00000000"
+      ],
+      [
+        "Max/Infinite Boost Energy",
+        "9209190A+00000000+6236AC60+00000000+B236AC60+00000000+10000350+000012C0+D2000000+00000000"
+      ],
+      [
+        "Max/Infinite Time",
+        "122C4580+00000000"
+      ],
+      [
+        "Moon Jump v1",
+        "94000130+FFFC0000+9209190A+00000000+6236AC60+00000000+B236AC60+00000000+10000030+0000FBE7+D2000000+00000000"
+      ],
+      [
+        "Moon Jump v2",
+        "94000130+FFFD0000+6236AC60+00000000+B236AC60+00000000+1000002A+0000FB9E+10000030+0000FB9E+D2000000+00000000"
+      ],
+      [
+        "Invincible",
+        "9209190A+00000000+6236AC60+00000000+B236AC60+00000000+200003B2+00000049+D2000000+00000000"
+      ],
+      [
+        "Get Rings From Anywhere",
+        "0235BF98+E1A00000"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Bros.",
+    "system": "nes",
+    "match": [
+      [
+        "mario",
+        "bros"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite lives",
+        "SXTIEG"
+      ],
+      [
+        "Start with 6 lives",
+        "IAISPL"
+      ],
+      [
+        "Start with 9 lives",
+        "AAISPU"
+      ],
+      [
+        "Coins kill you!",
+        "AEUIUGAG"
+      ],
+      [
+        "Infinite Time In Bonus Round",
+        "SZNTPUVK"
+      ],
+      [
+        "Invincibility",
+        "AVVIEGVI"
+      ],
+      [
+        "Infinite Lives P1",
+        "0048:04"
+      ],
+      [
+        "Infinite Lives P2",
+        "004C:04"
+      ]
+    ]
+  },
+  {
+    "game": "Mario Golf",
+    "system": "n64",
+    "match": [
+      [
+        "mario",
+        "golf"
+      ]
+    ],
+    "cheats": [
+      [
+        "Have Infinite Power Shots P1",
+        "801B71F8 0006"
+      ],
+      [
+        "Have Infinite Power Shots P2",
+        "801B72B0 0009"
+      ],
+      [
+        "Have Infinite Power Shots P3",
+        "801B7368 0006"
+      ],
+      [
+        "Have Infinite Power Shots P4",
+        "801B7420 0006"
+      ],
+      [
+        "Always Zero Strokes Taken P1",
+        "801B71F3 0000"
+      ],
+      [
+        "Max Gold Mario Badges P1",
+        "800C545B 0063"
+      ],
+      [
+        "Have All Courses",
+        "81130CEE FFFF"
+      ],
+      [
+        "Have All Characters",
+        "50000E02 0001+810C28E4 0000"
+      ]
+    ]
+  },
+  {
+    "game": "Dr. Mario",
+    "system": "gb",
+    "match": [
+      [
+        "dr",
+        "mario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Always Get Pill Modifier",
+        "010013C2"
+      ],
+      [
+        "Selected Pill Always Appears",
+        "3E1-C9E-6E9+001-CBE-087+001-CAE-5D4"
+      ],
+      [
+        "Always Get The Same Pill",
+        "FA1-CCE-4C1"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man V",
+    "system": "gb",
+    "match": [
+      [
+        "mega",
+        "man"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Energy",
+        "01989EDE"
+      ],
+      [
+        "Infinite Lives",
+        "010334DF"
+      ],
+      [
+        "Infinite PCs",
+        "01C83DDF"
+      ],
+      [
+        "Infinite TA",
+        "0198A4DE"
+      ],
+      [
+        "All Weapons",
+        "01FF9CDE+011F9DDE"
+      ],
+      [
+        "Infinite P-Chips",
+        "01E73DDF+01033EDF"
+      ],
+      [
+        "Infinite Weapon Power",
+        "01002EC2"
+      ],
+      [
+        "Have Turbo Arm At Max Power",
+        "010233DF"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man",
+    "system": "nes",
+    "match": [
+      [
+        "mega",
+        "man"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Lives",
+        "OZSKPZVK"
+      ],
+      [
+        "Start With 6 Lives",
+        "IASPLAZA"
+      ],
+      [
+        "Start With 9 Lives",
+        "AASPLAZE"
+      ],
+      [
+        "Infinite Energy",
+        "SZKZGZSA"
+      ],
+      [
+        "Start With Half Energy",
+        "TAXOIOGO"
+      ],
+      [
+        "Always Get Maximum Points For Shooting Super Villains",
+        "OXSLEEPV+AUSLOEAZ"
+      ],
+      [
+        "Infinite Weapons (Once You Have Them)",
+        "IESZXESN"
+      ]
+    ]
+  },
+  {
+    "game": "Dr. Mario",
+    "system": "nes",
+    "match": [
+      [
+        "dr",
+        "mario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Vitamin Capsules Don't Fall",
+        "GZNEVIVT"
+      ],
+      [
+        "Game Freezes After First Capsule",
+        "ZULOLZ"
+      ],
+      [
+        "Glitched Graphics For Level Select Screen",
+        "POPOOP"
+      ],
+      [
+        "Game Freezes, The Music Stops",
+        "PELOLZ"
+      ],
+      [
+        "Funky Effects",
+        "T?LOLZ"
+      ]
+    ]
+  },
+  {
+    "game": "Dr. Mario",
+    "system": "snes",
+    "match": [
+      [
+        "dr",
+        "mario"
+      ]
+    ],
+    "cheats": [
+      [
+        "Drop Capsule Anywhere To Beat Level",
+        "CBCC-3D00+6DCB-3F00"
+      ]
+    ]
+  },
+  {
+    "game": "Mega Man 7",
+    "system": "snes",
+    "match": [
+      [
+        "mega",
+        "man"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Health",
+        "C2DB-5F62"
+      ],
+      [
+        "Get Hit Once for Invincibility",
+        "1D79-8700"
+      ],
+      [
+        "Infinite E-Tanks",
+        "C209-7DA4"
+      ],
+      [
+        "Infinite W-Tanks",
+        "C20B-7DD4"
+      ],
+      [
+        "Infinite S-Tanks",
+        "C20E-7D04"
+      ],
+      [
+        "Infinite Beat Whistles",
+        "C277-8F00"
+      ]
+    ]
+  },
+  {
+    "game": "Metroid",
+    "system": "nes",
+    "match": [
+      [
+        "metroid"
+      ]
+    ],
+    "cheats": [
+      [
+        "Minimum Energy Of 30",
+        "SXSGNVSE"
+      ],
+      [
+        "Infinite Rockets On Pick-Up",
+        "SZUILUVK"
+      ],
+      [
+        "Extra Energy",
+        "YAXGVPLA"
+      ],
+      [
+        "Start With All Items And You Are Invincible",
+        "ALLGKP"
+      ],
+      [
+        "You Start With No Energy",
+        "YAZKOP"
+      ],
+      [
+        "Infinite Life",
+        "YAYGNP"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic Advance",
+    "system": "gba",
+    "match": [
+      [
+        "sonic"
+      ]
+    ],
+    "cheats": [
+      [
+        "Infinite Rings",
+        "83004FEC+03E7"
+      ],
+      [
+        "Infinite Lives",
+        "33005024+000A"
+      ],
+      [
+        "Max Score",
+        "83005030+967F+83005032+0098"
+      ],
+      [
+        "Max Rings (Special Stage)",
+        "33005078+00FF"
+      ],
+      [
+        "Have All Chaos Emeralds",
+        "3300517C+007F"
+      ]
+    ]
+  },
+  {
+    "game": "Sonic 3",
+    "system": "segaMD",
+    "match": [
+      [
+        "sonic"
+      ]
+    ],
+    "cheats": [
+      [
+        "Region Bypass",
+        "AABT-AN3W"
+      ],
+      [
+        "Untouchable Sonic and Tails",
+        "RYLA-C60W+RYLT-C6TE"
+      ]
+    ]
   }
 ]

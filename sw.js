@@ -3,7 +3,7 @@
 // cores are loaded cross-origin from the EmulatorJS CDN and are deliberately
 // not intercepted here.
 
-const CACHE = "bgb-shell-v5";
+const CACHE = "bgb-shell-v6";
 const SHELL = [
   "./",
   "index.html",
