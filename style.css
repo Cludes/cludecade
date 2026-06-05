@@ -1063,7 +1063,7 @@ body.playing:not(.skin-mode) main { padding: var(--space-6) var(--space-4); }
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   box-shadow: var(--e2);
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-4) var(--space-4);
 }
 /* Gentle entrance when the panel first appears on game ready. */
 #save-controls:not([hidden]) { animation: panel-in 0.25s ease both; }
@@ -1106,8 +1106,12 @@ body.playing:not(.skin-mode) main { padding: var(--space-6) var(--space-4); }
 }
 
 .group-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
-  font-size: var(--text-sm);
   min-width: 140px;
 }
 
@@ -1136,17 +1140,25 @@ body.playing:not(.skin-mode) main { padding: var(--space-6) var(--space-4); }
 .badge:empty { display: none; }
 
 button {
-  background: var(--panel-2);
+  background: linear-gradient(180deg, var(--surface-3), var(--surface-2));
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   padding: var(--space-2) var(--space-3);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   cursor: pointer;
   font-size: var(--text-sm);
-  transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
-button:hover:not(:disabled) { border-color: var(--accent); background: var(--surface-3); transform: translateY(-1px); }
-button:active:not(:disabled) { transform: translateY(0); }
+button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--surface-3), var(--surface-3));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 0 1px var(--accent-soft-border), 0 6px 18px -10px rgba(0, 0, 0, 0.7);
+  transform: translateY(-1px);
+}
+button:active:not(:disabled) { transform: translateY(0); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04); }
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* Destructive actions (clear all, remove a game) signal intent on hover. */
