@@ -878,6 +878,7 @@ async function renderRecent() {
     cover.setAttribute("aria-hidden", "true");
     cover.textContent = (rom.fileName || "?").charAt(0).toUpperCase();
     cover.style.setProperty("--cover", systemColor(SYSTEMS[rom.core] || ""));
+    addBoxart(cover, rom.core, rom.fileName);
 
     const info = document.createElement("div");
     info.className = "recent-info";
@@ -1156,6 +1157,55 @@ function systemColor(system) {
   return "#a6ff1a";
 }
 
+// Libretro thumbnail folders (No-Intro/Redump system names) for real box art.
+const LIBRETRO_FOLDERS = {
+  gb: "Nintendo - Game Boy",
+  gbc: "Nintendo - Game Boy Color",
+  gba: "Nintendo - Game Boy Advance",
+  nes: "Nintendo - Nintendo Entertainment System",
+  snes: "Nintendo - Super Nintendo Entertainment System",
+  n64: "Nintendo - Nintendo 64",
+  nds: "Nintendo - Nintendo DS",
+  psx: "Sony - PlayStation",
+  segaMD: "Sega - Mega Drive - Genesis",
+  segaGG: "Sega - Game Gear",
+  segaMS: "Sega - Master System - Mark III",
+  pce: "NEC - PC Engine - TurboGrafx 16",
+  vb: "Nintendo - Virtual Boy",
+  atari2600: "Atari - 2600",
+  atari7800: "Atari - 7800",
+  lynx: "Atari - Lynx",
+  ngp: "SNK - Neo Geo Pocket",
+  ws: "Bandai - WonderSwan",
+  coleco: "Coleco - ColecoVision",
+};
+
+// Best-effort libretro box-art URL from a core + ROM/display name.
+function boxartUrl(core, name) {
+  const folder = LIBRETRO_FOLDERS[core];
+  if (!folder || !name) return null;
+  const base = String(name).replace(/\.[^.]+$/, "").trim();
+  if (!base) return null;
+  const clean = base.replace(/[&*/:`<>?\\|"]/g, "_");
+  return "https://thumbnails.libretro.com/" + encodeURIComponent(folder) +
+    "/Named_Boxarts/" + encodeURIComponent(clean) + ".png";
+}
+
+// Lazily load real box art onto a cover. The letter cover stays as the fallback;
+// the image only appears if the CDN has a match (sends the title to libretro).
+function addBoxart(coverEl, core, name) {
+  const url = boxartUrl(core, name);
+  if (!url) return;
+  const img = new Image();
+  img.alt = "";
+  img.className = "b-cover-img";
+  img.decoding = "async";
+  img.loading = "lazy";
+  img.referrerPolicy = "no-referrer";
+  img.onload = () => { coverEl.appendChild(img); coverEl.classList.add("has-art"); };
+  img.src = url;
+}
+
 function makeBuiltinButton(g) {
   const li = document.createElement("li");
   const btn = document.createElement("button");
@@ -1166,6 +1216,16 @@ function makeBuiltinButton(g) {
   cover.setAttribute("aria-hidden", "true");
   cover.textContent = (g.name || "?").charAt(0).toUpperCase();
   cover.style.setProperty("--cover", systemColor(g.system));
+  // Bundled local cover art for the example games (homebrew aren't on the CDN).
+  if (g.image) {
+    const img = new Image();
+    img.alt = "";
+    img.className = "b-cover-img";
+    img.loading = "lazy";
+    img.src = g.image;
+    cover.appendChild(img);
+    cover.classList.add("has-art");
+  }
   const text = document.createElement("span");
   text.className = "b-text";
   const name = document.createElement("span");
