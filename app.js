@@ -1171,10 +1171,13 @@ function makeBuiltinButton(g) {
   const name = document.createElement("span");
   name.className = "b-name";
   name.textContent = g.name;
+  const sys = document.createElement("span");
+  sys.className = "b-system";
+  sys.textContent = g.system || "";
   const meta = document.createElement("span");
   meta.className = "b-meta";
   meta.textContent = [g.system, g.by ? "by " + g.by : "", g.license].filter(Boolean).join(" · ");
-  text.append(name, meta);
+  text.append(name, sys, meta);
   btn.append(cover, text);
   btn.addEventListener("click", () => loadBuiltin(g.file));
   li.append(btn);

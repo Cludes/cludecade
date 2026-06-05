@@ -546,9 +546,39 @@ a:focus-visible {
   margin: 0 0 var(--space-1);
 }
 .examples-hint { margin-top: 0; }
-#examples-list { list-style: none; margin: var(--space-3) auto 0; padding: 0; text-align: left; }
-#examples-list li { margin-bottom: var(--space-2); }
-#examples-list .builtin-game { border-radius: var(--r-md); }
+/* The full author/license meta is only for the load-view list, not the cards. */
+.b-system { display: none; }
+
+/* Home example games render as a compact card grid (mini game library). */
+#examples-list {
+  list-style: none;
+  margin: var(--space-3) auto 0;
+  padding: 0;
+  max-width: 560px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-2);
+}
+#examples-list li { margin: 0; }
+#examples-list .builtin-game {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-2);
+  border-radius: var(--r-md);
+}
+#examples-list .b-cover {
+  width: 100%;
+  height: 64px;
+  border-radius: var(--r-sm);
+  font-size: 1.9rem;
+}
+#examples-list .b-text { width: 100%; gap: 2px; }
+#examples-list .b-name { font-size: 0.82rem; line-height: 1.18; white-space: normal; }
+#examples-list .b-system { display: block; font-size: 0.66rem; color: var(--muted); }
+#examples-list .b-meta { display: none; }
+#examples-list .builtin-game::after { display: none; }
 
 #builtin { margin: var(--space-5) auto 0; max-width: 440px; text-align: left; }
 #builtin h2 {
