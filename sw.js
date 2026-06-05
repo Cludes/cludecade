@@ -3,7 +3,7 @@
 // cores are loaded cross-origin from the EmulatorJS CDN and are deliberately
 // not intercepted here.
 
-const CACHE = "bgb-shell-v2";
+const CACHE = "bgb-shell-v3";
 const SHELL = [
   "./",
   "index.html",
@@ -11,6 +11,7 @@ const SHELL = [
   "app.js",
   "cheats.json",
   "manifest.json",
+  "fonts/inter.woff2",
   "icon-192.png",
   "icon-512.png",
 ];
