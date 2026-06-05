@@ -141,7 +141,7 @@ body::before {
   opacity: 0.55;
 }
 
-footer { text-align: center; padding: var(--space-4); }
+footer { text-align: center; padding: var(--space-6) var(--space-4); border-top: 1px solid var(--border); margin-top: var(--space-5); }
 
 /* Slim sticky top nav. */
 .nav {
@@ -384,16 +384,22 @@ main { flex: 1; width: 100%; margin: 0 auto; padding: 0; }
 .filebtn {
   display: inline-block;
   cursor: pointer;
-  background: var(--accent-grad);
+  background: linear-gradient(180deg, #aacd1d, #8aa70c);
   color: var(--accent-contrast);
-  padding: var(--space-3) var(--space-5);
+  padding: 0.9rem 1.55rem;
   border-radius: var(--r-md);
   font-weight: 700;
-  border: 1px solid rgba(155, 188, 15, 0.6);
-  box-shadow: var(--glow), var(--shadow-sm);
-  transition: transform 0.12s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  border: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 10px 26px -10px rgba(155, 188, 15, 0.55);
+  transition: transform 0.14s ease, box-shadow 0.2s ease, background 0.18s ease;
 }
-.filebtn:hover { filter: brightness(1.06); transform: translateY(-1px); box-shadow: var(--glow-strong), var(--shadow); }
+.filebtn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #b6da26, #94b20e);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 14px 34px -10px rgba(155, 188, 15, 0.65);
+}
 .filebtn:active { transform: translateY(0); }
 
 /* Small file buttons read as secondary controls, matching the dark buttons. */
@@ -550,11 +556,17 @@ a:focus-visible {
   flex-direction: row;
   align-items: center;
   gap: var(--space-3);
-  background: var(--panel-2);
+  background: linear-gradient(160deg, var(--surface-2), var(--surface-1));
   border: 1px solid var(--border);
-  padding: 0.6rem 0.75rem;
+  border-radius: var(--r-md);
+  padding: var(--space-3);
+  transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease;
 }
-.builtin-game:hover:not(:disabled) { border-color: var(--accent); background: var(--surface-3); transform: none; }
+.builtin-game:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: linear-gradient(160deg, var(--surface-3), var(--surface-2));
+  transform: translateY(-1px);
+}
 /* Generated placeholder cover: system-coloured square with the game's initial. */
 .b-cover {
   flex: none;
