@@ -334,6 +334,7 @@ function onEmulatorReady() {
     npCover.style.setProperty("--cover", systemColor(SYSTEMS[currentCore] || ""));
     addBoxart(npCover, currentCore, currentFileName);
   }
+  refreshQuickLoad();
   // Match the screen box to the system so games fill it (no letterboxing).
   const gameEl = document.getElementById("game");
   if (gameEl) {
@@ -435,6 +436,52 @@ function toggleFastForward() {
   setStatus(fastForwardOn ? "Fast-forward on (3x)." : "Fast-forward off.");
 }
 if (fastForwardBtn) fastForwardBtn.addEventListener("click", toggleFastForward);
+
+// --- One-click quick save / load state (persisted to IndexedDB per game) ---
+
+const quickSaveBtn = document.getElementById("quick-save-btn");
+const quickLoadBtn = document.getElementById("quick-load-btn");
+
+async function quickSaveState() {
+  const g = gm();
+  if (!g || typeof g.getState !== "function" || !currentFileName) {
+    setStatus("Quick save not available yet.");
+    return;
+  }
+  try {
+    const bytes = await g.getState();
+    if (!bytes || !bytes.length) { setStatus("Nothing to save yet."); return; }
+    await romTx("states", "readwrite", (s) => s.put({ fileName: currentFileName, bytes, savedAt: Date.now() }));
+    if (quickLoadBtn) quickLoadBtn.disabled = false;
+    setStatus("State saved.");
+  } catch (e) {
+    setStatus("Quick save failed.");
+  }
+}
+
+async function quickLoadState() {
+  const g = gm();
+  if (!g || typeof g.loadState !== "function" || !currentFileName) return;
+  try {
+    const rec = await romTx("states", "readonly", (s) => s.get(currentFileName));
+    if (!rec || !rec.bytes) { setStatus("No quick save for this game yet."); return; }
+    g.loadState(rec.bytes);
+    setStatus("State loaded.");
+  } catch (e) {
+    setStatus("Quick load failed.");
+  }
+}
+
+// Enable Load only when a quick save already exists for the running game.
+async function refreshQuickLoad() {
+  if (!quickLoadBtn) return;
+  if (!currentFileName) { quickLoadBtn.disabled = true; return; }
+  const rec = await romTx("states", "readonly", (s) => s.get(currentFileName)).catch(() => null);
+  quickLoadBtn.disabled = !(rec && rec.bytes);
+}
+
+if (quickSaveBtn) quickSaveBtn.addEventListener("click", quickSaveState);
+if (quickLoadBtn) quickLoadBtn.addEventListener("click", quickLoadState);
 
 // --- In-game save (.sav / SRAM) ---
 
@@ -787,13 +834,15 @@ const MAX_RECENT = 10;
 
 function romDB() {
   return new Promise((resolve, reject) => {
-    const req = indexedDB.open("bgb-roms", 2);
+    const req = indexedDB.open("bgb-roms", 3);
     req.onupgradeneeded = () => {
       const db = req.result;
       // "roms" holds the (large) ROM bytes; "meta" holds small per-game stats
-      // (play time) so bumping a counter never rewrites a 32MB record.
+      // (play time) so bumping a counter never rewrites a 32MB record. "states"
+      // holds one-click quick-save states keyed by game.
       if (!db.objectStoreNames.contains("roms")) db.createObjectStore("roms", { keyPath: "fileName" });
       if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta", { keyPath: "fileName" });
+      if (!db.objectStoreNames.contains("states")) db.createObjectStore("states", { keyPath: "fileName" });
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
