@@ -1186,25 +1186,9 @@ body.playing:not(.skin-mode) #console-body {
   gap: 0.7rem;
 }
 .skin-mode #console-body { max-width: min(540px, 96vw); margin: 0; }
-.skin-mode #save-controls {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  width: 100%;
-  max-width: 460px;
-}
-.skin-mode #save-controls .row { border-top: none; padding: 0.25rem 0; justify-content: center; }
-/* In skin mode the cover + eyebrow are hidden, so centre the title + Change game
-   (don't let the title block stretch) and centre the tools, for a balanced menu. */
-.skin-mode .np-header { justify-content: center; flex-wrap: wrap; gap: var(--space-3); }
-.skin-mode .now-playing-head { flex: 0 1 auto; align-items: center; }
-.skin-mode .np-tools { justify-content: center; border-top: none; margin-top: var(--space-2); padding-top: 0; }
-.skin-mode .save-backup,
-.skin-mode #now-playing-system,
-.skin-mode .np-cover,
-.skin-mode .state-info,
-.skin-mode .np-header .group-label { display: none; }
+/* In skin mode the menu stays the full, normal card (cover, label, badge, all
+   controls) - just width-matched to the faceplate above it. */
+.skin-mode #save-controls { max-width: min(540px, 96vw); }
 .skin-mode #status { text-align: center; }
 .action-btn {
   width: 66px;
